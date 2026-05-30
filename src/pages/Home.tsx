@@ -87,7 +87,7 @@ export function Home() {
         </section>
 
         {/* ── ABOUT ATLAS ISLAND ── */}
-        <section id="about-island" className="relative py-12 sm:py-16 bg-[#120822]/30">
+        <section id="about-island" className="relative pt-16 sm:pt-20 pb-12 sm:pb-16 bg-[#120822]/30">
           <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
@@ -102,10 +102,10 @@ export function Home() {
               <p className="font-body text-[1.05rem] sm:text-[1.15rem] text-[#b8a8f0]/80 max-w-[650px] mx-auto leading-relaxed">
                 Atlas Island is a living sanctuary for Earth-conscious souls who feel called to co-create a regenerative future. Here, we honor ALL pathways, ALL currencies, and ALL beings as expressions of unique gifts in service of the Greatest &amp; Highest Good.
               </p>
-              <p className="font-body text-[1.05rem] sm:text-[1.15rem] text-[#fad144]/80 leading-relaxed text-center italic mt-4 mb-6">
+              <p className="font-body text-[1.05rem] sm:text-[1.15rem] text-[#fad144]/80 leading-relaxed text-center italic mt-4 mb-2">
                 "Our wishes and dreams deserve to have a space to be seen, felt, and living."
               </p>
-              <div className="flex flex-wrap justify-center gap-3">
+              <div className="flex flex-wrap justify-center gap-3 pt-1">
                 <Link
                   to="/vision"
                   className="px-5 py-2.5 rounded-xl bg-[#6455df]/15 border border-[#6455df]/30 text-[#b8a8f0] font-ui text-[0.7rem] uppercase tracking-[0.12em] hover:bg-[#6455df]/25 hover:border-[#fad144]/30 transition-all duration-300"
@@ -130,7 +130,7 @@ export function Home() {
         </section>
 
         {/* ── CO-CREATORS OF ATLAS ISLAND ── */}
-        <section className="relative py-12 sm:py-16 bg-[#120822]/50">
+        <section className="relative py-6 sm:py-10 bg-[#120822]/50">
           <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
@@ -139,12 +139,6 @@ export function Home() {
               transition={{ duration: 0.7 }}
               className="text-center mb-8"
             >
-              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[#dfff42]/30 bg-[#dfff42]/5 mb-5">
-                <Users className="w-3.5 h-3.5 text-[#dfff42]" />
-                <span className="font-ui text-[0.65rem] uppercase tracking-[0.15em] text-[#dfff42]">
-                  The Circle
-                </span>
-              </div>
               <h2 className="font-display text-[1.8rem] sm:text-[2.2rem] text-[#fad144] mb-4">
                 Co-Creators of Atlas Island
               </h2>
@@ -161,7 +155,7 @@ export function Home() {
                   subtitle: 'Founder, Vision Keeper, Ray Weaver',
                   location: 'Charlotte, North Carolina',
                   bio: 'Artist of Life and Co-Creator of Atlas Island. Rising Virgo with Aquarius Earth, Neptune, and Uranus placements. Weaving Heartlight into form through sacred technology and community.',
-                  image: '/images/cocreators/atlasmorphoenix.png',
+                  image: '/profile-aura.png',
                   color: '#fad144',
                 },
                 {
