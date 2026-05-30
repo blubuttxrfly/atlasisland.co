@@ -1,0 +1,188 @@
+@import "tailwindcss";
+
+/* ── Atlas Island Sacred Tokens ── */
+@theme {
+  /* Core Colors */
+  --color-atlas-indigo: #6455df;
+  --color-deep-indigo: #3a2a8a;
+  --color-solar-gold: #fad144;
+  --color-solar-gold-light: #ffe478;
+  --color-heartlight-green: #dfff42;
+  --color-magenta-ray: #ff0099;
+  --color-magenta-ray-soft: #ff009980;
+  --color-aura-cream: #f0e8ff;
+  --color-aura-muted: #b8a8f0;
+  --color-void-black: #0a0515;
+  --color-void-deep: #120822;
+
+  /* Orichalcum Bridge (Exchange connection) */
+  --color-orichalcum: #c8922a;
+  --color-orichalcum-light: #e8b84b;
+  --color-orichalcum-pale: #f5d98a;
+
+  /* Ray Colors */
+  --color-ray-red: #c94040;
+  --color-ray-orange: #d4732a;
+  --color-ray-yellow: #d4b830;
+  --color-ray-green: #3a9b6f;
+  --color-ray-cyan: #2ab3c4;
+  --color-ray-blue: #3a6bb5;
+  --color-ray-indigo: #5a4a9e;
+  --color-ray-violet: #8b4fb5;
+  --color-ray-magenta: #c4407a;
+  --color-ray-omni: #c0c0d8;
+
+  /* Typography */
+  --font-display: 'Alice', Georgia, serif;
+  --font-body: 'Cormorant Garamond', Georgia, serif;
+  --font-ui: 'Atkinson Hyperlegible', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+}
+
+/* ── Global Reset ── */
+html {
+  scroll-behavior: smooth;
+  color-scheme: dark;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-body);
+  color: var(--color-aura-cream);
+  background: var(--color-void-black);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+#root {
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── Typography Classes ── */
+.font-display {
+  font-family: var(--font-display);
+}
+
+.font-body {
+  font-family: var(--font-body);
+}
+
+.font-ui {
+  font-family: var(--font-ui);
+}
+
+/* ── Sacred Animations ── */
+@keyframes aura-pulse {
+  0%, 100% { opacity: 0.85; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.02); }
+}
+
+@keyframes gold-glow {
+  0%, 100% { box-shadow: 0 0 20px rgba(250, 209, 68, 0.2); }
+  50% { box-shadow: 0 0 40px rgba(250, 209, 68, 0.4); }
+}
+
+@keyframes magenta-pulse {
+  0%, 100% { box-shadow: 0 0 15px rgba(255, 0, 153, 0.15); }
+  50% { box-shadow: 0 0 30px rgba(255, 0, 153, 0.35); }
+}
+
+@keyframes float-gentle {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+@keyframes rotate-sigil {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+@keyframes scroll-hint {
+  0%, 100% { transform: translateY(0); opacity: 0.6; }
+  50% { transform: translateY(8px); opacity: 1; }
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0.3; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.5); }
+}
+
+.animate-aura-pulse {
+  animation: aura-pulse 4s ease-in-out infinite;
+}
+
+.animate-gold-glow {
+  animation: gold-glow 3s ease-in-out infinite;
+}
+
+.animate-magenta-pulse {
+  animation: magenta-pulse 2.5s ease-in-out infinite;
+}
+
+.animate-float {
+  animation: float-gentle 5s ease-in-out infinite;
+}
+
+.animate-rotate-sigil {
+  animation: rotate-sigil 30s linear infinite;
+}
+
+.animate-shimmer {
+  animation: shimmer 3s linear infinite;
+  background-size: 200% auto;
+}
+
+.animate-scroll-hint {
+  animation: scroll-hint 2s ease-in-out infinite;
+}
+
+.animate-twinkle {
+  animation: twinkle var(--dur, 3s) ease-in-out infinite;
+}
+
+/* ── Reduced Motion ── */
+@media (prefers-reduced-motion: reduce) {
+  .animate-aura-pulse,
+  .animate-gold-glow,
+  .animate-magenta-pulse,
+  .animate-float,
+  .animate-rotate-sigil,
+  .animate-shimmer,
+  .animate-scroll-hint,
+  .animate-twinkle {
+    animation: none;
+  }
+}
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(100, 85, 223, 0.25);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(100, 85, 223, 0.45);
+}
+
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(100, 85, 223, 0.25) transparent;
+}
