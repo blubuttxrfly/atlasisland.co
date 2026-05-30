@@ -152,9 +152,9 @@ export function Home() {
               {[
                 {
                   name: 'Atlas Morphoenix',
-                  subtitle: 'Founder, Vision Keeper, Ray Weaver',
-                  location: 'Charlotte, North Carolina',
-                  bio: 'Artist of Life and Co-Creator of Atlas Island. Rising Virgo with Aquarius Earth, Neptune, and Uranus placements. Weaving Heartlight into form through sacred technology and community.',
+                  subtitle: 'Co-Creator of Atlas Island · Energy Healer & Reader · Artist of Life',
+                  location: 'Charlotte, North Carolina USA',
+                  bio: 'Multidimensional being, Energy healer, and who shares their visions & wishes of Atlas Island. Where ALL beings are sovereign, thriving, and living their absolute best dream lives.',
                   image: '/profile-aura.png',
                   color: '#fad144',
                 },
