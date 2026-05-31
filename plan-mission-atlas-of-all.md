@@ -70,7 +70,7 @@ Sacred, contemplative, cosmological. The spiritual codex.
 ---
 
 ## 4. Heartlight Collective Context
-- Expansion of Heartlight Exchange (https://heartlight-exchange.vercel.app/)
+- Expansion of Heartlight Exchange (https://heartlight.atlasisland.co/)
 - Mutual aid with access to resources, funding, grants, opportunities
 - Open-forum for open commerce through sovereign interdependent network state
 - Beings can make ALL kinds of posts

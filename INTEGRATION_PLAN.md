@@ -69,7 +69,7 @@ When the time comes for sacred transmissions.
 | YouTube | `https://www.youtube.com/@AtlasIslandCo` |
 | Instagram | `https://www.instagram.com/atlasisland.co` |
 | Discord | `https://discord.gg/SVNFrqk8Mv` |
-| Heartlight Exchange | `https://heartlight-exchange.vercel.app` |
+| Heartlight Exchange | `https://heartlight.atlasisland.co` |
 | AUT Time & Tools | `https://time.atlasisland.co` |
 | Heartlight Flow | `https://flow.atlasisland.co` |
 
