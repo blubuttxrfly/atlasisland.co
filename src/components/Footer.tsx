@@ -36,8 +36,8 @@ export function Footer() {
           </div>
 
           {/* Sacred phrase */}
-          <p className="font-display text-[1.1rem] text-[#fad144]/80 tracking-wide">
-            Greatest & Highest Good for ALL that IS
+          <p className="font-body italic text-[0.85rem] sm:text-[0.9rem] text-[#fad144]/80 tracking-wide leading-relaxed">
+            🌈🎶 "Atlas Island - Home for the Heartlight of You & Me, Atlas Island - Where Every Being is Free" 💫🎶
           </p>
 
           {/* Social links */}

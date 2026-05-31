@@ -88,7 +88,7 @@ export function Connect() {
                 </p>
 
                 <a
-                  href="https://www.heartlightexchange.com/donate"
+                  href="https://heartlight-exchange.vercel.app/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-full py-3 rounded-xl bg-[#ff0099]/15 border border-[#ff0099]/30 text-[#ff0099] font-ui text-[0.75rem] uppercase tracking-[0.12em] hover:bg-[#ff0099]/25 hover:shadow-[0_0_25px_rgba(255,0,153,0.15)] transition-all duration-300 flex items-center justify-center gap-2"
@@ -129,7 +129,7 @@ export function Connect() {
                 </p>
 
                 <a
-                  href="https://www.heartlightexchange.com"
+                  href="https://heartlight-exchange.vercel.app/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-full py-3 rounded-xl bg-[#dfff42]/15 border border-[#dfff42]/30 text-[#dfff42] font-ui text-[0.75rem] uppercase tracking-[0.12em] hover:bg-[#dfff42]/25 hover:shadow-[0_0_25px_rgba(223,255,66,0.15)] transition-all duration-300 flex items-center justify-center gap-2"
@@ -194,7 +194,7 @@ export function Connect() {
                 </div>
 
                 <a
-                  href="https://www.heartlightexchange.com/join"
+                  href="https://heartlight-exchange.vercel.app/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-full py-3 rounded-xl bg-[#fad144]/15 border border-[#fad144]/30 text-[#fad144] font-ui text-[0.75rem] uppercase tracking-[0.12em] hover:bg-[#fad144]/25 hover:shadow-[0_0_25px_rgba(250,209,68,0.15)] transition-all duration-300 flex items-center justify-center gap-2"
@@ -326,7 +326,7 @@ export function Connect() {
             <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-6 text-[#b8a8f0]/40">
               <div className="flex items-center gap-2">
                 <Mail className="w-4 h-4" />
-                <span className="font-body text-[0.85rem]">hello@atlasisland.co</span>
+                <span className="font-body text-[0.85rem]">contact@atlasisland.co</span>
               </div>
               <div className="flex items-center gap-2">
                 <MapPin className="w-4 h-4" />

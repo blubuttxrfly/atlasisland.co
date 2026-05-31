@@ -8,6 +8,7 @@ import { Mission } from './pages/Mission';
 import { Vision } from './pages/Vision';
 import { Broadcast } from './pages/Broadcast';
 import { Heartlight } from './pages/Heartlight';
+import { AtlasOfAll } from './pages/AtlasOfAll';
 import { Connect } from './pages/Connect';
 
 function AnimatedRoutes() {
@@ -17,6 +18,7 @@ function AnimatedRoutes() {
       <Routes location={location} key={location.pathname}>
         <Route path="/" element={<Home />} />
         <Route path="/mission" element={<Mission />} />
+        <Route path="/atlas-of-all" element={<AtlasOfAll />} />
         <Route path="/vision" element={<Vision />} />
         <Route path="/broadcast" element={<Broadcast />} />
         <Route path="/heartlight" element={<Heartlight />} />

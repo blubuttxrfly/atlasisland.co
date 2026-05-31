@@ -2,11 +2,12 @@ import { type NavItem } from '../types';
 
 export const NAV_ITEMS: NavItem[] = [
   { path: '/', label: 'Home', description: 'The gateway to Atlas Island' },
-  { path: '/mission', label: 'Mission \u0026 Purpose', description: 'Atlas of ALL the Living' },
+  { path: '/mission', label: 'Mission & Purpose', description: 'Why Atlas Island exists' },
+  { path: '/atlas-of-all', label: 'Atlas of ALL', description: 'The Living Codex' },
   { path: '/heartlight', label: 'Heartlight Exchange', description: 'Gift Exchange Economy' },
   { path: '/vision', label: 'Vision', description: 'The future of Atlas Island' },
-  { path: '/broadcast', label: 'Broadcast', description: 'Videos \u0026 transmissions' },
-  { path: '/connect', label: 'Connect \u0026 Join', description: 'Step onto the Island' },
+  { path: '/broadcast', label: 'Broadcast', description: 'Videos & transmissions' },
+  { path: '/connect', label: 'Connect & Join', description: 'Step onto the Island' },
 ];
 
 export const QUICK_LINKS = [
@@ -44,7 +45,7 @@ export const QUICK_LINKS = [
     id: 'aut',
     title: 'AUT Time \u0026 Tools',
     description: 'Atlastizen Universal Time',
-    url: 'https://time.atlasisland.co',
+    url: 'https://aut-tools.vercel.app/',
     icon: 'Clock',
     iconImage: '',
     rayColor: '#2ab3c4',
@@ -54,7 +55,7 @@ export const QUICK_LINKS = [
     id: 'book',
     title: 'Atlas of ALL',
     description: 'The Living Codex',
-    url: '/mission',
+    url: '/atlas-of-all',
     icon: 'BookOpen',
     iconImage: '',
     rayColor: '#8b4fb5',

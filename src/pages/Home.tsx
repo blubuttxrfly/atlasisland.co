@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { Play, Users, Heart, Clock, BookOpen, TrendingUp, ChevronDown, MapPin, Sparkles } from 'lucide-react';
+import { Play, Users, Heart, Clock, BookOpen, TrendingUp, ChevronDown, MapPin } from 'lucide-react';
 import { PageTransition } from '../components/PageTransition';
 import { QUICK_LINKS } from '../lib/constants';
 
@@ -101,25 +101,28 @@ export function Home() {
         </section>
 
         {/* ── ABOUT ATLAS ISLAND ── */}
-        <section id="about-island" className="relative pt-16 sm:pt-20 pb-12 sm:pb-16 bg-[#120822]/30">
+        <section id="about-island" className="relative pt-24 sm:pt-32 pb-20 sm:pb-24 bg-[#120822]/30">
           <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-100px' }}
               transition={{ duration: 0.7 }}
-              className="text-center mb-8"
+              className="text-center"
             >
-              <h2 className="font-display text-[1.8rem] sm:text-[2.2rem] text-[#fad144] mb-4">
+              <h2 className="font-display text-[1.8rem] sm:text-[2.2rem] text-[#fad144] mb-6">
                 About Atlas Island
               </h2>
-              <p className="font-body text-[1.05rem] sm:text-[1.15rem] text-[#b8a8f0]/80 max-w-[650px] mx-auto leading-relaxed">
-                Atlas Island is a living sanctuary for Earth-conscious souls who feel called to co-create a regenerative future. Here, we honor ALL pathways, ALL currencies, and ALL beings as expressions of unique gifts in service of the Greatest &amp; Highest Good.
+              <p className="font-body text-[1.05rem] sm:text-[1.15rem] text-[#b8a8f0]/80 max-w-[650px] mx-auto leading-relaxed mb-8">
+                Atlas Island was born from a remembering. A remembering that we are One with our Earth, each other, or our Universe that breathes through us. This is a sanctuary for beings who feel the call to co-create a regenerative future that honors ALL life as sacred.
               </p>
-              <p className="font-body text-[1.05rem] sm:text-[1.15rem] text-[#fad144]/80 leading-relaxed text-center italic mt-4 mb-2">
+              <p className="font-body text-[1.05rem] sm:text-[1.15rem] text-[#b8a8f0]/80 max-w-[650px] mx-auto leading-relaxed mb-8">
+                Atlas Island is a place beings all throughout time have envisioned. A land where beings have their essentials assured, leading them to live life through a place of joy, flow, fulfillment &amp; abundance. I am here to uphold the sanctity &amp; thrival of living our absolute best dream lives with &amp; for our Heartlight's Greatest &amp; Highest Good. Atlastizens, co-creators and beings of Atlas Island, are the change we wish to be in our world. If you feel the call, feel free to join our Discord to become a co-creator today! ALL beings who co-creates from a place of authentic joy and conscious awareness is welcome here.
+              </p>
+              <p className="font-body text-[1.05rem] sm:text-[1.15rem] text-[#fad144]/80 leading-relaxed text-center italic mb-10">
                 "Our wishes and dreams deserve to have a space to be seen, felt, and living."
               </p>
-              <div className="flex flex-wrap justify-center gap-3 pt-1">
+              <div className="flex flex-wrap justify-center gap-4">
                 <Link
                   to="/vision"
                   className="px-5 py-2.5 rounded-xl bg-[#6455df]/15 border border-[#6455df]/30 text-[#b8a8f0] font-ui text-[0.7rem] uppercase tracking-[0.12em] hover:bg-[#6455df]/25 hover:border-[#fad144]/30 transition-all duration-300"
@@ -279,38 +282,6 @@ export function Home() {
                 </motion.a>
               ))}
             </div>
-          </div>
-        </section>
-
-        {/* ── 12 RAYS FEATURED CALLING ── */}
-        <section className="relative py-14 sm:py-20 bg-[#120822]/50">
-          <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: '-100px' }}
-              transition={{ duration: 0.7 }}
-              className="text-center mb-8"
-            >
-              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[#ff0099]/30 bg-[#ff0099]/5 mb-5">
-                <Sparkles className="w-3.5 h-3.5 text-[#ff0099]" />
-                <span className="font-ui text-[0.65rem] uppercase tracking-[0.15em] text-[#ff0099]">
-                  The Spectrum
-                </span>
-              </div>
-              <h2 className="font-display text-[1.8rem] sm:text-[2.2rem] text-[#fad144] mb-4">
-                12 Rays Featured Calling
-              </h2>
-              <p className="font-body text-[1rem] text-[#b8a8f0]/70 max-w-[500px] mx-auto mb-8">
-                A sacred framework for understanding your unique frequency and how it serves the collective.
-              </p>
-              <Link
-                to="/12-rays"
-                className="inline-block px-8 py-3 rounded-full bg-[#ff0099]/15 border border-[#ff0099]/40 text-[#ff0099] font-ui text-[0.75rem] uppercase tracking-[0.14em] hover:bg-[#ff0099]/25 hover:shadow-[0_0_30px_rgba(255,0,153,0.15)] transition-all duration-300"
-              >
-                Discover Your Ray
-              </Link>
-            </motion.div>
           </div>
         </section>
 

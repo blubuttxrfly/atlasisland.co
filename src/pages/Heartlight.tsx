@@ -1,15 +1,16 @@
 import { PageTransition } from '../components/PageTransition';
 import { motion } from 'framer-motion';
-import { Heart, ArrowRight } from 'lucide-react';
+import { Heart, ArrowUpRight } from 'lucide-react';
 
 export function Heartlight() {
   return (
     <PageTransition>
       <div className="min-h-screen pt-[72px]">
-        <section className="relative py-24 sm:py-32 overflow-hidden">
+        {/* Hero */}
+        <section className="relative pt-16 sm:pt-24 pb-10 overflow-hidden">
           <div className="absolute inset-0 bg-[#0a0515]" />
           <div
-            className="absolute inset-0 opacity-30"
+            className="absolute inset-0 opacity-25"
             style={{
               background: 'radial-gradient(ellipse 60% 50% at 50% 45%, #3a9b6f 0%, transparent 60%)',
             }}
@@ -21,34 +22,100 @@ export function Heartlight() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
             >
-              <span className="inline-block font-ui text-[0.7rem] uppercase tracking-[0.2em] text-[#dfff42] mb-5">
+              <span className="inline-block font-ui text-[0.7rem] uppercase tracking-[0.2em] text-[#dfff42] mb-3">
                 Gift Exchange Economy
               </span>
-              <h1 className="font-display text-[2.5rem] sm:text-[3.5rem] text-[#fad144] leading-tight mb-6">
+              <h1 className="font-display text-[2.2rem] sm:text-[3.2rem] text-[#fad144] leading-tight mb-5">
                 Heartlight Exchange
               </h1>
-              <p className="font-body text-[1.15rem] sm:text-[1.3rem] text-[#b8a8f0]/80 italic leading-relaxed max-w-[700px] mx-auto">
-                Where resources, skills, and gifts flow with clarity and grace.
-                A sacred space for co-creation beyond the scarcity paradigm.
+              <p className="font-body text-[1.05rem] sm:text-[1.2rem] text-[#b8a8f0]/80 italic leading-relaxed max-w-[650px] mx-auto mb-8">
+                The unified resource collective of Atlas Island. Assuring life essentials so ALL beings may co-create from thrival.
               </p>
+
+              <a
+                href="https://heartlight-exchange.vercel.app"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-8 py-3.5 rounded-xl bg-[#dfff42] text-[#0a0515] font-ui text-[0.8rem] font-semibold uppercase tracking-[0.12em] shadow-[0_0_20px_rgba(223,255,66,0.3)] hover:shadow-[0_0_35px_rgba(223,255,66,0.5)] hover:scale-[1.04] transition-all duration-300"
+              >
+                <Heart className="w-4 h-4" />
+                Enter the Heartlight Exchange
+                <ArrowUpRight className="w-4 h-4" />
+              </a>
             </motion.div>
           </div>
         </section>
 
-        {/* Philosophy */}
-        <section className="relative py-16 sm:py-20">
+        {/* How the Heartlight Exchange Is Built */}
+        <section className="relative py-12 sm:py-16 border-t border-[#6455df]/10">
           <div className="max-w-[800px] mx-auto px-4 sm:px-6">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="text-center mb-14"
+              className="text-center mb-10"
             >
-              <h2 className="font-display text-[1.6rem] text-[#fad144] mb-4">
+              <Heart className="w-7 h-7 text-[#ff0099] mx-auto mb-3" />
+              <h2 className="font-display text-[1.4rem] text-[#fad144] mb-2">
+                How the Heartlight Exchange Is Built
+              </h2>
+              <p className="font-body text-[0.95rem] text-[#b8a8f0]/60">
+                The Heartlight Collective serves as the unified resource collective of Atlas Island.
+              </p>
+            </motion.div>
+
+            <div className="space-y-8">
+              <div className="border-l-2 border-[#dfff42]/30 pl-6">
+                <h3 className="font-display text-[1.2rem] text-[#fad144] mb-2">
+                  The Heartlight Collective
+                </h3>
+                <p className="font-body text-[0.95rem] text-[#b8a8f0]/70 leading-relaxed mb-2">
+                  The Heartlight Collective is the unified resource collective of Atlas Island. Beings co-operate from a place of having their life essentials assured and fulfilled through this collective. Resources, skills, and gifts flow with clarity and grace, creating a sacred space for co-creation beyond the scarcity paradigm.
+                </p>
+                <p className="font-body text-[0.95rem] text-[#b8a8f0]/70 leading-relaxed">
+                  Our Heartlight is our universal heart & soul that comes from the remembrance of our sacred creation of ALL that IS. The Exchange is how this Heartlight moves through form, how abundance becomes shared, how thrival becomes collective.
+                </p>
+              </div>
+
+              <div className="border-l-2 border-[#6455df]/30 pl-6">
+                <h3 className="font-display text-[1.2rem] text-[#fad144] mb-2">
+                  Atlastizens, Co-Creators
+                </h3>
+                <p className="font-body text-[0.95rem] text-[#b8a8f0]/70 leading-relaxed">
+                  Atlastizens are the beings who have stepped onto Atlas Island as Co-Creators. They contribute and co-create with the Heartlight Collective through various roles that align with their gifts and calling, artists, healers, builders, gardeners and farmers tending the agroforestry fields, caregivers, engineers, architects, visioneers, dreamers, and any being who feels the call to co-create with our Heartlight.
+                </p>
+              </div>
+
+              <div className="border-l-2 border-[#ff0099]/30 pl-6">
+                <h3 className="font-display text-[1.2rem] text-[#fad144] mb-2">
+                  Sovereign Supporters
+                </h3>
+                <p className="font-body text-[0.95rem] text-[#b8a8f0]/70 leading-relaxed mb-2">
+                  Sovereign Supporters are beings who wish to donate and support healing aligned resources, currency, and opportunities without yet directly joining Atlas Island as Co-Creators. They may remain cloaked and with minimum surveillance for our Heartlight's Greatest & Highest Good.
+                </p>
+                <p className="font-body text-[0.95rem] text-[#b8a8f0]/70 leading-relaxed">
+                  Every contribution flows into the Heartlight Pool, a living reservoir that assures life essentials for ALL beings on Atlas Island so that co-creation may arise from thrival rather than survival.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Exchange Pathways */}
+        <section className="relative py-12 sm:py-16 border-t border-[#6455df]/10">
+          <div className="max-w-[800px] mx-auto px-4 sm:px-6">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="text-center mb-10"
+            >
+              <h2 className="font-display text-[1.4rem] text-[#fad144] mb-2">
                 Exchange Pathways
               </h2>
-              <p className="font-body text-[1rem] text-[#b8a8f0]/60">
+              <p className="font-body text-[0.95rem] text-[#b8a8f0]/60">
                 Five forms of sacred reciprocity. Choose what resonates.
               </p>
             </motion.div>
@@ -80,73 +147,8 @@ export function Heartlight() {
           </div>
         </section>
 
-        {/* Donation Tiers */}
-        <section className="relative py-16 sm:py-20 border-t border-[#6455df]/10">
-          <div className="max-w-[800px] mx-auto px-4 sm:px-6">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="text-center mb-12"
-            >
-              <Heart className="w-8 h-8 text-[#ff0099] mx-auto mb-4" />
-              <h2 className="font-display text-[1.6rem] text-[#fad144] mb-3">
-                Contribute to the Exchange
-              </h2>
-              <p className="font-body text-[1rem] text-[#b8a8f0]/60">
-                Sacred donation tiers aligned with the Rays of ALL.
-                All contributions flow into the Heartlight Pool.
-              </p>
-            </motion.div>
-
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
-              {[
-                { amount: '$11', name: 'Ray of Union', color: '#3a9b6f', desc: 'Green Ray — Heart-centered giving' },
-                { amount: '$22', name: 'Master Co-Creator', color: '#d4b830', desc: 'Orichalcum Ray — Building together' },
-                { amount: '$33', name: 'Life Prism', color: '#c94040', desc: 'Crystalline-Carbon — Full spectrum' },
-                { amount: '$42', name: '42SOA', color: '#ff0099', desc: 'The Answer — Ultimate resonance' },
-              ].map((tier) => (
-                <motion.button
-                  key={tier.amount}
-                  whileHover={{ scale: 1.03 }}
-                  whileTap={{ scale: 0.98 }}
-                  className="group relative p-5 rounded-xl border-2 text-center transition-all duration-300 hover:shadow-[0_8px_30px_rgba(0,0,0,0.3)]"
-                  style={{
-                    borderColor: tier.color + '40',
-                    backgroundColor: tier.color + '08',
-                  }}
-                >
-                  <div
-                    className="font-display text-[1.6rem] mb-1"
-                    style={{ color: tier.color }}
-                  >
-                    {tier.amount}
-                  </div>
-                  <div className="font-ui text-[0.7rem] uppercase tracking-[0.1em] text-[#fad144] mb-2">
-                    {tier.name}
-                  </div>
-                  <div className="font-body text-[0.75rem] text-[#b8a8f0]/50">
-                    {tier.desc}
-                  </div>
-                  <div className="mt-3 flex items-center justify-center gap-1 text-[0.7rem] text-[#b8a8f0]/40 group-hover:text-[#fad144] transition-colors">
-                    <span className="font-ui uppercase tracking-wider">Give</span>
-                    <ArrowRight className="w-3 h-3" />
-                  </div>
-                </motion.button>
-              ))}
-            </div>
-
-            <div className="mt-10 text-center">
-              <p className="font-body text-[0.85rem] text-[#b8a8f0]/40 italic">
-                Stripe integration coming soon. For now, reach out through Connect & Join.
-              </p>
-            </div>
-          </div>
-        </section>
-
-        {/* Link to Exchange */}
-        <section className="relative py-16 border-t border-[#6455df]/10">
+        {/* Bottom CTA */}
+        <section className="relative py-12 border-t border-[#6455df]/10">
           <div className="max-w-[800px] mx-auto px-4 sm:px-6 text-center">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -154,19 +156,18 @@ export function Heartlight() {
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
             >
-              <h3 className="font-display text-[1.4rem] text-[#fad144] mb-4">
-                Enter the Heartlight Exchange
-              </h3>
-              <p className="font-body text-[1rem] text-[#b8a8f0]/60 mb-6">
+              <p className="font-body text-[1rem] text-[#b8a8f0]/60 mb-5">
                 Explore the full community directory, cast wishes, and connect with Co-Creators.
               </p>
               <a
                 href="https://heartlight-exchange.vercel.app"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-block px-8 py-3 rounded-full border-2 border-[#dfff42] text-[#dfff42] font-ui text-[0.78rem] uppercase tracking-[0.14em] hover:bg-[#dfff42]/10 hover:shadow-[0_0_30px_rgba(223,255,66,0.2)] transition-all duration-300"
+                className="inline-flex items-center gap-2 px-8 py-3 rounded-xl border-2 border-[#dfff42] text-[#dfff42] font-ui text-[0.78rem] uppercase tracking-[0.14em] hover:bg-[#dfff42]/10 hover:shadow-[0_0_30px_rgba(223,255,66,0.2)] transition-all duration-300"
               >
+                <Heart className="w-4 h-4" />
                 Open Heartlight Exchange
+                <ArrowUpRight className="w-4 h-4" />
               </a>
             </motion.div>
           </div>
