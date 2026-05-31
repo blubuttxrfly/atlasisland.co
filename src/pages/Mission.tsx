@@ -97,7 +97,7 @@ export function Mission() {
                 </Link>
 
                 <a
-                  href="https://heartlight-exchange.vercel.app/"
+                  href="https://heartlight.atlasisland.co/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 px-8 py-3.5 rounded-xl bg-[#6455df]/20 border border-[#6455df]/40 text-[#b8a8f0] font-ui text-[0.8rem] font-semibold uppercase tracking-[0.12em] hover:bg-[#6455df]/30 hover:border-[#fad144]/30 transition-all duration-300"

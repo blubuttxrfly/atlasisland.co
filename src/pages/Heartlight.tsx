@@ -33,7 +33,7 @@ export function Heartlight() {
               </p>
 
               <a
-                href="https://heartlight-exchange.vercel.app"
+                href="https://heartlight.atlasisland.co"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-8 py-3.5 rounded-xl bg-[#dfff42] text-[#0a0515] font-ui text-[0.8rem] font-semibold uppercase tracking-[0.12em] shadow-[0_0_20px_rgba(223,255,66,0.3)] hover:shadow-[0_0_35px_rgba(223,255,66,0.5)] hover:scale-[1.04] transition-all duration-300"
@@ -160,7 +160,7 @@ export function Heartlight() {
                 Explore the full community directory, cast wishes, and connect with Co-Creators.
               </p>
               <a
-                href="https://heartlight-exchange.vercel.app"
+                href="https://heartlight.atlasisland.co"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-8 py-3 rounded-xl border-2 border-[#dfff42] text-[#dfff42] font-ui text-[0.78rem] uppercase tracking-[0.14em] hover:bg-[#dfff42]/10 hover:shadow-[0_0_30px_rgba(223,255,66,0.2)] transition-all duration-300"

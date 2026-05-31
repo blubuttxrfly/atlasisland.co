@@ -45,7 +45,7 @@ export const QUICK_LINKS = [
     id: 'aut',
     title: 'AUT Time \u0026 Tools',
     description: 'Atlastizen Universal Time',
-    url: 'https://aut-tools.vercel.app/',
+    url: 'https://aut.atlasisland.co/',
     icon: 'Clock',
     iconImage: '',
     rayColor: '#2ab3c4',
