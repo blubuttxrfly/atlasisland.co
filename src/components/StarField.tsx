@@ -95,7 +95,7 @@ function generateSkyDome(count: number): StarDef[] {
   return stars;
 }
 
-/* ── Circular glowing star with twinkle ── */
+/* ── Static glowing star with gentle opacity twinkle only ── */
 function GlowingStar({
   size,
   tint,
@@ -110,72 +110,41 @@ function GlowingStar({
   twinklePhase: number;
 }) {
   const [hovered, setHovered] = useState(false);
-  const glowRadius = hovered ? size * 5 : size * 3;
+
+  /* Gentle opacity cycle — real stars twinkle, they don't grow/shrink */
+  const minOp = brightness * 0.45;
+  const maxOp = brightness;
 
   return (
-    <motion.div
+    <div
       className="relative rounded-full cursor-crosshair"
-      style={{
-        width: size,
-        height: size,
-      }}
+      style={{ width: size, height: size }}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
-      animate={{
-        scale: hovered ? [1, 1.8, 1.4] : [1, 1.08, 1],
-      }}
-      transition={{
-        duration: hovered ? 0.35 : baseDuration * 0.6,
-        repeat: Infinity,
-        ease: 'easeInOut',
-      }}
     >
-      {/* Outer glow halo */}
+      {/* Outer glow halo — static position, only opacity breathes */}
       <motion.div
         className="absolute rounded-full pointer-events-none"
         style={{
-          width: glowRadius,
-          height: glowRadius,
-          left: (size - glowRadius) / 2,
-          top: (size - glowRadius) / 2,
+          width: size * 3,
+          height: size * 3,
+          left: -size,
+          top: -size,
           background: `radial-gradient(circle, ${tint} 0%, transparent 75%)`,
-          filter: `blur(${hovered ? 2.5 : 1.2}px)`,
+          filter: 'blur(1.2px)',
         }}
         animate={{
-          scale: hovered ? [1, 2.8, 2] : [1, 1.5, 1],
-          opacity: hovered ? [0.5, 0.95, 0.6] : [0.3, 0.65, 0.3],
+          opacity: hovered ? [0.6, 0.95, 0.6] : [0.25, 0.55, 0.25],
         }}
         transition={{
           duration: hovered ? 0.9 : baseDuration,
-          repeat: Infinity,
-          ease: 'easeInOut',
-        }}
-      />
-
-      {/* Middle glow */}
-      <motion.div
-        className="absolute rounded-full pointer-events-none"
-        style={{
-          width: size * 1.8,
-          height: size * 1.8,
-          left: (size - size * 1.8) / 2,
-          top: (size - size * 1.8) / 2,
-          background: `radial-gradient(circle, ${tint} 0%, transparent 60%)`,
-          filter: 'blur(0.8px)',
-        }}
-        animate={{
-          scale: hovered ? 1.5 : [1, 1.2, 1],
-          opacity: hovered ? 0.9 : [0.2, 0.6, 0.2],
-        }}
-        transition={{
-          duration: hovered ? 0.6 : baseDuration * 0.8,
           repeat: Infinity,
           ease: 'easeInOut',
           delay: twinklePhase * 0.3,
         }}
       />
 
-      {/* Star core */}
+      {/* Star core — gentle opacity twinkle only, no scale */}
       <motion.div
         className="absolute rounded-full pointer-events-none"
         style={{
@@ -188,15 +157,16 @@ function GlowingStar({
             : `0 0 ${size * 2}px ${size * 0.4}px ${tint}`,
         }}
         animate={{
-          opacity: hovered ? 1 : [brightness * 0.55, brightness, brightness * 0.55],
+          opacity: hovered ? 1 : [minOp, maxOp, minOp],
         }}
         transition={{
           duration: hovered ? 0.25 : baseDuration,
           repeat: Infinity,
           ease: 'easeInOut',
+          delay: twinklePhase * 0.3,
         }}
       />
-    </motion.div>
+    </div>
   );
 }
 
@@ -359,24 +329,13 @@ export function StarField({ count = 200 }: { count?: number }) {
           const horizonFade = 0.65 + (1 - star.distance) * 0.35;
 
           return (
-            <motion.div
+            <div
               key={star.id}
               className="absolute pointer-events-auto"
               style={{
                 left: x,
                 top: y,
-              }}
-              initial={{ opacity: 0 }}
-              animate={{
-                opacity: [0.1 * horizonFade, star.brightness * horizonFade, 0.1 * horizonFade],
-              }}
-              transition={{
-                opacity: {
-                  duration: star.duration,
-                  delay: star.delay,
-                  repeat: Infinity,
-                  ease: 'easeInOut',
-                },
+                opacity: horizonFade,
               }}
             >
               <GlowingStar
@@ -386,7 +345,7 @@ export function StarField({ count = 200 }: { count?: number }) {
                 baseDuration={star.duration}
                 twinklePhase={star.twinklePhase}
               />
-            </motion.div>
+            </div>
           );
         })}
       </motion.div>
