@@ -29,7 +29,7 @@ function AnimatedRoutes() {
 function App() {
   return (
     <BrowserRouter>
-      <StarField count={80} />
+      <StarField />
       <div className="min-h-screen flex flex-col bg-[#0a0515]">
         <Header />
         <AnimatedRoutes />

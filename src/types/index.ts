@@ -18,8 +18,17 @@ export interface QuickLink {
   description: string;
   url: string;
   icon: string;
+  iconImage?: string;
   rayColor: string;
   external: boolean;
+}
+
+export interface SocialLink {
+  id: string;
+  name: string;
+  url: string;
+  iconImage: string;
+  alt: string;
 }
 
 export interface FeaturedCalling {

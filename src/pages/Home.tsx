@@ -14,6 +14,20 @@ const iconMap: Record<string, React.ReactNode> = {
   TrendingUp: <TrendingUp className="w-6 h-6" />,
 };
 
+function renderLinkIcon(link: typeof QUICK_LINKS[0]) {
+  if (link.iconImage) {
+    return (
+      <img
+        src={link.iconImage}
+        alt=""
+        className="w-6 h-6 object-contain rounded"
+        style={{ imageRendering: 'auto' }}
+      />
+    );
+  }
+  return iconMap[link.icon] || <Heart className="w-5 h-5" />;
+}
+
 export function Home() {
   const [logoError, setLogoError] = useState(false);
 
@@ -249,9 +263,9 @@ export function Home() {
                 >
                   <div className="flex items-center gap-4 mb-3">
                     <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-[#6455df]/10 border border-[#6455df]/20 flex items-center justify-center group-hover:border-[#ff0099]/30 group-hover:bg-[#ff0099]/10 transition-all">
-                      <span className="text-[#b8a8f0] group-hover:text-[#ff0099] transition-colors">
-                        {iconMap[link.icon] || <Heart className="w-5 h-5" />}
-                      </span>
+                    <span className="text-[#b8a8f0] group-hover:text-[#ff0099] transition-colors">
+                      {renderLinkIcon(link)}
+                    </span>
                     </div>
                     <div>
                       <h3 className="font-ui text-[0.85rem] font-semibold text-[#fad144] group-hover:text-[#ff0099] transition-colors">

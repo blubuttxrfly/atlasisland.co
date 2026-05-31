@@ -203,13 +203,13 @@ export function Vision() {
                 The next step is simply to say yes.
               </p>
               <a
-                href="https://www.skool.com/atlas-island-heartlight-center-5616"
+                href="https://discord.gg/SVNFrqk8Mv"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-8 py-3.5 rounded-xl bg-[#3a9b6f] text-[#f0e8ff] font-ui text-[0.8rem] font-semibold uppercase tracking-[0.12em] shadow-[0_0_20px_rgba(58,155,111,0.25)] hover:shadow-[0_0_35px_rgba(58,155,111,0.4)] hover:scale-[1.04] transition-all duration-300"
               >
-                <Users className="w-4 h-4" />
-                Join the Vision on Skool
+                <img src="/discord-icon.webp" alt="" className="w-5 h-5 rounded" />
+                Join the Discord
               </a>
             </motion.div>
           </div>

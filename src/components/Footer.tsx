@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { Heart } from 'lucide-react';
+import { SOCIAL_LINKS } from '../lib/constants';
 
 export function Footer() {
   return (
@@ -40,11 +41,26 @@ export function Footer() {
           </p>
 
           {/* Social links */}
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-4">
+            {SOCIAL_LINKS.map((link) => (
+              <a
+                key={link.id}
+                href={link.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 rounded-xl bg-[#6455df]/15 border border-[#6455df]/25 flex items-center justify-center hover:bg-[#fad144]/10 hover:border-[#fad144]/30 transition-all duration-300"
+                aria-label={link.name}
+              >
+                <img
+                  src={link.iconImage}
+                  alt={link.alt}
+                  className="w-5 h-5 object-contain"
+                />
+              </a>
+            ))}
+            <div className="w-px h-6 bg-[#6455df]/25" />
             {[
-              { label: 'YouTube', url: 'https://youtube.com' },
-              { label: 'Skool', url: 'https://skool.com' },
-              { label: 'Exchange', url: '/heartlight' },
+              { label: 'Heartlight', url: '/heartlight' },
               { label: 'Connect', url: '/connect' },
             ].map((link) => (
               <Link

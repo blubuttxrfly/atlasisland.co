@@ -32,11 +32,18 @@
   --color-ray-magenta: #c4407a;
   --color-ray-omni: #c0c0d8;
 
-  /* Typography */
-  --font-display: 'Alice', Georgia, serif;
-  --font-body: 'Cormorant Garamond', Georgia, serif;
-  --font-ui: 'Atkinson Hyperlegible', system-ui, sans-serif;
-  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+  /* Typography, ALL unified through Alice */
+  --font-display: 'Alice', Georgia, 'Times New Roman', serif;
+  --font-body: 'Alice', Georgia, 'Times New Roman', serif;
+  --font-ui: 'Alice', Georgia, 'Times New Roman', serif;
+  --font-mono: 'Alice', Georgia, 'Times New Roman', serif;
+}
+
+/* ── Alice Global Harmony ── */
+*,
+*::before,
+*::after {
+  font-family: var(--font-body);
 }
 
 /* ── Global Reset ── */
@@ -48,7 +55,6 @@ html {
 body {
   margin: 0;
   padding: 0;
-  font-family: var(--font-body);
   color: var(--color-aura-cream);
   background: var(--color-void-black);
   -webkit-font-smoothing: antialiased;
