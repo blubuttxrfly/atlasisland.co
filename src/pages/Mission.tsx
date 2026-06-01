@@ -42,7 +42,8 @@ export function Mission() {
                     Atlas Island is born from the wish that one day, beings would be able to live from a place thrival and fulfillment. I believe in me while believing in ALL beings who feel the call to co-create our Heartlight's dreams & wishes in life. I know that when beings have their life essentials met, when they can breathe freely, they naturally find what brings them authentic joy. It is genuinely unique and ever-evolving from one being to another, and every path is sacred.
                   </p>
                   <p className="text-[#fad144]/90 italic">
-                    With Love of ALL the IS, Atlas Morphoenix
+                    With Love of ALL the IS,<br />
+                    Atlas Morphoenix
                   </p>
                 </div>
               </div>

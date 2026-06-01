@@ -1,6 +1,6 @@
 import { PageTransition } from '../components/PageTransition';
 import { motion } from 'framer-motion';
-import { Heart, Leaf, Waves, Sun, Users, Sparkles } from 'lucide-react';
+import { Heart, Leaf, Waves, Sun, Users, Sparkles, ArrowUpRight } from 'lucide-react';
 import { useScrollReveal } from '../hooks/useScrollReveal';
 
 export function Vision() {
