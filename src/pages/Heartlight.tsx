@@ -1,8 +1,10 @@
 import { PageTransition } from '../components/PageTransition';
 import { motion } from 'framer-motion';
 import { Heart, ArrowUpRight } from 'lucide-react';
+import { useScrollReveal } from '../hooks/useScrollReveal';
 
 export function Heartlight() {
+  useScrollReveal();
   return (
     <PageTransition>
       <div className="min-h-screen pt-[72px]">
@@ -49,13 +51,8 @@ export function Heartlight() {
         {/* How the Heartlight Exchange Is Built */}
         <section className="relative py-12 sm:py-16 border-t border-[#6455df]/10">
           <div className="max-w-[800px] mx-auto px-4 sm:px-6">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="text-center mb-10"
-            >
+            <div className="reveal text-center mb-10"
+ >
               <Heart className="w-7 h-7 text-[#ff0099] mx-auto mb-3" />
               <h2 className="font-display text-[1.4rem] text-[#fad144] mb-2">
                 How the Heartlight Exchange Is Built
@@ -63,7 +60,7 @@ export function Heartlight() {
               <p className="font-body text-[0.95rem] text-[#b8a8f0]/60">
                 The Heartlight Collective serves as the unified resource collective of Atlas Island.
               </p>
-            </motion.div>
+            </div>
 
             <div className="space-y-8">
               <div className="border-l-2 border-[#dfff42]/30 pl-6">
@@ -105,20 +102,15 @@ export function Heartlight() {
         {/* Exchange Pathways */}
         <section className="relative py-12 sm:py-16 border-t border-[#6455df]/10">
           <div className="max-w-[800px] mx-auto px-4 sm:px-6">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="text-center mb-10"
-            >
+            <div className="reveal text-center mb-10"
+ >
               <h2 className="font-display text-[1.4rem] text-[#fad144] mb-2">
                 Exchange Pathways
               </h2>
               <p className="font-body text-[0.95rem] text-[#b8a8f0]/60">
                 Five forms of sacred reciprocity. Choose what resonates.
               </p>
-            </motion.div>
+            </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {[
@@ -128,20 +120,15 @@ export function Heartlight() {
                 { icon: '🎁', title: 'Gift Exchange', desc: 'Offered freely from overflow, as an act of love and service.' },
                 { icon: '🌱', title: 'Scholarship Exchange', desc: 'Community-supported offerings for those without access.' },
               ].map((pathway, i) => (
-                <motion.div
-                  key={i}
-                  initial={{ opacity: 0, y: 15 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.4, delay: i * 0.08 }}
-                  className="flex items-start gap-4 p-5 rounded-xl border border-[#3a9b6f]/15 bg-[#120822]/40"
-                >
+                <div
+ key={i} className="reveal flex items-start gap-4 p-5 rounded-xl border border-[#3a9b6f]/15 bg-[#120822]/40"
+ >
                   <span className="text-2xl flex-shrink-0">{pathway.icon}</span>
                   <div>
                     <h3 className="font-display text-[1.05rem] text-[#fad144] mb-1">{pathway.title}</h3>
                     <p className="font-body text-[0.9rem] text-[#b8a8f0]/55">{pathway.desc}</p>
                   </div>
-                </motion.div>
+                </div>
               ))}
             </div>
           </div>
@@ -150,12 +137,7 @@ export function Heartlight() {
         {/* Bottom CTA */}
         <section className="relative py-12 border-t border-[#6455df]/10">
           <div className="max-w-[800px] mx-auto px-4 sm:px-6 text-center">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-            >
+            <div className="reveal" >
               <p className="font-body text-[1rem] text-[#b8a8f0]/60 mb-5">
                 Explore the full community directory, cast wishes, and connect with Co-Creators.
               </p>
@@ -169,7 +151,7 @@ export function Heartlight() {
                 Open Heartlight Exchange
                 <ArrowUpRight className="w-4 h-4" />
               </a>
-            </motion.div>
+            </div>
           </div>
         </section>
       </div>

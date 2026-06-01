@@ -1,8 +1,10 @@
 import { PageTransition } from '../components/PageTransition';
 import { motion } from 'framer-motion';
 import { Play, FileText } from 'lucide-react';
+import { useScrollReveal } from '../hooks/useScrollReveal';
 
 export function Broadcast() {
+  useScrollReveal();
   return (
     <PageTransition>
       <div className="min-h-screen pt-[72px]">
@@ -38,12 +40,7 @@ export function Broadcast() {
         {/* Video Section */}
         <section className="relative py-16 sm:py-20">
           <div className="max-w-[1200px] mx-auto px-4 sm:px-6">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-            >
+            <div className="reveal" >
               <h2 className="font-display text-[1.6rem] text-[#fad144] mb-8 text-center">
                 Latest Transmission
               </h2>
@@ -56,19 +53,14 @@ export function Broadcast() {
                   </p>
                 </div>
               </div>
-            </motion.div>
+            </div>
           </div>
         </section>
 
         {/* Article Garden */}
         <section className="relative py-16 sm:py-20 border-t border-[#6455df]/10">
           <div className="max-w-[1200px] mx-auto px-4 sm:px-6">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-            >
+            <div className="reveal" >
               <h2 className="font-display text-[1.6rem] text-[#fad144] mb-8 text-center">
                 Written Garden
               </h2>
@@ -103,7 +95,7 @@ export function Broadcast() {
                   </div>
                 ))}
               </div>
-            </motion.div>
+            </div>
           </div>
         </section>
       </div>

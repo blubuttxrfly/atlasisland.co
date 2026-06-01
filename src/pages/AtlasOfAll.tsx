@@ -1,7 +1,9 @@
 import { PageTransition } from '../components/PageTransition';
 import { motion } from 'framer-motion';
+import { useScrollReveal } from '../hooks/useScrollReveal';
 
 export function AtlasOfAll() {
+  useScrollReveal();
   return (
     <PageTransition>
       <div className="min-h-screen pt-[72px]">
@@ -37,13 +39,8 @@ export function AtlasOfAll() {
         {/* Introduction */}
         <section className="relative pb-10 bg-[#0a0515]">
           <div className="max-w-[800px] mx-auto px-4 sm:px-6">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="p-6 rounded-2xl border border-[#6455df]/20 bg-[#120822]/50"
-            >
+            <div className="reveal p-6 rounded-2xl border border-[#6455df]/20 bg-[#120822]/50"
+ >
               <h2 className="font-display text-[1.3rem] text-[#fad144] mb-4 text-center">
                 A Living Book, A Co-Creation Experience
               </h2>
@@ -57,20 +54,15 @@ export function AtlasOfAll() {
                 <p className="text-[#fad144]/80 italic text-center">
                   This is our Infinite Universe of ALL, written together, remembered together, lived together.
                 </p>
-              </div>            </motion.div>
+              </div>            </div>
           </div>
         </section>
 
         {/* Sacred Pillars */}
         <section className="relative py-10 bg-[#0a0515]">
           <div className="max-w-[800px] mx-auto px-4 sm:px-6">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="space-y-10"
-            >
+            <div className="reveal space-y-10"
+ >
               <div className="border-l-2 border-[#6455df]/30 pl-6">
                 <h2 className="font-display text-[1.4rem] text-[#fad144] mb-3">
                   All Energy is Conscious
@@ -173,7 +165,7 @@ export function AtlasOfAll() {
                   <p className="text-[#fad144] mt-3">In Peace, there is Power. In Sovereignty, there is Sacredness. In Love, there is ALL.</p>
                 </div>
               </div>
-            </motion.div>
+            </div>
           </div>
         </section>
       </div>

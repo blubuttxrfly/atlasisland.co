@@ -1,15 +1,17 @@
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
+import { Suspense, lazy } from 'react';
 import { Header } from './components/Header';
 import { Footer } from './components/Footer';
 import { StarField } from './components/StarField';
-import { Home } from './pages/Home';
-import { Mission } from './pages/Mission';
-import { Vision } from './pages/Vision';
-import { Broadcast } from './pages/Broadcast';
-import { Heartlight } from './pages/Heartlight';
-import { AtlasOfAll } from './pages/AtlasOfAll';
-import { Connect } from './pages/Connect';
+
+const Home      = lazy(() => import('./pages/Home').then(m => ({ default: m.Home })));
+const Mission   = lazy(() => import('./pages/Mission').then(m => ({ default: m.Mission })));
+const Vision    = lazy(() => import('./pages/Vision').then(m => ({ default: m.Vision })));
+const Broadcast = lazy(() => import('./pages/Broadcast').then(m => ({ default: m.Broadcast })));
+const Heartlight= lazy(() => import('./pages/Heartlight').then(m => ({ default: m.Heartlight })));
+const AtlasOfAll= lazy(() => import('./pages/AtlasOfAll').then(m => ({ default: m.AtlasOfAll })));
+const Connect   = lazy(() => import('./pages/Connect').then(m => ({ default: m.Connect })));
 
 function AnimatedRoutes() {
   const location = useLocation();
@@ -34,7 +36,13 @@ function App() {
       <StarField />
       <div className="min-h-screen flex flex-col bg-[#0a0515]">
         <Header />
-        <AnimatedRoutes />
+        <Suspense fallback={
+          <main className="flex-1 flex items-center justify-center">
+            <div className="w-8 h-8 rounded-full border-2 border-[#fad144]/30 border-t-[#fad144] animate-spin" />
+          </main>
+        }>
+          <AnimatedRoutes />
+        </Suspense>
         <Footer />
       </div>
     </BrowserRouter>

@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { Play, Users, Heart, Clock, BookOpen, TrendingUp, ChevronDown, MapPin } from 'lucide-react';
 import { PageTransition } from '../components/PageTransition';
 import { QUICK_LINKS } from '../lib/constants';
+import { useScrollReveal } from '../hooks/useScrollReveal';
 
 const iconMap: Record<string, React.ReactNode> = {
   Youtube: <Play className="w-6 h-6" />,
@@ -29,6 +30,7 @@ function renderLinkIcon(link: typeof QUICK_LINKS[0]) {
 }
 
 export function Home() {
+  useScrollReveal();
   const [logoError, setLogoError] = useState(false);
 
   return (
@@ -103,13 +105,8 @@ export function Home() {
         {/* ── ABOUT ATLAS ISLAND ── */}
         <section id="about-island" className="relative pt-24 sm:pt-32 pb-20 sm:pb-24 bg-[#120822]/30">
           <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: '-100px' }}
-              transition={{ duration: 0.7 }}
-              className="text-center"
-            >
+            <div className="reveal text-center"
+ >
               <h2 className="font-display text-[1.8rem] sm:text-[2.2rem] text-[#fad144] mb-6">
                 About Atlas Island
               </h2>
@@ -142,27 +139,22 @@ export function Home() {
                   Connect &amp; Join
                 </Link>
               </div>
-            </motion.div>
+            </div>
           </div>
         </section>
 
         {/* ── CO-CREATORS OF ATLAS ISLAND ── */}
         <section className="relative py-6 sm:py-10 bg-[#120822]/50">
           <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: '-100px' }}
-              transition={{ duration: 0.7 }}
-              className="text-center mb-8"
-            >
+            <div className="reveal text-center mb-8"
+ >
               <h2 className="font-display text-[1.8rem] sm:text-[2.2rem] text-[#fad144] mb-4">
                 Co-Creators of Atlas Island
               </h2>
               <p className="font-body text-[1rem] text-[#b8a8f0]/70 max-w-[500px] mx-auto">
                 Souls who have heard the call and stepped forward to weave this sanctuary into being.
               </p>
-            </motion.div>
+            </div>
 
             {/* Co-Creator Cards */}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
@@ -183,15 +175,10 @@ export function Home() {
                   image: '',
                   color: '#dfff42',
                 },
-              ].map((creator, i) => (
-                <motion.div
-                  key={creator.name}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: '-50px' }}
-                  transition={{ delay: i * 0.1, duration: 0.5 }}
-                  className="group relative rounded-2xl border border-[#6455df]/20 bg-[#0a0515]/80 backdrop-blur-sm p-6 transition-all duration-400 hover:border-[#fad144]/30 hover:shadow-[0_8px_40px_rgba(100,85,223,0.12)]"
-                >
+              ].map((creator) => (
+                <div
+ key={creator.name} className="reveal group relative rounded-2xl border border-[#6455df]/20 bg-[#0a0515]/80 backdrop-blur-sm p-6 transition-all duration-400 hover:border-[#fad144]/30 hover:shadow-[0_8px_40px_rgba(100,85,223,0.12)]"
+ >
                   <div className="relative w-20 h-20 mx-auto mb-4 rounded-full overflow-hidden border-2 border-[#6455df]/30 group-hover:border-[#fad144]/40 transition-colors">
                     {creator.image ? (
                       <img
@@ -221,7 +208,7 @@ export function Home() {
                   <p className="font-body text-[0.85rem] text-[#b8a8f0]/70 text-center leading-relaxed">
                     {creator.bio}
                   </p>
-                </motion.div>
+                </div>
               ))}
             </div>
           </div>
@@ -230,13 +217,8 @@ export function Home() {
         {/* ── SACRED PATHWAYS ── */}
         <section className="relative py-12 sm:py-16 bg-[#120822]/30">
           <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: '-100px' }}
-              transition={{ duration: 0.7 }}
-              className="text-center mb-8"
-            >
+            <div className="reveal text-center mb-8"
+ >
               <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[#ff0099]/30 bg-[#ff0099]/5 mb-5">
                 <Heart className="w-3.5 h-3.5 text-[#ff0099]" />
                 <span className="font-ui text-[0.65rem] uppercase tracking-[0.15em] text-[#ff0099]">
@@ -249,7 +231,7 @@ export function Home() {
               <p className="font-body text-[1rem] text-[#b8a8f0]/70 max-w-[500px] mx-auto">
                 Portals into the Heartlight of Atlas Island, each one a unique frequency of co-creation.
               </p>
-            </motion.div>
+            </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
                 {QUICK_LINKS.map((link, i) => (
@@ -259,10 +241,9 @@ export function Home() {
                   target="_blank"
                   rel="noopener noreferrer"
                   initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: '-50px' }}
+                  animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: i * 0.08, duration: 0.5 }}
-                  className="group block relative rounded-2xl border border-[#6455df]/20 bg-[#120822]/60 backdrop-blur-sm p-6 transition-all duration-400 hover:border-[#ff0099]/30 hover:bg-[#120822]/90 hover:shadow-[0_8px_40px_rgba(100,85,223,0.12)]"
+                  className="reveal group block relative rounded-2xl border border-[#6455df]/20 bg-[#120822]/60 backdrop-blur-sm p-6 transition-all duration-400 hover:border-[#ff0099]/30 hover:bg-[#120822]/90 hover:shadow-[0_8px_40px_rgba(100,85,223,0.12)]"
                 >
                   <div className="flex items-center gap-4 mb-3">
                     <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-[#6455df]/10 border border-[#6455df]/20 flex items-center justify-center group-hover:border-[#ff0099]/30 group-hover:bg-[#ff0099]/10 transition-all">
@@ -288,12 +269,7 @@ export function Home() {
         {/* ── COMMUNITY CTA ── */}
         <section className="relative py-12 sm:py-16">
           <div className="max-w-[800px] mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-            >
+            <div className="reveal" >
               <h2 className="font-display text-[1.6rem] sm:text-[2rem] text-[#fad144] mb-4">
                 The Island is Calling
               </h2>
@@ -307,7 +283,7 @@ export function Home() {
                 <Users className="w-4 h-4" />
                 Step Into the Circle
               </Link>
-            </motion.div>
+            </div>
           </div>
         </section>
       </div>

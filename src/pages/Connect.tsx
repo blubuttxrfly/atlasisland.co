@@ -2,8 +2,10 @@ import { useState } from 'react';
 import { PageTransition } from '../components/PageTransition';
 import { motion } from 'framer-motion';
 import { Mail, MapPin, Send, Heart, HandCoins, Users, Sparkles } from 'lucide-react';
+import { useScrollReveal } from '../hooks/useScrollReveal';
 
 export function Connect() {
+  useScrollReveal();
   const [collectiveAmount] = useState(1242);
 
   return (
@@ -41,30 +43,20 @@ export function Connect() {
         {/* Three Sacred Paths */}
         <section className="relative py-12 sm:py-16">
           <div className="max-w-[1100px] mx-auto px-4 sm:px-6">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="text-center mb-10"
-            >
+            <div className="reveal text-center mb-10"
+ >
               <h2 className="font-display text-[1.6rem] text-[#fad144] mb-3">
                 Three Paths of Support
               </h2>
               <p className="font-body text-[1rem] text-[#b8a8f0]/60">
                 ALL contributions serve the Greatest & Highest Good for our Heartlight Collective.
               </p>
-            </motion.div>
+            </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
               {/* Path 1: Donations */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5 }}
-                whileHover={{ y: -4 }}
-                className="relative p-6 rounded-2xl border border-[#ff0099]/20 bg-[#120822]/40 flex flex-col"
+              <div
+                className="reveal relative p-6 rounded-2xl border border-[#ff0099]/20 bg-[#120822]/40 flex flex-col"
               >
                 <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 px-3 py-1 rounded-full border border-[#ff0099]/30 bg-[#ff0099]/10">
                   <span className="font-ui text-[0.6rem] uppercase tracking-[0.15em] text-[#ff0099]">
@@ -96,16 +88,11 @@ export function Connect() {
                   <Heart className="w-4 h-4" />
                   Offer a Gift
                 </a>
-              </motion.div>
+              </div>
 
               {/* Path 2: Heartlight Collective Exchange */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: 0.1 }}
-                whileHover={{ y: -4 }}
-                className="relative p-6 rounded-2xl border border-[#dfff42]/20 bg-[#120822]/40 flex flex-col"
+              <div
+                className="reveal relative p-6 rounded-2xl border border-[#dfff42]/20 bg-[#120822]/40 flex flex-col"
               >
                 <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 px-3 py-1 rounded-full border border-[#dfff42]/30 bg-[#dfff42]/10">
                   <span className="font-ui text-[0.6rem] uppercase tracking-[0.15em] text-[#dfff42]">
@@ -137,16 +124,11 @@ export function Connect() {
                   <HandCoins className="w-4 h-4" />
                   Enter the Exchange
                 </a>
-              </motion.div>
+              </div>
 
               {/* Path 3: Atlastizen Co-Creator */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: 0.2 }}
-                whileHover={{ y: -4 }}
-                className="relative p-6 rounded-2xl border border-[#fad144]/20 bg-[#120822]/40 flex flex-col"
+              <div
+                className="reveal relative p-6 rounded-2xl border border-[#fad144]/20 bg-[#120822]/40 flex flex-col"
               >
                 <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 px-3 py-1 rounded-full border border-[#fad144]/30 bg-[#fad144]/10">
                   <span className="font-ui text-[0.6rem] uppercase tracking-[0.15em] text-[#fad144]">
@@ -202,36 +184,26 @@ export function Connect() {
                   <Users className="w-4 h-4" />
                   Become an Atlastizen
                 </a>
-              </motion.div>
+              </div>
             </div>
 
             {/* Collective transparency note */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.3 }}
-              className="mt-8 text-center"
-            >
+            <div className="reveal mt-8 text-center"
+ >
               <p className="font-body text-[0.85rem] text-[#b8a8f0]/40 italic max-w-[600px] mx-auto">
                 The Heartlight Collective resource amount is transparently displayed and stewarded
                 for the Greatest & Highest Good of ALL Atlastizens. We are expanding and building
                 the Heartlight Collective together.
               </p>
-            </motion.div>
+            </div>
           </div>
         </section>
 
         {/* Discord Community */}
         <section className="relative py-12 sm:py-16 border-t border-[#6455df]/10">
           <div className="max-w-[700px] mx-auto px-4 sm:px-6 text-center">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="p-6 sm:p-8 rounded-2xl border border-[#6455df]/20 bg-[#120822]/40"
-            >
+            <div className="reveal p-6 sm:p-8 rounded-2xl border border-[#6455df]/20 bg-[#120822]/40"
+ >
               <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[#dfff42]/30 bg-[#dfff42]/5 mb-5">
                 <Users className="w-3.5 h-3.5 text-[#dfff42]" />
                 <span className="font-ui text-[0.65rem] uppercase tracking-[0.15em] text-[#dfff42]">
@@ -257,27 +229,22 @@ export function Connect() {
                 <Users className="w-4 h-4" />
                 Enter the Sanctuary
               </a>
-            </motion.div>
+            </div>
           </div>
         </section>
 
         {/* Contact */}
         <section className="relative py-16 sm:py-20 border-t border-[#6455df]/10">
           <div className="max-w-[600px] mx-auto px-4 sm:px-6">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="text-center mb-10"
-            >
+            <div className="reveal text-center mb-10"
+ >
               <h2 className="font-display text-[1.6rem] text-[#fad144] mb-3">
                 Reach Out
               </h2>
               <p className="font-body text-[1rem] text-[#b8a8f0]/60">
                 Have a question, offering, or resonance to share?
               </p>
-            </motion.div>
+            </div>
 
             <form className="space-y-4">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">

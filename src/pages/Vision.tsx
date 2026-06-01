@@ -1,8 +1,10 @@
 import { PageTransition } from '../components/PageTransition';
 import { motion } from 'framer-motion';
 import { Heart, Leaf, Waves, Sun, Users, Sparkles } from 'lucide-react';
+import { useScrollReveal } from '../hooks/useScrollReveal';
 
 export function Vision() {
+  useScrollReveal();
   return (
     <PageTransition>
       <div className="min-h-screen pt-[72px]">
@@ -38,12 +40,7 @@ export function Vision() {
         <section className="relative py-12 sm:py-16 bg-[#0a0515]">
           <div className="max-w-[800px] mx-auto px-4 sm:px-6 space-y-12">
             {/* 1. The Eco-Islands Network */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-            >
+            <div className="reveal" >
               <div className="flex items-center gap-3 mb-5">
                 <Leaf className="w-5 h-5 text-[#dfff42]" />
                 <h2 className="font-display text-[1.6rem] text-[#fad144]">
@@ -56,15 +53,10 @@ export function Vision() {
               <p className="font-body text-[1.05rem] text-[#b8a8f0]/70 leading-relaxed">
                 Every island operates on principles of permaculture, mutual aid, and sacred economics. Food forests, renewable energy, water harvesting, and natural building are the baseline of how we choose to dwell upon our Earth.
               </p>
-            </motion.div>
+            </div>
 
             {/* 2. Resonance Governance */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-            >
+            <div className="reveal" >
               <div className="flex items-center gap-3 mb-5">
                 <Waves className="w-5 h-5 text-[#2ab3c4]" />
                 <h2 className="font-display text-[1.6rem] text-[#fad144]">
@@ -81,16 +73,11 @@ export function Vision() {
                 back when another's gift is needed. Leadership is a flow, a sacred
                 rotation of service, shifting to where it is needed.
               </p>
-            </motion.div>
+            </div>
 
             {/* 3. Assurance for ALL. Thrival for ALL. */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="p-8 rounded-2xl border border-[#fad144]/15 bg-[#120822]/50"
-            >
+            <div className="reveal p-8 rounded-2xl border border-[#fad144]/15 bg-[#120822]/50"
+ >
               <div className="flex items-center gap-3 mb-4 justify-center">
                 <Sun className="w-5 h-5 text-[#fad144]" />
                 <h3 className="font-display text-[1.3rem] text-[#fad144]">
@@ -104,15 +91,10 @@ export function Vision() {
                 ALL currencies welcomed, and ALL credentials welcomed as expressions
                 of unique gifts.
               </p>
-            </motion.div>
+            </div>
 
             {/* 4. Love as Foundation */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-            >
+            <div className="reveal" >
               <div className="flex items-center gap-3 mb-5">
                 <Heart className="w-5 h-5 text-[#ff0099]" />
                 <h2 className="font-display text-[1.6rem] text-[#fad144]">
@@ -130,15 +112,10 @@ export function Vision() {
                 with curiosity and care, knowing that every moment holds an invitation
                 to deepen our connection with ALL that IS.
               </p>
-            </motion.div>
+            </div>
 
             {/* 5. Living Roles — to be updated when Atlas channels the full set */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-            >
+            <div className="reveal" >
               <div className="flex items-center gap-3 mb-6">
                 <Users className="w-5 h-5 text-[#3a9b6f]" />
                 <h2 className="font-display text-[1.6rem] text-[#fad144]">
@@ -182,16 +159,11 @@ export function Vision() {
                   </motion.div>
                 ))}
               </div>
-            </motion.div>
+            </div>
 
             {/* CTA */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="p-8 rounded-2xl border border-[#ff0099]/20 bg-[#120822]/50 text-center"
-            >
+            <div className="reveal p-8 rounded-2xl border border-[#ff0099]/20 bg-[#120822]/50 text-center"
+ >
               <Sparkles className="w-6 h-6 text-[#ff0099] mx-auto mb-4" />
               <h3 className="font-display text-[1.3rem] text-[#fad144] mb-4">
                 The Island is Calling
@@ -211,7 +183,7 @@ export function Vision() {
                 <img src="/discord-icon.webp" alt="" className="w-5 h-5 rounded" />
                 Join the Discord
               </a>
-            </motion.div>
+            </div>
           </div>
         </section>
       </div>

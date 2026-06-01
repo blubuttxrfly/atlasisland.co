@@ -2,8 +2,10 @@ import { PageTransition } from '../components/PageTransition';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { Users, Heart } from 'lucide-react';
+import { useScrollReveal } from '../hooks/useScrollReveal';
 
 export function Mission() {
+  useScrollReveal();
   return (
     <PageTransition>
       <div className="min-h-screen pt-[72px]">
@@ -25,13 +27,8 @@ export function Mission() {
               </h1>
             </motion.div>
 
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="space-y-10"
-            >
+            <div className="reveal space-y-10"
+ >
               {/* Personal Declaration — FIRST and most prominent */}
               <div className="border-l-2 border-[#fad144]/40 pl-6 py-2">
                 <h2 className="font-display text-[1.4rem] text-[#fad144] mb-4">
@@ -106,7 +103,7 @@ export function Mission() {
                   Explore the Heartlight Collective
                 </a>
               </div>
-            </motion.div>
+            </div>
           </div>
         </section>
       </div>
