@@ -114,6 +114,57 @@ export function Vision() {
               </p>
             </div>
 
+            {/* 6. Heartlight Collective & Flow */}
+            <div className="reveal p-8 rounded-2xl border border-[#ff0099]/20 bg-gradient-to-br from-[#120822]/60 to-[#2a0a1f]/40">
+              <div className="flex items-center gap-3 mb-5 justify-center">
+                <Heart className="w-5 h-5 text-[#ff0099]" />
+                <h2 className="font-display text-[1.6rem] text-[#fad144]">
+                  Heartlight Collective & Flow
+                </h2>
+              </div>
+              <p className="font-body text-[1.05rem] text-[#b8a8f0]/70 leading-relaxed mb-4">
+                The Heartlight Collective is the living economy of Atlas Island — a unified space where the 
+                Heartlight Exchange, Heartlight Flow, and mutual aid resources converge. Here, beings co-operate 
+                from a place of having their life essentials assured, contributing their gifts, and circulating 
+                abundance with transparent grace.
+              </p>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-6">
+                <div className="p-4 rounded-lg border border-[#ff0099]/15 bg-[#0a0515]/50">
+                  <h3 className="font-display text-[1rem] text-[#fad144] mb-2">Exchange</h3>
+                  <p className="font-body text-[0.85rem] text-[#b8a8f0]/60">
+                    Gift economy marketplace where offerings flow through five sacred pathways: fixed price, 
+                    sliding scale, trade, gift, and scholarship.
+                  </p>
+                </div>
+                <div className="p-4 rounded-lg border border-[#6455df]/15 bg-[#0a0515]/50">
+                  <h3 className="font-display text-[1rem] text-[#fad144] mb-2">Collective</h3>
+                  <p className="font-body text-[0.85rem] text-[#b8a8f0]/60">
+                    Mutual aid pool assuring life essentials for ALL beings. Transparent Open Collective ledger 
+                    with community governance and wish fulfillment.
+                  </p>
+                </div>
+                <div className="p-4 rounded-lg border border-[#dfff42]/15 bg-[#0a0515]/50">
+                  <h3 className="font-display text-[1rem] text-[#fad144] mb-2">Flow</h3>
+                  <p className="font-body text-[0.85rem] text-[#b8a8f0]/60">
+                    Individual dashboard visualizing personal resource flows, ray-hued transactions, and 
+                    interconnection with the Collective pool through live Actual Budget integration.
+                  </p>
+                </div>
+              </div>
+              <div className="mt-6 text-center">
+                <a
+                  href="https://heartlight.atlasisland.co"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-[#ff0099]/20 border border-[#ff0099]/30 text-[#ff0099] font-ui text-[0.75rem] uppercase tracking-[0.12em] hover:bg-[#ff0099]/30 transition-all duration-300"
+                >
+                  <Heart className="w-4 h-4" />
+                  Enter the Heartlight Collective
+                  <ArrowUpRight className="w-4 h-4" />
+                </a>
+              </div>
+            </div>
+
             {/* 5. Living Roles — to be updated when Atlas channels the full set */}
             <div className="reveal" >
               <div className="flex items-center gap-3 mb-6">
