@@ -45,7 +45,7 @@ export function Mission() {
                     With Love of ALL the IS,<br />
                     Atlas Morphoenix
                   </p>
-                  <div className="mt-6 flex justify-center">
+                  <div className="mt-6">
                     <img 
                       src="/AtlasSignature.png" 
                       alt="Atlas Morphoenix Signature" 
