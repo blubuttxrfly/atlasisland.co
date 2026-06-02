@@ -4,7 +4,7 @@ export const NAV_ITEMS: NavItem[] = [
   { path: '/', label: 'Home', description: 'The gateway to Atlas Island' },
   { path: '/mission', label: 'Mission & Purpose', description: 'Why Atlas Island exists' },
   { path: '/atlas-of-all', label: 'Atlas of ALL', description: 'The Living Codex' },
-  { path: '/heartlight', label: 'Heartlight Exchange', description: 'Gift Exchange Economy' },
+  { path: '/heartlight', label: 'Heartlight Collective', description: 'Living economy of Atlas Island' },
   { path: '/vision', label: 'Vision', description: 'The future of Atlas Island' },
   { path: '/broadcast', label: 'Broadcast', description: 'Videos & transmissions' },
   { path: '/connect', label: 'Connect & Join', description: 'Step onto the Island' },
