@@ -45,11 +45,11 @@ export function Mission() {
                     With Love of ALL the IS,<br />
                     Atlas Morphoenix
                   </p>
-                  <div className="mt-6">
+                  <div className="mt-4 -ml-2">
                     <img 
                       src="/AtlasSignature.png" 
                       alt="Atlas Morphoenix Signature" 
-                      className="h-24 w-auto opacity-90"
+                      className="h-20 w-auto opacity-90"
                     />
                   </div>
                 </div>
