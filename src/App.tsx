@@ -9,8 +9,8 @@ const Home      = lazy(() => import('./pages/Home').then(m => ({ default: m.Home
 const Mission   = lazy(() => import('./pages/Mission').then(m => ({ default: m.Mission })));
 const Vision    = lazy(() => import('./pages/Vision').then(m => ({ default: m.Vision })));
 const Broadcast = lazy(() => import('./pages/Broadcast').then(m => ({ default: m.Broadcast })));
-const Heartlight= lazy(() => import('./pages/Heartlight').then(m => ({ default: m.Heartlight })));
-const AtlasOfAll= lazy(() => import('./pages/AtlasOfAll').then(m => ({ default: m.AtlasOfAll })));
+const HeartlightCollective = lazy(() => import('./pages/HeartlightCollective').then(m => ({ default: m.HeartlightCollective })));
+const AtlasOfAll = lazy(() => import('./pages/AtlasOfAll').then(m => ({ default: m.AtlasOfAll })));
 const Connect   = lazy(() => import('./pages/Connect').then(m => ({ default: m.Connect })));
 
 function AnimatedRoutes() {
@@ -23,7 +23,7 @@ function AnimatedRoutes() {
         <Route path="/atlas-of-all" element={<AtlasOfAll />} />
         <Route path="/vision" element={<Vision />} />
         <Route path="/broadcast" element={<Broadcast />} />
-        <Route path="/heartlight" element={<Heartlight />} />
+        <Route path="/heartlight" element={<HeartlightCollective />} />
         <Route path="/connect" element={<Connect />} />
       </Routes>
     </AnimatePresence>
