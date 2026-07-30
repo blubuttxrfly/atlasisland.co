@@ -82,13 +82,12 @@ export function HeartlightCollective() {
     },
     {
       name: 'Stripe',
-      description: 'Accept any card directly. Funds deposit to Relay automatically.',
+      description: 'Accept any card directly. Funds deposit to Atlas Island LLC account automatically.',
       cta: 'Give via Card',
-      // TODO: Replace with your real Stripe Payment Link
-      url: 'mailto:contact@atlasisland.co?subject=Heartlight%20Collective%20Donation%20-%20Card%20Payment%20Request',
+      url: 'https://donate.stripe.com/00w5kD1e70RhepT9m10oM00',
       color: '#635bff',
-      available: false,
-      setupNote: 'Create a Stripe donation link at stripe.com',
+      available: true,
+      setupNote: null,
     },
     {
       name: 'Bank Transfer (ACH / Wire)',
