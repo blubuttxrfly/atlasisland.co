@@ -1,12 +1,10 @@
-import { useState } from 'react';
 import { PageTransition } from '../components/PageTransition';
 import { motion } from 'framer-motion';
-import { Mail, MapPin, Send, Heart, HandCoins, Users, Sparkles } from 'lucide-react';
+import { Mail, MapPin, Send, Heart, HandCoins, Users } from 'lucide-react';
 import { useScrollReveal } from '../hooks/useScrollReveal';
 
 export function Connect() {
   useScrollReveal();
-  const [collectiveAmount] = useState(1242);
 
   return (
     <PageTransition>
@@ -75,19 +73,19 @@ export function Connect() {
                 </h3>
 
                 <p className="font-body text-[0.9rem] text-[#b8a8f0]/70 leading-relaxed text-center mb-5 flex-1">
-                  Sacred offerings that flow directly into the Heartlight Collective through Relay.
+                  Sacred offerings that flow directly into the Heartlight Collective through Stripe.
                   Every gift, no matter the size, nourishes the sanctuary we are building together.
-                  Our open ledger is being woven for full transparency.
+                  Funds are stewarded through Atlas Island LLC for transparency and trust.
                 </p>
 
                 <a
-                  href="https://relayfi.com"
+                  href="https://donate.stripe.com/00w5kD1e70RhepT9m10oM00"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-full py-3 rounded-xl bg-[#ff0099]/15 border border-[#ff0099]/30 text-[#ff0099] font-ui text-[0.75rem] uppercase tracking-[0.12em] hover:bg-[#ff0099]/25 hover:shadow-[0_0_25px_rgba(255,0,153,0.15)] transition-all duration-300 flex items-center justify-center gap-2"
                 >
                   <Heart className="w-4 h-4" />
-                  Offer a Gift via Relay
+                  Offer a Gift via Stripe
                 </a>
               </div>
 
@@ -148,42 +146,24 @@ export function Connect() {
                 </h3>
 
                 <div className="text-center mb-3">
-                  <span className="font-display text-[1.8rem] text-[#fad144]">$12</span>
-                  <span className="font-ui text-[0.7rem] text-[#b8a8f0]/50 uppercase tracking-[0.1em]"> / month</span>
+                  <span className="font-display text-[1.8rem] text-[#fad144]">C.E.S.</span>
+                  <span className="font-ui text-[0.7rem] text-[#b8a8f0]/50 uppercase tracking-[0.1em]"> Profile Creation</span>
                 </div>
 
                 <p className="font-body text-[0.9rem] text-[#b8a8f0]/70 leading-relaxed text-center mb-5 flex-1">
-                  An encouraged contribution to become an Atlastizen Co-Creator.
-                  Your $12 flows directly into the Heartlight Collective — stewarded through Relay
-                  and collectively directed for the Greatest & Highest Good.
+                  Become an Atlastizen by creating your Core Energetic Signature (C.E.S.) profile.
+                  Your C.E.S. is your sovereign identity across the Heartlight Collective — 
+                  the golden thread connecting your gifts, offerings, and resonance.
                 </p>
 
-                {/* Collective Resource Display */}
-                <div className="mb-5 p-3 rounded-xl border border-[#6455df]/20 bg-[#0a0515]/50">
-                  <div className="flex items-center justify-center gap-2 mb-1">
-                    <Sparkles className="w-3.5 h-3.5 text-[#fad144]" />
-                    <span className="font-ui text-[0.6rem] uppercase tracking-[0.12em] text-[#b8a8f0]/50">
-                      Heartlight Collective
-                    </span>
-                  </div>
-                  <div className="text-center">
-                    <span className="font-display text-[1.4rem] text-[#fad144]">
-                      ${collectiveAmount.toLocaleString()}
-                    </span>
-                    <p className="font-ui text-[0.6rem] text-[#b8a8f0]/40 uppercase tracking-[0.1em] mt-0.5">
-                      Currently stewarded via Relay
-                    </p>
-                  </div>
-                </div>
-
                 <a
-                  href="https://relayfi.com"
+                  href="https://heartlight.atlasisland.co/create-profile"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-full py-3 rounded-xl bg-[#fad144]/15 border border-[#fad144]/30 text-[#fad144] font-ui text-[0.75rem] uppercase tracking-[0.12em] hover:bg-[#fad144]/25 hover:shadow-[0_0_25px_rgba(250,209,68,0.15)] transition-all duration-300 flex items-center justify-center gap-2"
                 >
                   <Users className="w-4 h-4" />
-                  Become an Atlastizen
+                  Create C.E.S. Profile
                 </a>
               </div>
             </div>
@@ -192,7 +172,9 @@ export function Connect() {
             <div className="reveal mt-8 text-center"
  >
               <p className="font-body text-[0.85rem] text-[#b8a8f0]/40 italic max-w-[600px] mx-auto">
-                The Heartlight Collective resource amount is stewarded through Relay for the Greatest & Highest Good of ALL Atlastizens. Our open ledger is being woven so ALL beings may witness how abundance flows. Visit the <a href="/ledger" className="text-[#fad144] hover:underline">Sacred Ledger</a> to witness the flow.
+                The Heartlight Collective receives donations through Stripe, stewarded through Atlas Island LLC 
+                for the Greatest & Highest Good of ALL Atlastizens. Our open ledger is being woven so ALL beings 
+                may witness how abundance flows. Visit the <a href="/ledger" className="text-[#fad144] hover:underline">Sacred Ledger</a> to witness the flow.
               </p>
             </div>
           </div>
