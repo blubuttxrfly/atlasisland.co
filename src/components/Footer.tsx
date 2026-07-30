@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom';
 import { Heart } from 'lucide-react';
 import { SOCIAL_LINKS } from '../lib/constants';
 
@@ -40,7 +39,7 @@ export function Footer() {
             🌈🎶 "Atlas Island - Home for the Heartlight of You & Me, Atlas Island - Where Every Being is Free" 💫🎶
           </p>
 
-          {/* Social links */}
+          {/* Icon row — social + app links together */}
           <div className="flex items-center gap-4">
             {SOCIAL_LINKS.map((link) => (
               <a
@@ -58,20 +57,32 @@ export function Footer() {
                 />
               </a>
             ))}
-            <div className="w-px h-6 bg-[#6455df]/25" />
-            {[
-              { label: 'Heartlight', url: '/heartlight' },
-              { label: 'Ledger', url: '/ledger' },
-              { label: 'Connect', url: '/connect' },
-            ].map((link) => (
-              <Link
-                key={link.label}
-                to={link.url}
-                className="px-4 py-2 rounded-lg bg-[#6455df]/15 border border-[#6455df]/25 font-ui text-[0.65rem] uppercase tracking-[0.1em] text-[#b8a8f0] hover:text-[#fad144] hover:bg-[#fad144]/10 hover:border-[#fad144]/30 transition-all duration-300"
-              >
-                {link.label}
-              </Link>
-            ))}
+            <a
+              href="https://heartlight.atlasisland.co"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-10 h-10 rounded-xl bg-[#6455df]/15 border border-[#6455df]/25 flex items-center justify-center hover:bg-[#fad144]/10 hover:border-[#fad144]/30 transition-all duration-300"
+              aria-label="Heartlight Collective"
+            >
+              <img
+                src="/heartlight-icon.png"
+                alt="Heartlight Collective"
+                className="w-6 h-6 object-contain rounded"
+              />
+            </a>
+            <a
+              href="https://aut.atlasisland.co"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-10 h-10 rounded-xl bg-[#6455df]/15 border border-[#6455df]/25 flex items-center justify-center hover:bg-[#fad144]/10 hover:border-[#fad144]/30 transition-all duration-300"
+              aria-label="AUT Time & Tools"
+            >
+              <img
+                src="/aut-icon.png"
+                alt="AUT Time & Tools"
+                className="w-6 h-6 object-contain rounded"
+              />
+            </a>
           </div>
 
           {/* Copyright */}

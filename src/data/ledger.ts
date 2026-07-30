@@ -41,7 +41,7 @@ export interface SacredLedger {
 export const SACRED_LEDGER: SacredLedger = {
   pool: {
     // Update this date whenever you add new entries
-    asOfDate: '2025-07-30',
+    asOfDate: '2026-07-30',
     // These fields are computed from entries below. You do not need to edit them.
     totalBalance: 0,
     totalInflows: 0,
