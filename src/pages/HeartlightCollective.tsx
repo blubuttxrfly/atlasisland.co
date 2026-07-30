@@ -1,10 +1,82 @@
 import { PageTransition } from '../components/PageTransition';
 import { motion } from 'framer-motion';
-import { Heart, ArrowUpRight, Users, Waves, Sparkles, Gift, HandHeart, TrendingUp } from 'lucide-react';
+import { Heart, ArrowUpRight, Users, Waves, Sparkles, Gift, HandHeart, TrendingUp, TrendingDown, CreditCard, Mail } from 'lucide-react';
 import { useScrollReveal } from '../hooks/useScrollReveal';
+import { SACRED_LEDGER } from '../data/ledger';
 
 export function HeartlightCollective() {
   useScrollReveal();
+  const { pool, entries, transparencyNote } = SACRED_LEDGER;
+
+  const formatCurrency = (amount: number) => {
+    return new Intl.NumberFormat('en-US', {
+      style: 'currency',
+      currency: 'USD',
+      minimumFractionDigits: 2,
+    }).format(amount);
+  };
+
+  const formatDate = (dateStr: string) => {
+    return new Date(dateStr).toLocaleDateString('en-US', {
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric',
+    });
+  };
+
+  const inflowTotal = entries
+    .filter((e) => e.type === 'inflow')
+    .reduce((sum, e) => sum + e.amount, 0);
+
+  const outflowTotal = entries
+    .filter((e) => e.type === 'outflow')
+    .reduce((sum, e) => sum + e.amount, 0);
+
+  const currentBalance = inflowTotal - outflowTotal;
+
+  // Payment methods — update these with your actual handles
+  const PAYMENT_METHODS = [
+    {
+      name: 'Venmo',
+      handle: '@atlasisland',
+      url: 'https://venmo.com/u/atlasisland',
+      color: '#0085ff',
+      icon: '💙',
+      available: false, // set to true when you have a Venmo
+    },
+    {
+      name: 'PayPal',
+      handle: 'contact@atlasisland.co',
+      url: 'https://paypal.me/atlasisland',
+      color: '#0070ba',
+      icon: '💙',
+      available: false, // set to true when you have PayPal
+    },
+    {
+      name: 'Cash App',
+      handle: '$atlasisland',
+      url: 'https://cash.app/$atlasisland',
+      color: '#00d632',
+      icon: '💚',
+      available: false, // set to true when you have Cash App
+    },
+    {
+      name: 'Bank Transfer (ACH)',
+      handle: 'Contact for routing details',
+      url: 'mailto:contact@atlasisland.co?subject=Heartlight%20Collective%20Donation%20-%20Bank%20Transfer',
+      color: '#fad144',
+      icon: '🏛️',
+      available: true, // Always available — they email you
+    },
+    {
+      name: 'Check / Money Order',
+      handle: 'Mail to Atlas Island c/o Z Atlas Morphoenix',
+      url: 'mailto:contact@atlasisland.co?subject=Heartlight%20Collective%20Donation%20-%20Mailing%20Address',
+      color: '#ff0099',
+      icon: '💌',
+      available: true, // Always available — they email you
+    },
+  ];
 
   return (
     <PageTransition>
@@ -138,7 +210,7 @@ export function HeartlightCollective() {
           </div>
         </section>
 
-        {/* Live Pool Stats */}
+        {/* Live Pool Stats — REAL DATA FROM SACRED_LEDGER */}
         <section className="relative py-16 border-t border-[#6455df]/10">
           <div className="max-w-[900px] mx-auto px-4 sm:px-6">
             <div className="reveal text-center mb-10">
@@ -151,13 +223,21 @@ export function HeartlightCollective() {
               </p>
             </div>
 
-            <div className="reveal p-8 rounded-2xl border border-[#fad144]/15 bg-[#120822]/50 backdrop-blur-sm">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 0.2, duration: 0.8 }}
+              className="reveal p-8 rounded-2xl border border-[#fad144]/15 bg-[#120822]/50 backdrop-blur-sm"
+            >
               <div className="text-center mb-8">
                 <p className="font-body text-[0.9rem] text-[#b8a8f0]/60 uppercase tracking-[0.15em] mb-2">
                   Total Pool Balance
                 </p>
                 <p className="font-display text-[3.5rem] text-[#fad144]">
-                  $12,847.56
+                  {formatCurrency(currentBalance)}
+                </p>
+                <p className="font-body text-[0.8rem] text-[#b8a8f0]/40 mt-1">
+                  Stewarded as of {formatDate(pool.asOfDate)}
                 </p>
                 <div className="inline-flex items-center gap-2 mt-3 px-3 py-1.5 rounded-full bg-[#3a9b6f]/20 border border-[#3a9b6f]/30">
                   <span className="w-2 h-2 rounded-full bg-[#3a9b6f] animate-pulse" />
@@ -169,23 +249,29 @@ export function HeartlightCollective() {
 
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 pt-6 border-t border-[#6455df]/10">
                 <div className="text-center">
-                  <p className="font-display text-[2rem] text-[#ff0099] mb-1">47</p>
-                  <p className="font-body text-[0.85rem] text-[#b8a8f0]/60">Active Offerings</p>
+                  <div className="flex items-center justify-center gap-2 mb-1">
+                    <TrendingUp className="w-4 h-4 text-[#3a9b6f]" />
+                    <p className="font-display text-[2rem] text-[#3a9b6f]">{formatCurrency(inflowTotal)}</p>
+                  </div>
+                  <p className="font-body text-[0.85rem] text-[#b8a8f0]/60">Total Inflows</p>
                 </div>
                 <div className="text-center">
-                  <p className="font-display text-[2rem] text-[#6455df] mb-1">12</p>
-                  <p className="font-body text-[0.85rem] text-[#b8a8f0]/60">Wishes This Moon</p>
+                  <div className="flex items-center justify-center gap-2 mb-1">
+                    <TrendingDown className="w-4 h-4 text-[#ff0099]" />
+                    <p className="font-display text-[2rem] text-[#ff0099]">{formatCurrency(outflowTotal)}</p>
+                  </div>
+                  <p className="font-body text-[0.85rem] text-[#b8a8f0]/60">Total Outflows</p>
                 </div>
                 <div className="text-center">
-                  <p className="font-display text-[2rem] text-[#dfff42] mb-1">156</p>
-                  <p className="font-body text-[0.85rem] text-[#b8a8f0]/60">Co-Creators</p>
+                  <p className="font-display text-[2rem] text-[#dfff42] mb-1">{entries.length}</p>
+                  <p className="font-body text-[0.85rem] text-[#b8a8f0]/60">Sacred Transactions</p>
                 </div>
               </div>
-            </div>
+            </motion.div>
           </div>
         </section>
 
-        {/* Recent Activity Feed */}
+        {/* Recent Flow — REAL LEDGER ENTRIES */}
         <section className="relative py-16 border-t border-[#6455df]/10">
           <div className="max-w-[800px] mx-auto px-4 sm:px-6">
             <div className="reveal text-center mb-10">
@@ -199,48 +285,135 @@ export function HeartlightCollective() {
             </div>
 
             <div className="space-y-4">
-              {[
-                {
-                  icon: '🌟',
-                  text: 'Solar panel installation funded for the Alentejo sanctuary',
-                  time: '2 hours ago',
-                  color: '#dfff42'
-                },
-                {
-                  icon: '💫',
-                  text: '3 new healers joined the Exchange this week',
-                  time: '1 day ago',
-                  color: '#ff0099'
-                },
-                {
-                  icon: '🎶',
-                  text: 'Monthly pool goal reached: $500 for community meals',
-                  time: '3 days ago',
-                  color: '#6455df'
-                },
-                {
-                  icon: '🌱',
-                  text: 'Rainwater filtration system wish fulfilled for TDF',
-                  time: '5 days ago',
-                  color: '#3a9b6f'
-                },
-              ].map((item, i) => (
-                <motion.div
-                  key={i}
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={{ opacity: 1, x: 0 }}
+              {[...entries]
+                .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+                .map((entry, i) => (
+                  <motion.div
+                    key={entry.id}
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: i * 0.1, duration: 0.5 }}
+                    className="reveal flex items-start gap-4 p-5 rounded-xl border border-[#6455df]/10 bg-[#0a0515]/40 hover:bg-[#0a0515]/60 transition-all duration-300"
+                  >
+                    <div className="flex-shrink-0 mt-0.5">
+                      <div
+                        className="w-9 h-9 rounded-lg flex items-center justify-center"
+                        style={{
+                          backgroundColor: `${entry.rayColor || (entry.type === 'inflow' ? '#3a9b6f' : '#ff0099')}15`,
+                          border: `1px solid ${entry.rayColor || (entry.type === 'inflow' ? '#3a9b6f' : '#ff0099')}25`,
+                        }}
+                      >
+                        {entry.type === 'inflow' ? (
+                          <ArrowUpRight className="w-4 h-4" style={{ color: entry.rayColor || '#3a9b6f' }} />
+                        ) : (
+                          <TrendingDown className="w-4 h-4" style={{ color: entry.rayColor || '#ff0099' }} />
+                        )}
+                      </div>
+                    </div>
+                    <div className="flex-1">
+                      <div className="flex items-center gap-2 mb-1">
+                        <span
+                          className="inline-block w-2 h-2 rounded-full"
+                          style={{ backgroundColor: entry.rayColor || '#fad144' }}
+                        />
+                        <span className="font-ui text-[0.65rem] uppercase tracking-[0.12em] text-[#b8a8f0]/50">
+                          {entry.category}
+                        </span>
+                      </div>
+                      <p className="font-body text-[0.95rem] text-[#b8a8f0]/75">{entry.description}</p>
+                      <div className="flex items-center justify-between mt-1">
+                        <p className="font-ui text-[0.7rem] text-[#b8a8f0]/40 uppercase tracking-[0.1em]">
+                          {formatDate(entry.date)}
+                        </p>
+                        <p
+                          className="font-display text-[1rem]"
+                          style={{
+                            color: entry.type === 'inflow' ? '#3a9b6f' : '#ff0099',
+                          }}
+                        >
+                          {entry.type === 'inflow' ? '+' : '-'}{formatCurrency(entry.amount)}
+                        </p>
+                      </div>
+                    </div>
+                  </motion.div>
+                ))}
+            </div>
+
+            {/* Transparency Note */}
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.5, duration: 0.6 }}
+              className="mt-10 p-6 rounded-xl border border-[#fad144]/10 bg-[#fad144]/5 text-center"
+            >
+              <Sparkles className="w-5 h-5 text-[#fad144] mx-auto mb-3" />
+              <p className="font-body text-[0.95rem] text-[#fad144]/70 italic leading-relaxed max-w-[600px] mx-auto">
+                {transparencyNote}
+              </p>
+            </motion.div>
+          </div>
+        </section>
+
+        {/* Donation Methods — REAL FUNCTIONALITY */}
+        <section className="relative py-16 border-t border-[#6455df]/10">
+          <div className="max-w-[900px] mx-auto px-4 sm:px-6">
+            <div className="reveal text-center mb-10">
+              <HandHeart className="w-7 h-7 text-[#ff0099] mx-auto mb-3" />
+              <h2 className="font-display text-[1.8rem] text-[#fad144] mb-3">
+                Offer a Gift
+              </h2>
+              <p className="font-body text-[1.05rem] text-[#b8a8f0]/65">
+                Multiple pathways to nourish the Heartlight Collective
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+              {PAYMENT_METHODS.filter((m) => m.available).map((method, i) => (
+                <motion.a
+                  key={method.name}
+                  href={method.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: i * 0.1, duration: 0.5 }}
-                  className="reveal flex items-start gap-4 p-5 rounded-xl border border-[#6455df]/10 bg-[#0a0515]/40"
+                  className="reveal group block p-5 rounded-2xl border border-[#6455df]/20 bg-[#0a0515]/60 backdrop-blur-sm hover:border-[#fad144]/30 hover:bg-[#0a0515]/80 transition-all duration-400"
                 >
-                  <span className="text-2xl flex-shrink-0">{item.icon}</span>
-                  <div className="flex-1">
-                    <p className="font-body text-[1rem] text-[#b8a8f0]/75">{item.text}</p>
-                    <p className="font-ui text-[0.75rem] text-[#b8a8f0]/40 uppercase tracking-[0.1em] mt-1">
-                      {item.time}
-                    </p>
+                  <div className="flex items-center gap-3 mb-3">
+                    <span className="text-xl">{method.icon}</span>
+                    <h3 className="font-display text-[1.1rem] text-[#fad144] group-hover:text-[#ff0099] transition-colors">
+                      {method.name}
+                    </h3>
                   </div>
-                </motion.div>
+                  <p className="font-body text-[0.85rem] text-[#b8a8f0]/60 mb-2">
+                    {method.handle}
+                  </p>
+                  <div className="flex items-center gap-1 text-[0.75rem] text-[#b8a8f0]/40 font-ui uppercase tracking-[0.1em]">
+                    <CreditCard className="w-3 h-3" />
+                    Click to initiate
+                  </div>
+                </motion.a>
               ))}
+            </div>
+
+            {/* Coming soon notice for unavailable methods */}
+            {PAYMENT_METHODS.filter((m) => !m.available).length > 0 && (
+              <div className="mt-6 text-center">
+                <p className="font-body text-[0.8rem] text-[#b8a8f0]/30 italic">
+                  Additional methods coming soon: {PAYMENT_METHODS.filter((m) => !m.available).map((m) => m.name).join(', ')}
+                </p>
+              </div>
+            )}
+
+            <div className="mt-8 p-5 rounded-xl border border-[#dfff42]/10 bg-[#dfff42]/5 text-center">
+              <Mail className="w-5 h-5 text-[#dfff42] mx-auto mb-2" />
+              <p className="font-body text-[0.9rem] text-[#b8a8f0]/70 leading-relaxed">
+                Questions about giving? Reach out at{' '}
+                <a href="mailto:contact@atlasisland.co?subject=Heartlight%20Collective%20Donation" className="text-[#fad144] hover:underline">
+                  contact@atlasisland.co
+                </a>
+                {' '}and we will guide you through the process with gratitude.
+              </p>
             </div>
           </div>
         </section>
