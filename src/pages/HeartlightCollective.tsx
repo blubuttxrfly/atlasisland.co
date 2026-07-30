@@ -1,6 +1,6 @@
 import { PageTransition } from '../components/PageTransition';
 import { motion } from 'framer-motion';
-import { Heart, ArrowUpRight, Users, Waves, Sparkles, Gift, HandHeart, TrendingUp, TrendingDown, CreditCard, Mail } from 'lucide-react';
+import { Heart, ArrowUpRight, Users, Waves, Sparkles, Gift, HandHeart, TrendingUp, TrendingDown, Mail } from 'lucide-react';
 import { useScrollReveal } from '../hooks/useScrollReveal';
 import { SACRED_LEDGER } from '../data/ledger';
 
@@ -34,47 +34,79 @@ export function HeartlightCollective() {
 
   const currentBalance = inflowTotal - outflowTotal;
 
-  // Payment methods — update these with your actual handles
+  // ═══════════════════════════════════════════════════════════
+  // SETUP REQUIRED — How to receive donations
+  // ═══════════════════════════════════════════════════════════
+  // Relay is your bank (where money lands), but people need a FRONT DOOR
+  // to actually send you money. Here are your options:
+  //
+  // OPTION A (Recommended): Create a PayPal.Me or Cash App link
+  //   • PayPal: https://www.paypal.com/paypalme/ → create link
+  //   • Cash App: https://cash.app/ → get your $handle link
+  //   • Update the `url` field below with your actual link
+  //
+  // OPTION B: Stripe Donation Link (accepts cards, no monthly fee)
+  //   • Sign up at https://stripe.com
+  //   • Create a "Payment Link" → set to "Donation" mode
+  //   • Payouts go directly to your Relay account
+  //   • Update the `url` field below
+  //
+  // OPTION C: Zelle / Venmo
+  //   • Zelle: Use your Relay account email/phone
+  //   • Venmo: Create business profile → get @handle link
+  //
+  // OPTION D: Bank Transfer / Check
+  //   • Beings email contact@atlasisland.co for routing details
+  //   • You manually provide Relay account details via secure email
+  // ═══════════════════════════════════════════════════════════
   const PAYMENT_METHODS = [
     {
-      name: 'Venmo',
-      handle: '@atlasisland',
-      url: 'https://venmo.com/u/atlasisland',
-      color: '#0085ff',
-      icon: '💙',
-      available: false, // set to true when you have a Venmo
-    },
-    {
       name: 'PayPal',
-      handle: 'contact@atlasisland.co',
-      url: 'https://paypal.me/atlasisland',
+      description: 'Credit card, debit card, or PayPal balance — no account needed',
+      cta: 'Give via PayPal',
+      // TODO: Replace with your real PayPal.Me link
+      url: 'mailto:contact@atlasisland.co?subject=Heartlight%20Collective%20Donation%20-%20PayPal%20Link%20Request',
       color: '#0070ba',
-      icon: '💙',
-      available: false, // set to true when you have PayPal
+      available: false,
+      setupNote: 'Create your PayPal.Me link at paypal.com/paypalme',
     },
     {
       name: 'Cash App',
-      handle: '$atlasisland',
-      url: 'https://cash.app/$atlasisland',
+      description: 'Instant transfer from Cash App balance or linked card',
+      cta: 'Give via Cash App',
+      // TODO: Replace with your real $cashtag link
+      url: 'mailto:contact@atlasisland.co?subject=Heartlight%20Collective%20Donation%20-%20Cash%20App%20Request',
       color: '#00d632',
-      icon: '💚',
-      available: false, // set to true when you have Cash App
+      available: false,
+      setupNote: 'Get your $cashtag link at cash.app',
     },
     {
-      name: 'Bank Transfer (ACH)',
-      handle: 'Contact for routing details',
+      name: 'Stripe',
+      description: 'Accept any card directly. Funds deposit to Relay automatically.',
+      cta: 'Give via Card',
+      // TODO: Replace with your real Stripe Payment Link
+      url: 'mailto:contact@atlasisland.co?subject=Heartlight%20Collective%20Donation%20-%20Card%20Payment%20Request',
+      color: '#635bff',
+      available: false,
+      setupNote: 'Create a Stripe donation link at stripe.com',
+    },
+    {
+      name: 'Bank Transfer (ACH / Wire)',
+      description: 'Direct transfer from any US bank. Best for larger gifts.',
+      cta: 'Request Details',
       url: 'mailto:contact@atlasisland.co?subject=Heartlight%20Collective%20Donation%20-%20Bank%20Transfer',
       color: '#fad144',
-      icon: '🏛️',
-      available: true, // Always available — they email you
+      available: true,
+      setupNote: null,
     },
     {
       name: 'Check / Money Order',
-      handle: 'Mail to Atlas Island c/o Z Atlas Morphoenix',
+      description: 'Mail a physical check to Atlas Island.',
+      cta: 'Request Mailing Address',
       url: 'mailto:contact@atlasisland.co?subject=Heartlight%20Collective%20Donation%20-%20Mailing%20Address',
       color: '#ff0099',
-      icon: '💌',
-      available: true, // Always available — they email you
+      available: true,
+      setupNote: null,
     },
   ];
 
@@ -380,17 +412,20 @@ export function HeartlightCollective() {
                   className="reveal group block p-5 rounded-2xl border border-[#6455df]/20 bg-[#0a0515]/60 backdrop-blur-sm hover:border-[#fad144]/30 hover:bg-[#0a0515]/80 transition-all duration-400"
                 >
                   <div className="flex items-center gap-3 mb-3">
-                    <span className="text-xl">{method.icon}</span>
+                    <div
+                      className="w-3 h-3 rounded-full flex-shrink-0"
+                      style={{ backgroundColor: method.color }}
+                    />
                     <h3 className="font-display text-[1.1rem] text-[#fad144] group-hover:text-[#ff0099] transition-colors">
                       {method.name}
                     </h3>
                   </div>
-                  <p className="font-body text-[0.85rem] text-[#b8a8f0]/60 mb-2">
-                    {method.handle}
+                  <p className="font-body text-[0.85rem] text-[#b8a8f0]/60 mb-3">
+                    {method.description}
                   </p>
                   <div className="flex items-center gap-1 text-[0.75rem] text-[#b8a8f0]/40 font-ui uppercase tracking-[0.1em]">
-                    <CreditCard className="w-3 h-3" />
-                    Click to initiate
+                    <ArrowUpRight className="w-3 h-3" />
+                    {method.cta}
                   </div>
                 </motion.a>
               ))}
@@ -398,10 +433,20 @@ export function HeartlightCollective() {
 
             {/* Coming soon notice for unavailable methods */}
             {PAYMENT_METHODS.filter((m) => !m.available).length > 0 && (
-              <div className="mt-6 text-center">
-                <p className="font-body text-[0.8rem] text-[#b8a8f0]/30 italic">
-                  Additional methods coming soon: {PAYMENT_METHODS.filter((m) => !m.available).map((m) => m.name).join(', ')}
+              <div className="mt-6 p-4 rounded-xl border border-[#6455df]/10 bg-[#0a0515]/30">
+                <p className="font-body text-[0.8rem] text-[#b8a8f0]/40 italic text-center mb-2">
+                  More pathways opening soon:
                 </p>
+                <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-1">
+                  {PAYMENT_METHODS.filter((m) => !m.available).map((m) => (
+                    <span key={m.name} className="font-ui text-[0.7rem] text-[#b8a8f0]/30 uppercase tracking-[0.1em]">
+                      {m.name}
+                      {m.setupNote && (
+                        <span className="text-[#b8a8f0]/20 normal-case"> — {m.setupNote}</span>
+                      )}
+                    </span>
+                  ))}
+                </div>
               </div>
             )}
 
