@@ -104,16 +104,17 @@ export function HeartlightCollective() {
                   <h3 className="font-display text-[1.3rem] text-[#fad144]">Collective</h3>
                 </div>
                 <p className="font-body text-[0.95rem] text-[#b8a8f0]/70 leading-relaxed mb-4">
-                  Mutual aid pool assuring life essentials for ALL. Transparent Open Collective ledger 
-                  with community governance, wish fulfillment, and regenerative trust.
+                  Mutual aid pool assuring life essentials for ALL. Stewarded through Relay with transparent ledgers,
+                  community governance, wish fulfillment, and regenerative trust. Our open ledger is being built so ALL
+                  beings may witness how abundance flows.
                 </p>
                 <a
-                  href="https://opencollective.com/atlas-island"
+                  href="https://relayfi.com"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 text-[0.85rem] text-[#6455df] font-ui uppercase tracking-[0.1em] hover:text-[#fad144] transition-colors"
                 >
-                  View Ledger
+                  Stewarded via Relay
                   <ArrowUpRight className="w-3.5 h-3.5" />
                 </a>
               </motion.div>
@@ -163,7 +164,7 @@ export function HeartlightCollective() {
                 <div className="inline-flex items-center gap-2 mt-3 px-3 py-1.5 rounded-full bg-[#3a9b6f]/20 border border-[#3a9b6f]/30">
                   <span className="w-2 h-2 rounded-full bg-[#3a9b6f] animate-pulse" />
                   <span className="font-ui text-[0.7rem] text-[#3a9b6f] uppercase tracking-[0.1em]">
-                    Live via Open Collective
+                    Open ledger coming soon
                   </span>
                 </div>
               </div>
@@ -296,12 +297,12 @@ export function HeartlightCollective() {
                   contributing to the Collective pool.
                 </p>
                 <a
-                  href="https://opencollective.com/atlas-island"
+                  href="https://relayfi.com"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-[#ff0099]/20 border border-[#ff0099]/30 text-[#ff0099] font-ui text-[0.75rem] uppercase tracking-[0.12em] hover:bg-[#ff0099]/30 transition-all duration-300"
                 >
-                  Support
+                  Support via Relay
                   <ArrowUpRight className="w-3.5 h-3.5" />
                 </a>
               </motion.div>

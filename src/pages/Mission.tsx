@@ -36,14 +36,17 @@ export function Mission() {
                 </h2>
                 <div className="font-body text-[1.05rem] text-[#b8a8f0]/80 leading-relaxed space-y-4">
                   <p>
-                    I know what it is like to be in a state of survival. And I also know what it is like to remember that I deserve to live my absolute best dream life now. I deserve to be in a world that I am living every day with conscious awareness of authentic joy. Especially when I remember there are infinite beings who feel the within their Heartlight to share their gifts, offerings, and healing.
+                    I know what it is like to be in a state of survival from an early age battling demons and diseases that I almost lost to. Later, toxic relationships that had my empathy in a constant battle of confusion and chaos. I had to re-learn what it meant to be me, and I am so grateful I chose to do so. This life path has also brought me back to remember what it means to be living life with authentic joy and conscious awareness. I remember now that we deserve to live our absolute best dream lives. We deserve to be in a world where we are living every day with conscious awareness of our authentic joy. Especially when there are beings who feel the within their Heartlight to share their gifts, wishes, and healing with our world.
                   </p>
                   <p>
-                    Atlas Island is born from the wish that one day, beings would be able to live from a place thrival and fulfillment. I believe in me while believing in ALL beings who feel the call to co-create our Heartlight's dreams & wishes in life. I know that when beings have their life essentials met, when they can breathe freely, they naturally find what brings them authentic joy. It is genuinely unique and ever-evolving from one being to another, and every path is sacred.
+                    Atlas Island is born from the wish that one day, beings will be living from a place thrival and fulfillment. I believe ALL beings who feel the call to co-create our Heartlight's dreams & wishes in life deserve to do so while having their life essentials assured by the collective. I know that when beings have their life essentials met, we can breathe peacefully, freely, and deeply, and naturally find what brings them authentic joy. Our life journeys are unique and ever-evolving from one being to another, and every path is sacred.
+                  </p>
+                  <p>
+                    Atlas Island is a sentient being, just the same as you, me, nature, and our Earth. When we remember that we are sovereign interdependent beings co-creating a living sustainable regenerative home with & for ALL the Living, we re-unite with the authentic callings of our Heartlight's sacred life journey.
                   </p>
                   <p className="text-[#fad144]/90 italic">
                     With Love of ALL that IS,<br />
-                    Atlas Morphoenix
+                    Z Atlas Morphoenix
                   </p>
                   <div className="mt-3">
                     <img 

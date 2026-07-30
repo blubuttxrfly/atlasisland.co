@@ -75,18 +75,19 @@ export function Connect() {
                 </h3>
 
                 <p className="font-body text-[0.9rem] text-[#b8a8f0]/70 leading-relaxed text-center mb-5 flex-1">
-                  Sacred offerings that flow directly into the Heartlight Collective.
+                  Sacred offerings that flow directly into the Heartlight Collective through Relay.
                   Every gift, no matter the size, nourishes the sanctuary we are building together.
+                  Our open ledger is being woven for full transparency.
                 </p>
 
                 <a
-                  href="https://heartlight.atlasisland.co/"
+                  href="https://relayfi.com"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-full py-3 rounded-xl bg-[#ff0099]/15 border border-[#ff0099]/30 text-[#ff0099] font-ui text-[0.75rem] uppercase tracking-[0.12em] hover:bg-[#ff0099]/25 hover:shadow-[0_0_25px_rgba(255,0,153,0.15)] transition-all duration-300 flex items-center justify-center gap-2"
                 >
                   <Heart className="w-4 h-4" />
-                  Offer a Gift
+                  Offer a Gift via Relay
                 </a>
               </div>
 
@@ -116,7 +117,7 @@ export function Connect() {
                 </p>
 
                 <a
-                  href="https://heartlight.atlasisland.co/"
+                  href="https://heartlight.atlasisland.co/exchange"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-full py-3 rounded-xl bg-[#dfff42]/15 border border-[#dfff42]/30 text-[#dfff42] font-ui text-[0.75rem] uppercase tracking-[0.12em] hover:bg-[#dfff42]/25 hover:shadow-[0_0_25px_rgba(223,255,66,0.15)] transition-all duration-300 flex items-center justify-center gap-2"
@@ -153,8 +154,8 @@ export function Connect() {
 
                 <p className="font-body text-[0.9rem] text-[#b8a8f0]/70 leading-relaxed text-center mb-5 flex-1">
                   An encouraged contribution to become an Atlastizen Co-Creator.
-                  Your $12 flows directly into the Heartlight Collective — transparently
-                  displayed and collectively stewarded for the Greatest & Highest Good.
+                  Your $12 flows directly into the Heartlight Collective — stewarded through Relay
+                  and collectively directed for the Greatest & Highest Good.
                 </p>
 
                 {/* Collective Resource Display */}
@@ -170,13 +171,13 @@ export function Connect() {
                       ${collectiveAmount.toLocaleString()}
                     </span>
                     <p className="font-ui text-[0.6rem] text-[#b8a8f0]/40 uppercase tracking-[0.1em] mt-0.5">
-                      Currently stewarded
+                      Currently stewarded via Relay
                     </p>
                   </div>
                 </div>
 
                 <a
-                  href="https://heartlight.atlasisland.co/"
+                  href="https://relayfi.com"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-full py-3 rounded-xl bg-[#fad144]/15 border border-[#fad144]/30 text-[#fad144] font-ui text-[0.75rem] uppercase tracking-[0.12em] hover:bg-[#fad144]/25 hover:shadow-[0_0_25px_rgba(250,209,68,0.15)] transition-all duration-300 flex items-center justify-center gap-2"
@@ -191,9 +192,7 @@ export function Connect() {
             <div className="reveal mt-8 text-center"
  >
               <p className="font-body text-[0.85rem] text-[#b8a8f0]/40 italic max-w-[600px] mx-auto">
-                The Heartlight Collective resource amount is transparently displayed and stewarded
-                for the Greatest & Highest Good of ALL Atlastizens. We are expanding and building
-                the Heartlight Collective together.
+                The Heartlight Collective resource amount is stewarded through Relay for the Greatest & Highest Good of ALL Atlastizens. Our open ledger is being woven so ALL beings may witness how abundance flows.
               </p>
             </div>
           </div>

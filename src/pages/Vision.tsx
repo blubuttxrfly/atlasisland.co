@@ -139,8 +139,7 @@ export function Vision() {
                 <div className="p-4 rounded-lg border border-[#6455df]/15 bg-[#0a0515]/50">
                   <h3 className="font-display text-[1rem] text-[#fad144] mb-2">Collective</h3>
                   <p className="font-body text-[0.85rem] text-[#b8a8f0]/60">
-                    Mutual aid pool assuring life essentials for ALL beings. Transparent Open Collective ledger 
-                    with community governance and wish fulfillment.
+                    Mutual aid pool assuring life essentials for ALL beings. Transparent ledgers stewarded through Relay with community governance and wish fulfillment.
                   </p>
                 </div>
                 <div className="p-4 rounded-lg border border-[#dfff42]/15 bg-[#0a0515]/50">
