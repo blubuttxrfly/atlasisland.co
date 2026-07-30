@@ -222,19 +222,18 @@ export function Ledger() {
         <section className="relative py-12 border-t border-[#6455df]/10">
           <div className="max-w-[800px] mx-auto px-4 sm:px-6 text-center">
             <div className="reveal">
-              <Heart className="w-6 h-6 text-[#ff0099] mx-auto mb-3" />
-              <p className="font-body text-[1.05rem] text-[#b8a8f0]/65 mb-6">
-                Feel called to contribute to the Heartlight Collective?
+              <p className="font-body text-[1rem] text-[#b8a8f0]/70 leading-relaxed max-w-[600px] mx-auto mb-8">
+                The Heartlight Collective is stewarded through Relay. Every inflow and outflow
+                is recorded with sacred intention for the Greatest & Highest Good of ALL.
               </p>
               <a
-                href="https://relayfi.com"
+                href="https://donate.stripe.com/00w5kD1e70RhepT9m10oM00"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-8 py-3.5 rounded-xl bg-[#dfff42] text-[#0a0515] font-ui text-[0.8rem] font-semibold uppercase tracking-[0.12em] shadow-[0_0_20px_rgba(223,255,66,0.3)] hover:shadow-[0_0_35px_rgba(223,255,66,0.5)] hover:scale-[1.02] transition-all duration-500 ease-out"
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-[#ff0099]/15 border border-[#ff0099]/30 text-[#ff0099] font-ui text-[0.75rem] uppercase tracking-[0.12em] hover:bg-[#ff0099]/25 transition-all duration-300"
               >
                 <Heart className="w-4 h-4" />
-                Offer a Gift via Relay
-                <ArrowUpRight className="w-4 h-4" />
+                Offer a Gift via Stripe
               </a>
             </div>
           </div>

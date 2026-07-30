@@ -87,9 +87,17 @@ export function Footer() {
 
           {/* Copyright */}
           <div className="flex items-center gap-2 font-ui text-[0.65rem] text-[#b8a8f0]/40">
-            <span>© 2025 Atlas Island</span>
+            <span>© 2026 Atlas Island</span>
             <Heart className="w-3 h-3 text-[#ff0099]/50" />
             <span>All Rights Reserved</span>
+          </div>
+          <div className="flex items-center gap-4 mt-2">
+            <a href="/privacy" className="font-ui text-[0.65rem] text-[#b8a8f0]/30 hover:text-[#fad144]/60 transition-colors">
+              Privacy Policy
+            </a>
+            <a href="/ledger" className="font-ui text-[0.65rem] text-[#b8a8f0]/30 hover:text-[#fad144]/60 transition-colors">
+              Sacred Ledger
+            </a>
           </div>
         </div>
       </div>

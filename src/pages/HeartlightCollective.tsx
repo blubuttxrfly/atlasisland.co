@@ -525,13 +525,13 @@ export function HeartlightCollective() {
                   contributing to the Collective pool.
                 </p>
                 <a
-                  href="https://relayfi.com"
+                  href="https://donate.stripe.com/00w5kD1e70RhepT9m10oM00"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-[#ff0099]/20 border border-[#ff0099]/30 text-[#ff0099] font-ui text-[0.75rem] uppercase tracking-[0.12em] hover:bg-[#ff0099]/30 transition-all duration-300"
                 >
-                  Support via Relay
-                  <ArrowUpRight className="w-3.5 h-3.5" />
+                  <HandHeart className="w-4 h-4" />
+                  Offer a Gift via Stripe
                 </a>
               </motion.div>
 

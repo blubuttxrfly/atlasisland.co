@@ -6,7 +6,8 @@ export type PageRoute =
   | '/broadcast'
   | '/heartlight'
   | '/ledger'
-  | '/connect';
+  | '/connect'
+  | '/privacy';
 
 export interface NavItem {
   path: PageRoute;
