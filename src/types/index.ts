@@ -5,6 +5,7 @@ export type PageRoute =
   | '/vision'
   | '/broadcast'
   | '/heartlight'
+  | '/ledger'
   | '/connect';
 
 export interface NavItem {

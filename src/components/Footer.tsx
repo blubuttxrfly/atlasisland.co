@@ -61,6 +61,7 @@ export function Footer() {
             <div className="w-px h-6 bg-[#6455df]/25" />
             {[
               { label: 'Heartlight', url: '/heartlight' },
+              { label: 'Ledger', url: '/ledger' },
               { label: 'Connect', url: '/connect' },
             ].map((link) => (
               <Link

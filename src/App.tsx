@@ -11,6 +11,7 @@ const Vision    = lazy(() => import('./pages/Vision').then(m => ({ default: m.Vi
 const Broadcast = lazy(() => import('./pages/Broadcast').then(m => ({ default: m.Broadcast })));
 const HeartlightCollective = lazy(() => import('./pages/HeartlightCollective').then(m => ({ default: m.HeartlightCollective })));
 const AtlasOfAll = lazy(() => import('./pages/AtlasOfAll').then(m => ({ default: m.AtlasOfAll })));
+const Ledger    = lazy(() => import('./pages/Ledger').then(m => ({ default: m.Ledger })));
 const Connect   = lazy(() => import('./pages/Connect').then(m => ({ default: m.Connect })));
 
 function AnimatedRoutes() {
@@ -24,6 +25,7 @@ function AnimatedRoutes() {
         <Route path="/vision" element={<Vision />} />
         <Route path="/broadcast" element={<Broadcast />} />
         <Route path="/heartlight" element={<HeartlightCollective />} />
+        <Route path="/ledger" element={<Ledger />} />
         <Route path="/connect" element={<Connect />} />
       </Routes>
     </AnimatePresence>

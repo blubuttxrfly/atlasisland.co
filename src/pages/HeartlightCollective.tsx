@@ -109,12 +109,10 @@ export function HeartlightCollective() {
                   beings may witness how abundance flows.
                 </p>
                 <a
-                  href="https://relayfi.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href="/ledger"
                   className="inline-flex items-center gap-2 text-[0.85rem] text-[#6455df] font-ui uppercase tracking-[0.1em] hover:text-[#fad144] transition-colors"
                 >
-                  Stewarded via Relay
+                  View Sacred Ledger
                   <ArrowUpRight className="w-3.5 h-3.5" />
                 </a>
               </motion.div>

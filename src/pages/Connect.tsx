@@ -192,7 +192,7 @@ export function Connect() {
             <div className="reveal mt-8 text-center"
  >
               <p className="font-body text-[0.85rem] text-[#b8a8f0]/40 italic max-w-[600px] mx-auto">
-                The Heartlight Collective resource amount is stewarded through Relay for the Greatest & Highest Good of ALL Atlastizens. Our open ledger is being woven so ALL beings may witness how abundance flows.
+                The Heartlight Collective resource amount is stewarded through Relay for the Greatest & Highest Good of ALL Atlastizens. Our open ledger is being woven so ALL beings may witness how abundance flows. Visit the <a href="/ledger" className="text-[#fad144] hover:underline">Sacred Ledger</a> to witness the flow.
               </p>
             </div>
           </div>
