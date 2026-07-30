@@ -148,11 +148,24 @@ export function HeartlightCollective() {
                 </a>
 
                 <a
-                  href="https://atlasisland.co/connect"
+                  href="https://heartlight.atlasisland.co/create-profile"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 px-8 py-3.5 rounded-xl bg-[#ff0099]/20 border border-[#ff0099]/30 text-[#ff0099] font-ui text-[0.8rem] font-semibold uppercase tracking-[0.12em] hover:bg-[#ff0099]/30 transition-all duration-500 ease-out"
                 >
                   <Users className="w-4 h-4" />
                   Join as Co-Creator
+                </a>
+
+                <a
+                  href="https://donate.stripe.com/00w5kD1e70RhepT9m10oM00"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-8 py-3.5 rounded-xl bg-[#6455df]/20 border border-[#6455df]/30 text-[#b8a8f0] font-ui text-[0.8rem] font-semibold uppercase tracking-[0.12em] hover:bg-[#6455df]/30 hover:border-[#fad144]/30 hover:text-[#fad144] transition-all duration-500 ease-out"
+                >
+                  <HandHeart className="w-4 h-4" />
+                  Donate
+                  <ArrowUpRight className="w-4 h-4" />
                 </a>
               </div>
             </motion.div>
