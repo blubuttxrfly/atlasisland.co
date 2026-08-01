@@ -70,7 +70,7 @@ export function Mission() {
                   Atlas Island is home to Queer/LGBTQIA+/Two-Spirit beings and Allies, neurodivergent souls, artists, healers, and beings of ALL walks of life who feel the call to co-create a meaningful and fulfilling life through unifying intentional, aligned exchanges.
                 </p>
                 <p className="font-body text-[1.05rem] text-[#b8a8f0]/70 leading-relaxed">
-                  Many beings who feel the call to New Earth may also resonate with Atlas Island. If you sense that another way of living is possible, one rooted in consent, care, sovereignty, and authentic joy, your Heartlight is already resonating with the frequency of the Island.
+                  Many beings who feel the call to New Earth may also resonate with Atlas Island. If you wish and dream that there is another way of life that is based on sovereign interdependence, peace, unity, mutual aid, conscious co-creation, and authentic joy, Atlas Island is a home where we co-create and live our absolute best dream lives together.
                 </p>
               </div>
 
