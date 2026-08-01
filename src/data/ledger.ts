@@ -66,5 +66,5 @@ export const SACRED_LEDGER: SacredLedger = {
     // },
   ],
   transparencyNote:
-    'This ledger was established on July 30, 2025. It is a living, sacred document. Every entry is stewarded with intention for our Heartlight\'s Greatest \u0026 Highest Good. If you feel called to contribute, use the Relay payment link on the Heartlight Collective page.',
+    'This ledger was established on July 30, 2026. It is a living, sacred document. Every entry is stewarded with intention for our Heartlight\'s Greatest \u0026 Highest Good. If you feel called to contribute, use the Relay payment link on the Heartlight Collective page.',
 };

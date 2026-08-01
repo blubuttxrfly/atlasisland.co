@@ -1,10 +1,67 @@
 import { PageTransition } from '../components/PageTransition';
-import { motion } from 'framer-motion';
-import { Mail, MapPin, Send, Heart, HandCoins, Users } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Mail, MapPin, Send, Heart, HandCoins, Users, CheckCircle, AlertCircle, Loader2 } from 'lucide-react';
 import { useScrollReveal } from '../hooks/useScrollReveal';
+import { useState, type FormEvent } from 'react';
 
 export function Connect() {
   useScrollReveal();
+
+  const [formData, setFormData] = useState({ name: '', email: '', message: '' });
+  const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
+  const [errorMsg, setErrorMsg] = useState('');
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+  };
+
+  const handleSubmit = async (e: FormEvent) => {
+    e.preventDefault();
+    setErrorMsg('');
+
+    if (!formData.name.trim() || !formData.email.trim() || !formData.message.trim()) {
+      setErrorMsg('Please fill in ALL fields so we may receive your transmission.');
+      setStatus('error');
+      return;
+    }
+
+    // Simple email validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(formData.email)) {
+      setErrorMsg('Please enter a valid email address.');
+      setStatus('error');
+      return;
+    }
+
+    setStatus('submitting');
+
+    try {
+      const response = await fetch('https://formsubmit.co/ajax/contact@atlasisland.co', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          message: formData.message,
+          _subject: `New Transmission from ${formData.name} — Atlas Island`,
+          _template: 'table',
+        }),
+      });
+
+      if (response.ok) {
+        setStatus('success');
+        setFormData({ name: '', email: '', message: '' });
+      } else {
+        throw new Error('Form submission failed');
+      }
+    } catch {
+      setStatus('error');
+      setErrorMsg('Something went wrong. Please try again, or email us directly at contact@atlasisland.co');
+    }
+  };
 
   return (
     <PageTransition>
@@ -41,8 +98,7 @@ export function Connect() {
         {/* Three Sacred Paths */}
         <section className="relative py-12 sm:py-16">
           <div className="max-w-[1100px] mx-auto px-4 sm:px-6">
-            <div className="reveal text-center mb-10"
- >
+            <div className="reveal text-center mb-10">
               <h2 className="font-display text-[1.6rem] text-[#fad144] mb-3">
                 Three Paths of Support
               </h2>
@@ -53,9 +109,7 @@ export function Connect() {
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
               {/* Path 1: Donations */}
-              <div
-                className="reveal relative p-6 rounded-2xl border border-[#ff0099]/20 bg-[#120822]/40 flex flex-col"
-              >
+              <div className="reveal relative p-6 rounded-2xl border border-[#ff0099]/20 bg-[#120822]/40 flex flex-col">
                 <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 px-3 py-1 rounded-full border border-[#ff0099]/30 bg-[#ff0099]/10">
                   <span className="font-ui text-[0.6rem] uppercase tracking-[0.15em] text-[#ff0099]">
                     Sacred Giving
@@ -90,9 +144,7 @@ export function Connect() {
               </div>
 
               {/* Path 2: Heartlight Collective Exchange */}
-              <div
-                className="reveal relative p-6 rounded-2xl border border-[#dfff42]/20 bg-[#120822]/40 flex flex-col"
-              >
+              <div className="reveal relative p-6 rounded-2xl border border-[#dfff42]/20 bg-[#120822]/40 flex flex-col">
                 <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 px-3 py-1 rounded-full border border-[#dfff42]/30 bg-[#dfff42]/10">
                   <span className="font-ui text-[0.6rem] uppercase tracking-[0.15em] text-[#dfff42]">
                     Mutual Aid
@@ -126,9 +178,7 @@ export function Connect() {
               </div>
 
               {/* Path 3: Atlastizen Co-Creator */}
-              <div
-                className="reveal relative p-6 rounded-2xl border border-[#fad144]/20 bg-[#120822]/40 flex flex-col"
-              >
+              <div className="reveal relative p-6 rounded-2xl border border-[#fad144]/20 bg-[#120822]/40 flex flex-col">
                 <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 px-3 py-1 rounded-full border border-[#fad144]/30 bg-[#fad144]/10">
                   <span className="font-ui text-[0.6rem] uppercase tracking-[0.15em] text-[#fad144]">
                     Co-Creator
@@ -169,8 +219,7 @@ export function Connect() {
             </div>
 
             {/* Collective transparency note */}
-            <div className="reveal mt-8 text-center"
- >
+            <div className="reveal mt-8 text-center">
               <p className="font-body text-[0.85rem] text-[#b8a8f0]/40 italic max-w-[600px] mx-auto">
                 The Heartlight Collective receives donations through Stripe, stewarded through Atlas Island LLC 
                 for the Greatest & Highest Good of ALL Atlastizens. Our open ledger is being woven so ALL beings 
@@ -183,8 +232,7 @@ export function Connect() {
         {/* Discord Community */}
         <section className="relative py-12 sm:py-16 border-t border-[#6455df]/10">
           <div className="max-w-[700px] mx-auto px-4 sm:px-6 text-center">
-            <div className="reveal p-6 sm:p-8 rounded-2xl border border-[#6455df]/20 bg-[#120822]/40"
- >
+            <div className="reveal p-6 sm:p-8 rounded-2xl border border-[#6455df]/20 bg-[#120822]/40">
               <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[#dfff42]/30 bg-[#dfff42]/5 mb-5">
                 <Users className="w-3.5 h-3.5 text-[#dfff42]" />
                 <span className="font-ui text-[0.65rem] uppercase tracking-[0.15em] text-[#dfff42]">
@@ -217,8 +265,7 @@ export function Connect() {
         {/* Contact */}
         <section className="relative py-16 sm:py-20 border-t border-[#6455df]/10">
           <div className="max-w-[600px] mx-auto px-4 sm:px-6">
-            <div className="reveal text-center mb-10"
- >
+            <div className="reveal text-center mb-10">
               <h2 className="font-display text-[1.6rem] text-[#fad144] mb-3">
                 Reach Out
               </h2>
@@ -227,49 +274,119 @@ export function Connect() {
               </p>
             </div>
 
-            <form className="space-y-4">
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div>
-                  <label className="block font-ui text-[0.65rem] uppercase tracking-[0.15em] text-[#b8a8f0]/50 mb-2">
-                    Name
-                  </label>
-                  <input
-                    type="text"
-                    className="w-full px-4 py-3 rounded-lg border border-[#6455df]/20 bg-[#120822]/60 text-[#f0e8ff] font-body text-[0.95rem] placeholder-[#b8a8f0]/30 focus:outline-none focus:border-[#fad144]/40 focus:shadow-[0_0_15px_rgba(250,209,68,0.1)] transition-all"
-                    placeholder="Your name"
-                  />
-                </div>
-                <div>
-                  <label className="block font-ui text-[0.65rem] uppercase tracking-[0.15em] text-[#b8a8f0]/50 mb-2">
-                    Email
-                  </label>
-                  <input
-                    type="email"
-                    className="w-full px-4 py-3 rounded-lg border border-[#6455df]/20 bg-[#120822]/60 text-[#f0e8ff] font-body text-[0.95rem] placeholder-[#b8a8f0]/30 focus:outline-none focus:border-[#fad144]/40 focus:shadow-[0_0_15px_rgba(250,209,68,0.1)] transition-all"
-                    placeholder="your@email.com"
-                  />
-                </div>
-              </div>
+            <AnimatePresence mode="wait">
+              {status === 'success' ? (
+                <motion.div
+                  key="success"
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.95 }}
+                  className="p-8 rounded-2xl border border-[#3a9b6f]/30 bg-[#3a9b6f]/10 text-center"
+                >
+                  <CheckCircle className="w-12 h-12 text-[#3a9b6f] mx-auto mb-4" />
+                  <h3 className="font-display text-[1.4rem] text-[#fad144] mb-2">
+                    Transmission Received
+                  </h3>
+                  <p className="font-body text-[0.95rem] text-[#b8a8f0]/70 leading-relaxed">
+                    Thank you, {formData.name || 'beloved'}. Your message has been sent to the Heartlight.
+                    We will respond as soon as the resonance aligns.
+                  </p>
+                  <button
+                    onClick={() => setStatus('idle')}
+                    className="mt-6 px-6 py-2.5 rounded-xl bg-[#fad144]/15 border border-[#fad144]/30 text-[#fad144] font-ui text-[0.75rem] uppercase tracking-[0.12em] hover:bg-[#fad144]/25 transition-all duration-300"
+                  >
+                    Send Another
+                  </button>
+                </motion.div>
+              ) : (
+                <motion.form
+                  key="form"
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -10 }}
+                  onSubmit={handleSubmit}
+                  className="space-y-4"
+                >
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div>
+                      <label className="block font-ui text-[0.65rem] uppercase tracking-[0.15em] text-[#b8a8f0]/50 mb-2">
+                        Name
+                      </label>
+                      <input
+                        type="text"
+                        name="name"
+                        value={formData.name}
+                        onChange={handleChange}
+                        required
+                        className="w-full px-4 py-3 rounded-lg border border-[#6455df]/20 bg-[#120822]/60 text-[#f0e8ff] font-body text-[0.95rem] placeholder-[#b8a8f0]/30 focus:outline-none focus:border-[#fad144]/40 focus:shadow-[0_0_15px_rgba(250,209,68,0.1)] transition-all"
+                        placeholder="Your name"
+                      />
+                    </div>
+                    <div>
+                      <label className="block font-ui text-[0.65rem] uppercase tracking-[0.15em] text-[#b8a8f0]/50 mb-2">
+                        Email
+                      </label>
+                      <input
+                        type="email"
+                        name="email"
+                        value={formData.email}
+                        onChange={handleChange}
+                        required
+                        className="w-full px-4 py-3 rounded-lg border border-[#6455df]/20 bg-[#120822]/60 text-[#f0e8ff] font-body text-[0.95rem] placeholder-[#b8a8f0]/30 focus:outline-none focus:border-[#fad144]/40 focus:shadow-[0_0_15px_rgba(250,209,68,0.1)] transition-all"
+                        placeholder="your@email.com"
+                      />
+                    </div>
+                  </div>
 
-              <div>
-                <label className="block font-ui text-[0.65rem] uppercase tracking-[0.15em] text-[#b8a8f0]/50 mb-2">
-                  Message
-                </label>
-                <textarea
-                  rows={5}
-                  className="w-full px-4 py-3 rounded-lg border border-[#6455df]/20 bg-[#120822]/60 text-[#f0e8ff] font-body text-[0.95rem] placeholder-[#b8a8f0]/30 focus:outline-none focus:border-[#fad144]/40 focus:shadow-[0_0_15px_rgba(250,209,68,0.1)] transition-all resize-none"
-                  placeholder="What brings you to Atlas Island?"
-                />
-              </div>
+                  <div>
+                    <label className="block font-ui text-[0.65rem] uppercase tracking-[0.15em] text-[#b8a8f0]/50 mb-2">
+                      Message
+                    </label>
+                    <textarea
+                      name="message"
+                      value={formData.message}
+                      onChange={handleChange}
+                      required
+                      rows={5}
+                      className="w-full px-4 py-3 rounded-lg border border-[#6455df]/20 bg-[#120822]/60 text-[#f0e8ff] font-body text-[0.95rem] placeholder-[#b8a8f0]/30 focus:outline-none focus:border-[#fad144]/40 focus:shadow-[0_0_15px_rgba(250,209,68,0.1)] transition-all resize-none"
+                      placeholder="What brings you to Atlas Island?"
+                    />
+                  </div>
 
-              <button
-                type="submit"
-                className="w-full py-3 rounded-full bg-[#ff0099]/15 border border-[#ff0099]/30 text-[#ff0099] font-ui text-[0.78rem] uppercase tracking-[0.14em] hover:bg-[#ff0099]/25 hover:shadow-[0_0_30px_rgba(255,0,153,0.15)] transition-all duration-300 flex items-center justify-center gap-2"
-              >
-                <Send className="w-4 h-4" />
-                Send Transmission
-              </button>
-            </form>
+                  <AnimatePresence>
+                    {status === 'error' && errorMsg && (
+                      <motion.div
+                        initial={{ opacity: 0, y: -5 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: -5 }}
+                        className="flex items-center gap-2 p-3 rounded-lg border border-[#ff0099]/20 bg-[#ff0099]/10 text-[#ff0099] font-body text-[0.85rem]"
+                      >
+                        <AlertCircle className="w-4 h-4 flex-shrink-0" />
+                        <span>{errorMsg}</span>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+
+                  <button
+                    type="submit"
+                    disabled={status === 'submitting'}
+                    className="w-full py-3 rounded-full bg-[#ff0099]/15 border border-[#ff0099]/30 text-[#ff0099] font-ui text-[0.78rem] uppercase tracking-[0.14em] hover:bg-[#ff0099]/25 hover:shadow-[0_0_30px_rgba(255,0,153,0.15)] transition-all duration-300 flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
+                  >
+                    {status === 'submitting' ? (
+                      <>
+                        <Loader2 className="w-4 h-4 animate-spin" />
+                        Sending Transmission...
+                      </>
+                    ) : (
+                      <>
+                        <Send className="w-4 h-4" />
+                        Send Transmission
+                      </>
+                    )}
+                  </button>
+                </motion.form>
+              )}
+            </AnimatePresence>
 
             <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-6 text-[#b8a8f0]/40">
               <div className="flex items-center gap-2">

@@ -82,11 +82,11 @@ export const SOCIAL_LINKS = [
     alt: 'YouTube channel',
   },
   {
-    id: 'discord',
-    name: 'Discord',
-    url: 'https://discord.gg/SVNFrqk8Mv',
-    iconImage: '/discord-icon.webp',
-    alt: 'Discord server',
+    id: 'substack',
+    name: 'Substack',
+    url: 'https://newsletter.atlasisland.org',
+    iconImage: '/substack-icon.svg',
+    alt: 'Substack newsletter',
   },
   {
     id: 'instagram',
@@ -94,5 +94,19 @@ export const SOCIAL_LINKS = [
     url: 'https://www.instagram.com/atlasisland.co',
     iconImage: '/instagram-icon.webp',
     alt: 'Instagram profile',
+  },
+  {
+    id: 'threads',
+    name: 'Threads',
+    url: 'https://www.threads.com/@atlasisland.co',
+    iconImage: '/threads-icon.svg',
+    alt: 'Threads profile',
+  },
+  {
+    id: 'discord',
+    name: 'Discord',
+    url: 'https://discord.gg/SVNFrqk8Mv',
+    iconImage: '/discord-icon.webp',
+    alt: 'Discord server',
   },
 ];
