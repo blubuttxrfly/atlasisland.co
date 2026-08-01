@@ -265,7 +265,7 @@ export function Broadcast() {
 
             <div className="rounded-2xl border border-[#FF6719]/20 bg-[#120822]/40 p-6 sm:p-8">
               <iframe
-                src="https://substack.atlasisland.co/embed"
+                src="https://substack.com/@atlasisland/embed"
                 width="100%"
                 height="320"
                 className="rounded-xl border-0"

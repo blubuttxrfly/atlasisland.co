@@ -84,7 +84,7 @@ export const SOCIAL_LINKS = [
   {
     id: 'substack',
     name: 'Substack',
-    url: 'https://substack.atlasisland.co',
+    url: 'https://substack.com/@atlasisland',
     iconImage: '/substack-icon.svg',
     alt: 'Substack newsletter',
   },
@@ -99,7 +99,7 @@ export const SOCIAL_LINKS = [
     id: 'threads',
     name: 'Threads',
     url: 'https://www.threads.com/@atlasisland.co',
-    iconImage: '/threads-icon.svg',
+    iconImage: '/threads-icon.webp',
     alt: 'Threads profile',
   },
   {
