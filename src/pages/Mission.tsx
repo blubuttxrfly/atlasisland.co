@@ -67,7 +67,19 @@ export function Mission() {
                   A peaceful, sovereign, interdependent nation living in alignment with the <Link to="/codes" className="text-[#fad144] hover:underline">12 Codes of ALL</Link>, the agreed-upon resonance of the collective. These Codes provide a language and structure to assure the sanctity and thrival of ALL that IS.
                 </p>
                 <p className="font-body text-[1.05rem] text-[#b8a8f0]/70 leading-relaxed mb-4">
-                  Atlas Island is home to Queer/LGBTQIA+/Two-Spirit beings and Allies, neurodivergent souls, artists, healers, and beings of ALL walks of life who feel the call to co-create a meaningful and fulfilling life through unifying intentional, aligned exchanges.
+                  Atlas Island is a home for beings of ALL walks of life, including:
+                </p>
+                <ul className="font-body text-[1.05rem] text-[#b8a8f0]/70 leading-relaxed mb-4 space-y-1 list-disc list-inside">
+                  <li>Earth-conscious co-creators</li>
+                  <li>Queer/LGBTQIA+/Two-Spirit beings and Allies</li>
+                  <li>Neurodivergent and Disabled beings</li>
+                  <li>Artists, Healers, Musicians</li>
+                  <li>Caregivers</li>
+                  <li>Guides & Guardians</li>
+                  <li>Engineers, Developers, Visioneers, Builders</li>
+                </ul>
+                <p className="font-body text-[1.05rem] text-[#b8a8f0]/70 leading-relaxed">
+                  And ALL who feel the call to co-create a meaningful and fulfilling life through unifying intentional, aligned exchanges.
                 </p>
                 <p className="font-body text-[1.05rem] text-[#b8a8f0]/70 leading-relaxed">
                   Many beings who feel the call to New Earth may also resonate with Atlas Island. If you wish and dream that there is another way of life that is based on sovereign interdependence, peace, unity, mutual aid, conscious co-creation, and authentic joy, Atlas Island is a home where we co-create and live our absolute best dream lives together.
