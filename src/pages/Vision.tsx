@@ -31,7 +31,7 @@ export function Vision() {
                 Atlas Island Vision
               </h1>
               <p className="font-body text-[1.05rem] sm:text-[1.2rem] text-[#b8a8f0]/80 italic leading-relaxed max-w-[650px] mx-auto">
-                An interdependent, sovereign, regenerative eco-islands network, co-created with conscious awareness & authentic joy, governed by resonance, and open to ALL who feel the call.
+                A peaceful, sovereign, interdependent nation of regenerative eco-islands, co-created with conscious awareness and authentic joy, governed by the <a href="/codes" className="text-[#fad144] hover:underline">12 Codes of ALL</a>, and open to ALL who feel the call to New Earth.
               </p>
             </motion.div>
           </div>

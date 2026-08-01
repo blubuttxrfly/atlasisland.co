@@ -58,12 +58,19 @@ export function Mission() {
                 </div>
               </div>
 
+              {/* The Calling — evolved for sovereign interdependent nation resonance */}
               <div className="border-l-2 border-[#ff0099]/30 pl-6">
                 <h2 className="font-display text-[1.4rem] text-[#fad144] mb-3">
                   The Calling
                 </h2>
+                <p className="font-body text-[1.05rem] text-[#b8a8f0]/80 leading-relaxed mb-4">
+                  A peaceful, sovereign, interdependent nation living in alignment with the <Link to="/codes" className="text-[#fad144] hover:underline">12 Codes of ALL</Link> — the agreed-upon resonance of the collective. These Codes provide a language and structure to assure the sanctity and thrival of ALL that IS.
+                </p>
+                <p className="font-body text-[1.05rem] text-[#b8a8f0]/70 leading-relaxed mb-4">
+                  Atlas Island is home to Queer/LGBTQIA+/Two-Spirit beings and Allies, neurodivergent souls, artists, healers, and beings of ALL walks of life who feel the call to co-create a meaningful and fulfilling life through unifying intentional, aligned exchanges.
+                </p>
                 <p className="font-body text-[1.05rem] text-[#b8a8f0]/70 leading-relaxed">
-                  A space for Queer/LGBTQIA+/Two-Spirit & Allies, neurodivergent, artists, healers, and beings of ALL walks of life who feel a call to co-create a meaningful & fulfilling life through unifying intentional, aligned exchanges.
+                  Many beings who feel the call to New Earth may also resonate with Atlas Island. If you sense that another way of living is possible — one rooted in consent, care, sovereignty, and authentic joy — you are already hearing the frequency of the Island.
                 </p>
               </div>
 

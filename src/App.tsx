@@ -12,6 +12,7 @@ const Broadcast = lazy(() => import('./pages/Broadcast').then(m => ({ default: m
 const HeartlightCollective = lazy(() => import('./pages/HeartlightCollective').then(m => ({ default: m.HeartlightCollective })));
 const AtlasOfAll = lazy(() => import('./pages/AtlasOfAll').then(m => ({ default: m.AtlasOfAll })));
 const Ledger    = lazy(() => import('./pages/Ledger').then(m => ({ default: m.Ledger })));
+const Codes      = lazy(() => import('./pages/Codes').then(m => ({ default: m.Codes })));
 const Connect   = lazy(() => import('./pages/Connect').then(m => ({ default: m.Connect })));
 const PrivacyPolicy = lazy(() => import('./pages/PrivacyPolicy').then(m => ({ default: m.PrivacyPolicy })));
 
@@ -27,6 +28,7 @@ function AnimatedRoutes() {
         <Route path="/broadcast" element={<Broadcast />} />
         <Route path="/heartlight" element={<HeartlightCollective />} />
         <Route path="/ledger" element={<Ledger />} />
+        <Route path="/codes" element={<Codes />} />
         <Route path="/connect" element={<Connect />} />
         <Route path="/privacy" element={<PrivacyPolicy />} />
       </Routes>
