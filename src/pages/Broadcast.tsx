@@ -161,8 +161,8 @@ export function Broadcast() {
 
               <div className="max-w-[900px] mx-auto aspect-video rounded-2xl border border-[#6455df]/20 bg-[#120822]/60 overflow-hidden">
                 <iframe
-                  src="https://www.youtube.com/embed?listType=user_uploads&list=AtlasIslandCo"
-                  title="Atlas Island YouTube Channel"
+                  src="https://www.youtube.com/embed/afD6L1HnWWk"
+                  title="Atlas Island Broadcast"
                   className="w-full h-full"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowFullScreen
