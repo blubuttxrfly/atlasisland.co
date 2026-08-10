@@ -74,11 +74,11 @@ export function Mission() {
                   <li>Queer/LGBTQIA+/Two-Spirit beings and Allies</li>
                   <li>Neurodivergent and Disabled beings</li>
                   <li>Artists, Healers, Musicians</li>
-                  <li>Caregivers</li>
+                  <li>Caregivers, Gardeners, Horticulturalists, Earth-Stewards</li>
                   <li>Guides & Guardians</li>
                   <li>Engineers, Developers, Visioneers, Builders</li>
                 </ul>
-                <p className="font-body text-[1.05rem] text-[#b8a8f0]/70 leading-relaxed">
+                <p className="font-body text-[1.05rem] text-[#b8a8f0]/70 leading-relaxed mb-8">
                   And ALL who feel the call to co-create a meaningful and fulfilling life through unifying intentional, aligned exchanges.
                 </p>
                 <p className="font-body text-[1.05rem] text-[#b8a8f0]/70 leading-relaxed">
