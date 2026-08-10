@@ -111,10 +111,13 @@ export function Home() {
                 About Atlas Island
               </h2>
               <p className="font-body text-[1.05rem] sm:text-[1.15rem] text-[#b8a8f0]/80 max-w-[650px] mx-auto leading-relaxed mb-8">
-                Atlas Island is a peaceful, sovereign, interdependent nation born from a remembering — a remembering that we are One with our Earth, each other, and our Universe of ALL that breathes through us. This is a sanctuary for beings who feel the call to co-create a regenerative future that honors ALL life as sacred, governed by the <Link to="/codes" className="text-[#fad144] hover:underline">12 Codes of ALL</Link>.
+                Atlas Island is a peaceful, sovereign, interdependent nation born from a remembering that we are One with our Earth, one another, and our Universe of ALL that breathes through & with us. This is a sanctuary for beings who feel the call to co-create an Earth-conscious regenerative future that honors ALL life as sacred, governed by the <Link to="/codes" className="text-[#fad144] hover:underline">12 Codes of ALL</Link>.
               </p>
               <p className="font-body text-[1.05rem] sm:text-[1.15rem] text-[#b8a8f0]/80 max-w-[650px] mx-auto leading-relaxed mb-8">
-                Atlas Island is a place beings throughout time have envisioned — a land where beings have their essentials assured, leading them to live life through a place of joy, flow, fulfillment and abundance. I am here to uphold the sanctity and thrival of living our absolute best dream lives with and for our Heartlight's Greatest & Highest Good. Atlastizens are the change we wish to be in our world. If you feel the call to New Earth, feel free to join our Discord to become a co-creator today. ALL beings who co-create from a place of authentic joy and conscious awareness are welcome here.
+                Atlas Island is a place beings throughout time have envisioned. A network of communities where beings have their essentials assured, leading them to live life through a place of joy, flow, abundance and fulfillment. At Atlas Island, we are here to uphold the sanctity and thrival of living our absolute best dream lives with & for our Heartlight's Greatest & Highest Good.
+              </p>
+              <p className="font-body text-[1.05rem] sm:text-[1.15rem] text-[#b8a8f0]/80 max-w-[650px] mx-auto leading-relaxed mb-8">
+                Atlastizens are the change we wish to be in our world. If you feel the call to co-creating New Earth, feel free to join our Discord and Heartlight Collective to become a co-creator today. ALL beings who co-create from a place of authentic joy and conscious awareness are welcome & home with Atlas Island.
               </p>
               <p className="font-body text-[1.05rem] sm:text-[1.15rem] text-[#fad144]/80 leading-relaxed text-center italic mb-10">
                 "Our wishes and dreams deserve to have a space to be seen, felt, and living."
