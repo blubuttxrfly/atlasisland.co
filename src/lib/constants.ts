@@ -84,7 +84,7 @@ export const SOCIAL_LINKS = [
   {
     id: 'substack',
     name: 'Substack',
-    url: 'https://substack.com/@atlasisland',
+    url: 'https://zatlasmorphoenix.substack.com/',
     iconImage: '/substack-icon.svg',
     alt: 'Substack newsletter',
   },
