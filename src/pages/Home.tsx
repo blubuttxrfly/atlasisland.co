@@ -163,11 +163,11 @@ export function Home() {
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
               {[
                 {
-                  name: 'Atlas Morphoenix',
-                  subtitle: 'Co-Creator of Atlas Island · Energy Healer & Reader · Artist of Life',
+                  name: 'Z Atlas Morphoenix',
+                  subtitle: 'Co-Creator of Atlas Island · they/she · Energy Healer & Reader · Artist of Life',
                   location: 'Charlotte, North Carolina USA',
                   bio: 'Multidimensional being, Energy healer, and who shares their visions & wishes of Atlas Island. Where ALL beings are sovereign, thriving, and living their absolute best dream lives.',
-                  image: '/profile-aura.png',
+                  image: '/z-portrait.jpg',
                   color: '#fad144',
                 },
                 {
