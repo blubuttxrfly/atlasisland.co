@@ -1,4 +1,5 @@
 import { useRef, useEffect } from 'react';
+import { useTheme } from './ThemeProvider';
 
 interface Star {
   x: number;
@@ -10,19 +11,28 @@ interface Star {
   color: string;
 }
 
-const RAY_COLORS = [
+const MOON_COLORS = [
   '255,255,255',
-  '255,240,220',
-  '220,230,255',
-  '250,220,180',
-  '200,210,255',
-  '255,230,200',
+  '255,250,240',
+  '250,245,220',
+  '255,240,210',
+  '245,250,255',
+  '255,235,200',
 ];
 
-function generateStars(count: number, width: number, height: number): Star[] {
+const SUN_COLORS = [
+  '255,0,153',    // Magenta Ray — luminous on lavender
+  '250,209,68',   // Gold Ray — bright sun spark
+  '42,179,196',   // Teal Ray — airy contrast
+  '201,64,64',    // Red Ray — warm ember
+  '58,155,111',   // Green Ray — living light
+  '212,115,42',   // Orange Ray — solar flare
+];
+
+function generateStars(count: number, width: number, height: number, isLight: boolean): Star[] {
   const stars: Star[] = [];
+  const palette = isLight ? SUN_COLORS : MOON_COLORS;
   for (let i = 0; i < count; i++) {
-    // Mostly tiny stars, occasional slightly larger
     const size = Math.random() < 0.85
       ? 0.5 + Math.random() * 1.0
       : 1.2 + Math.random() * 1.0;
@@ -33,7 +43,7 @@ function generateStars(count: number, width: number, height: number): Star[] {
       opacity: 0.25 + Math.random() * 0.55,
       twinkleSpeed: 0.001 + Math.random() * 0.002,
       twinkleOffset: Math.random() * Math.PI * 2,
-      color: RAY_COLORS[Math.floor(Math.random() * RAY_COLORS.length)],
+      color: palette[Math.floor(Math.random() * palette.length)],
     });
   }
   return stars;
@@ -44,6 +54,8 @@ export function StarField({ count = 70 }: { count?: number }) {
   const rafRef = useRef<number>(0);
   const starsRef = useRef<Star[]>([]);
   const dimsRef = useRef({ w: 0, h: 0 });
+  const { resolvedTheme } = useTheme();
+  const isLight = resolvedTheme === 'light';
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -61,7 +73,7 @@ export function StarField({ count = 70 }: { count?: number }) {
       canvas.style.height = `${h}px`;
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
       dimsRef.current = { w, h };
-      starsRef.current = generateStars(count, w, h);
+      starsRef.current = generateStars(isLight ? Math.floor(count * 0.7) : count, w, h, isLight);
     };
 
     resize();
@@ -73,13 +85,15 @@ export function StarField({ count = 70 }: { count?: number }) {
       const { w, h } = dimsRef.current;
       ctx.clearRect(0, 0, w, h);
 
-      // Atmospheric gradient
-      const grad = ctx.createRadialGradient(w * 0.5, h * 0.45, 0, w * 0.5, h * 0.45, Math.max(w, h) * 0.7);
-      grad.addColorStop(0, 'rgba(10,5,21,0)');
-      grad.addColorStop(0.7, 'rgba(10,5,21,0.3)');
-      grad.addColorStop(1, 'rgba(10,5,21,0.6)');
-      ctx.fillStyle = grad;
-      ctx.fillRect(0, 0, w, h);
+      // Atmospheric gradient — dark mode only
+      if (!isLight) {
+        const grad = ctx.createRadialGradient(w * 0.5, h * 0.45, 0, w * 0.5, h * 0.45, Math.max(w, h) * 0.7);
+        grad.addColorStop(0, 'rgba(10,5,21,0)');
+        grad.addColorStop(0.7, 'rgba(10,5,21,0.3)');
+        grad.addColorStop(1, 'rgba(10,5,21,0.6)');
+        ctx.fillStyle = grad;
+        ctx.fillRect(0, 0, w, h);
+      }
 
       // Draw stars
       const stars = starsRef.current;
@@ -90,9 +104,9 @@ export function StarField({ count = 70 }: { count?: number }) {
         const twinkle = Math.sin(Date.now() * s.twinkleSpeed + s.twinkleOffset);
         const alpha = s.opacity * (0.5 + 0.5 * twinkle);
 
-        // Soft glow — all stars glow, larger for bigger stars
+        // Soft glow — smaller in light mode
         ctx.beginPath();
-        const glowRadius = s.size * (s.size > 1.2 ? 6 : 8);
+        const glowRadius = s.size * (s.size > 1.2 ? (isLight ? 5 : 6) : (isLight ? 6 : 8));
         const glow = ctx.createRadialGradient(s.x, s.y, 0, s.x, s.y, glowRadius);
         glow.addColorStop(0, `rgba(${s.color},${alpha * 0.6})`);
         glow.addColorStop(0.4, `rgba(${s.color},${alpha * 0.15})`);
@@ -117,7 +131,7 @@ export function StarField({ count = 70 }: { count?: number }) {
       cancelAnimationFrame(rafRef.current);
       window.removeEventListener('resize', resize);
     };
-  }, [count]);
+  }, [count, isLight]);
 
   return (
     <canvas
@@ -131,6 +145,7 @@ export function StarField({ count = 70 }: { count?: number }) {
         height: '100%',
         pointerEvents: 'none',
         zIndex: 1,
+        opacity: isLight ? 0.75 : 1,
       }}
     />
   );
