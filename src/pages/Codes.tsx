@@ -80,7 +80,7 @@ function CodeCard({ code, index }: { code: typeof CODES[0]; index: number }) {
         <p className="font-ui text-[0.6rem] uppercase tracking-[0.2em] text-[var(--text-secondary)]/30 mb-1">
           Code {String(code.number).padStart(2, '0')}
         </p>
-        <h3 className="font-display text-[1.25rem] text-[var(--color-solar-gold)] mb-1"{code.name}</h3>
+        <h3 className="font-display text-[1.25rem] text-[var(--color-solar-gold)] mb-1">{code.name}</h3>
         <div className="flex items-center gap-2 mb-4">
           <span className="w-2 h-2 rounded-full inline-block" style={{ background: code.color }} />
           <span className="font-ui text-[0.65rem] uppercase tracking-[0.12em]" style={{ color: code.color }}>{code.ray}</span>
@@ -121,7 +121,7 @@ export function Codes() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
             >
-              <span className="inline-flex items-center gap-2 font-ui text-[0.7rem] uppercase tracking-[0.2em] text-[var(--color-solar-gold)] mb-4"
+              <span className="inline-flex items-center gap-2 font-ui text-[0.7rem] uppercase tracking-[0.2em] text-[var(--color-solar-gold)] mb-4">
                 <Diamond className="w-3.5 h-3.5" />
                 Sacred Foundation
               </span>

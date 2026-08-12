@@ -125,7 +125,7 @@ export function Heartlight() {
  >
                   <span className="text-2xl flex-shrink-0">{pathway.icon}</span>
                   <div>
-                    <h3 className="font-display text-[1.05rem] text-[var(--color-solar-gold)] mb-1"{pathway.title}</h3>
+                    <h3 className="font-display text-[1.05rem] text-[var(--color-solar-gold)] mb-1">{pathway.title}</h3>
                     <p className="font-body text-[0.9rem] text-[var(--text-secondary)]/55">{pathway.desc}</p>
                   </div>
                 </div>
