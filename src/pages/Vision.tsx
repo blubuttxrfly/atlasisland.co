@@ -27,7 +27,7 @@ export function Vision() {
                 <Sparkles className="w-3.5 h-3.5" />
                 Green Ray Incarnate
               </span>
-              <h1 className="font-display text-[2.2rem] sm:text-[3.2rem] text-[var(--color-solar-gold)] leading-tight mb-5" style={ textShadow: 'var(--text-shadow-hero)' }
+              <h1 className="font-display text-[2.2rem] sm:text-[3.2rem] text-[var(--color-solar-gold)] leading-tight mb-5" style={{ textShadow: 'var(--text-shadow-hero)' }}>
                 Atlas Island Vision
               </h1>
               <p className="font-body text-[1.05rem] sm:text-[1.2rem] text-[var(--text-secondary)]/80 italic leading-relaxed max-w-[650px] mx-auto">

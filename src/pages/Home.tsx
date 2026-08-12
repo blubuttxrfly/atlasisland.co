@@ -97,9 +97,7 @@ export function Home() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3, duration: 0.8 }}
             className="relative z-10 font-body text-[1rem] sm:text-[1.15rem] text-[var(--color-heartlight-green)] text-center mb-8 max-w-[90%]"
-            style={{
-              textShadow: 'var(--text-shadow-hero)',
-            }}
+            style={{ textShadow: 'var(--text-shadow-hero)' }}
           >
             Earth-conscious Regenerative Co-Creator Community
           </motion.p>

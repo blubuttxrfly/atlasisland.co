@@ -35,9 +35,7 @@ export function Footer() {
           </div>
 
           {/* Sacred phrase */}
-          <p className="font-body italic text-[0.85rem] sm:text-[0.9rem] text-[var(--color-solar-gold)]/80 tracking-wide leading-relaxed"
-            style={{ textShadow: '0 1px 4px rgba(0,0,0,0.35)' }}
-          >
+          <p className="font-body italic text-[0.85rem] sm:text-[0.9rem] text-[var(--color-magenta-ray)] tracking-wide leading-relaxed">
             🌈🎶 "Atlas Island - Home for the Heartlight of You & Me, Atlas Island - Where Every Being is Free" 💫🎶
           </p>
 

@@ -26,7 +26,7 @@ export function AtlasOfAll() {
               <span className="inline-block font-ui text-[0.7rem] uppercase tracking-[0.2em] text-[var(--color-magenta-ray)] mb-3">
                 Sacred Transmission
               </span>
-              <h1 className="font-display text-[2rem] sm:text-[2.8rem] text-[var(--color-solar-gold)] leading-tight mb-4" style={ textShadow: 'var(--text-shadow-hero)' }
+              <h1 className="font-display text-[2rem] sm:text-[2.8rem] text-[var(--color-solar-gold)] leading-tight mb-4" style={{ textShadow: 'var(--text-shadow-hero)' }}>
                 Atlas of ALL the Living
               </h1>
               <p className="font-body text-[1.1rem] sm:text-[1.2rem] text-[var(--text-secondary)]/80 italic leading-relaxed max-w-[650px] mx-auto">

@@ -23,8 +23,9 @@ export function Mission() {
                 Why Atlas Island Exists
               </span>
               <h1
-                className="font-display text-[2rem] sm:text-[2.8rem] text-[var(--color-solar-gold)] leading-tight" style={ textShadow: 'var(--text-shadow-hero)' }
-              
+                className="font-display text-[2rem] sm:text-[2.8rem] text-[var(--color-solar-gold)] leading-tight"
+                style={{ textShadow: 'var(--text-shadow-hero)' }}
+              >
                 Mission & Purpose
               </h1>
             </motion.div>

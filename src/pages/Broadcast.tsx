@@ -106,7 +106,7 @@ export function Broadcast() {
               <span className="inline-block font-ui text-[0.7rem] uppercase tracking-[0.2em] text-[#c94040] mb-5">
                 Transmissions from the Island
               </span>
-              <h1 className="font-display text-[2.5rem] sm:text-[3.5rem] text-[var(--color-solar-gold)] leading-tight mb-6" style={ textShadow: 'var(--text-shadow-hero)' }
+              <h1 className="font-display text-[2.5rem] sm:text-[3.5rem] text-[var(--color-solar-gold)] leading-tight mb-6" style={{ textShadow: 'var(--text-shadow-hero)' }}>
                 Broadcast
               </h1>
               <p className="font-body text-[1.15rem] sm:text-[1.3rem] text-[var(--text-secondary)]/80 italic leading-relaxed max-w-[700px] mx-auto mb-10">
