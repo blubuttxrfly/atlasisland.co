@@ -92,7 +92,7 @@ We only share the minimum data necessary for each service to fulfill its role. N
                 <Shield className="w-3.5 h-3.5" />
                 Sacred Trust
               </span>
-              <h1 className="font-display text-[2.5rem] sm:text-[3.5rem] text-[var(--color-solar-gold)] leading-tight mb-6">
+              <h1 className="font-display text-[2.5rem] sm:text-[3.5rem] text-[var(--color-solar-gold)] leading-tight mb-6" style={ textShadow: 'var(--text-shadow-hero)' }
                 Privacy Policy
               </h1>
               <p className="font-body text-[1.1rem] sm:text-[1.25rem] text-[var(--text-secondary)]/85 italic leading-relaxed max-w-[650px] mx-auto mb-4">

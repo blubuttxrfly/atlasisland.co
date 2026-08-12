@@ -27,7 +27,7 @@ export function Heartlight() {
               <span className="inline-block font-ui text-[0.7rem] uppercase tracking-[0.2em] text-[var(--color-heartlight-green)] mb-3">
                 Gift Exchange Economy
               </span>
-              <h1 className="font-display text-[2.2rem] sm:text-[3.2rem] text-[var(--color-solar-gold)] leading-tight mb-5">
+              <h1 className="font-display text-[2.2rem] sm:text-[3.2rem] text-[var(--color-solar-gold)] leading-tight mb-5" style={ textShadow: 'var(--text-shadow-hero)' }
                 Heartlight Exchange
               </h1>
               <p className="font-body text-[1.05rem] sm:text-[1.2rem] text-[var(--text-secondary)]/80 italic leading-relaxed max-w-[650px] mx-auto mb-8">

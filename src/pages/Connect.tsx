@@ -84,7 +84,7 @@ export function Connect() {
               <span className="inline-block font-ui text-[0.7rem] uppercase tracking-[0.2em] text-[var(--color-magenta-ray)] mb-5">
                 The Gateway
               </span>
-              <h1 className="font-display text-[2.5rem] sm:text-[3.5rem] text-[var(--color-solar-gold)] leading-tight mb-6">
+              <h1 className="font-display text-[2.5rem] sm:text-[3.5rem] text-[var(--color-solar-gold)] leading-tight mb-6" style={ textShadow: 'var(--text-shadow-hero)' }
                 Connect & Join
               </h1>
               <p className="font-body text-[1.15rem] sm:text-[1.3rem] text-[var(--text-secondary)]/80 italic leading-relaxed max-w-[700px] mx-auto">

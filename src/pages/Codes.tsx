@@ -125,7 +125,7 @@ export function Codes() {
                 <Diamond className="w-3.5 h-3.5" />
                 Sacred Foundation
               </span>
-              <h1 className="font-display text-[2.2rem] sm:text-[3.2rem] text-[var(--color-solar-gold)] leading-tight mb-5">
+              <h1 className="font-display text-[2.2rem] sm:text-[3.2rem] text-[var(--color-solar-gold)] leading-tight mb-5" style={ textShadow: 'var(--text-shadow-hero)' }
                 The 12 Codes of ALL
               </h1>
               <p className="font-body text-[1.05rem] sm:text-[1.15rem] text-[var(--text-secondary)]/70 italic leading-relaxed max-w-[650px] mx-auto mb-6">

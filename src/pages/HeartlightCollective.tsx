@@ -85,7 +85,7 @@ export function HeartlightCollective() {
       description: 'Accept any card directly. Funds deposit to Atlas Island LLC account automatically.',
       cta: 'Give via Card',
       url: 'https://donate.stripe.com/00w5kD1e70RhepT9m10oM00',
-      color: '#635bff',
+      color: 'var(--color-ray-400)',
       available: true,
       setupNote: null,
     },
@@ -94,7 +94,7 @@ export function HeartlightCollective() {
       description: 'Direct transfer from any US bank. Best for larger gifts.',
       cta: 'Request Details',
       url: 'mailto:contact@atlasisland.co?subject=Heartlight%20Collective%20Donation%20-%20Bank%20Transfer',
-      color: '#fad144',
+      color: 'var(--color-solar-gold)',
       available: true,
       setupNote: null,
     },
@@ -103,7 +103,7 @@ export function HeartlightCollective() {
       description: 'Mail a physical check to Atlas Island.',
       cta: 'Request Mailing Address',
       url: 'mailto:contact@atlasisland.co?subject=Heartlight%20Collective%20Donation%20-%20Mailing%20Address',
-      color: '#ff0099',
+      color: 'var(--color-magenta-ray)',
       available: true,
       setupNote: null,
     },
@@ -111,7 +111,7 @@ export function HeartlightCollective() {
 
   return (
     <PageTransition>
-      <div className="min-h-screen pt-[72px] bg-[var(--bg-page)] bg-heartlight-magenta">
+      <div className="min-h-screen pt-[72px] bg-[var(--bg-page)]">
         {/* Hero Section */}
         <section className="relative pt-20 sm:pt-28 pb-12 overflow-hidden">
           <div className="relative max-w-[900px] mx-auto px-4 sm:px-6 text-center">
@@ -124,7 +124,7 @@ export function HeartlightCollective() {
                 <Sparkles className="w-3.5 h-3.5" />
                 Living Economy of Atlas Island
               </span>
-              <h1 className="font-display text-[2.5rem] sm:text-[3.5rem] text-[var(--color-solar-gold)] leading-tight mb-6">
+              <h1 className="font-display text-[2.5rem] sm:text-[3.5rem] text-[var(--color-solar-gold)] leading-tight mb-6" style={{ textShadow: 'var(--text-shadow-hero)' }}>
                 Heartlight Collective
               </h1>
               <p className="font-body text-[1.1rem] sm:text-[1.25rem] text-[var(--text-secondary)]/85 italic leading-relaxed max-w-[700px] mx-auto mb-8">
@@ -140,11 +140,12 @@ export function HeartlightCollective() {
                   href="https://heartlight.atlasisland.co"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-8 py-3.5 rounded-xl bg-[#dfff42] text-[#0a0515] font-ui text-[0.8rem] font-semibold uppercase tracking-[0.12em] shadow-[0_0_20px_rgba(223,255,66,0.3)] hover:shadow-[0_0_35px_rgba(223,255,66,0.5)] hover:scale-[1.02] transition-all duration-500 ease-out"
+                  className="inline-flex items-center gap-2 px-8 py-3.5 rounded-xl bg-[#dfff42] text-[var(--color-magenta-ray)] font-ui text-[0.8rem] font-semibold uppercase tracking-[0.12em] shadow-[0_0_20px_rgba(223,255,66,0.3)] hover:shadow-[0_0_35px_rgba(223,255,66,0.5)] hover:scale-[1.02] transition-all duration-500 ease-out"
+                  style={{ textShadow: '0 1px 3px rgba(0,0,0,0.15)' }}
                 >
-                  <Heart className="w-4 h-4" />
+                  <Heart className="w-4 h-4" style={{ filter: 'drop-shadow(0 1px 1px rgba(0,0,0,0.2))' }} />
                   Enter the Exchange
-                  <ArrowUpRight className="w-4 h-4" />
+                  <ArrowUpRight className="w-4 h-4" style={{ filter: 'drop-shadow(0 1px 1px rgba(0,0,0,0.2))' }} />
                 </a>
 
                 <a
@@ -152,8 +153,9 @@ export function HeartlightCollective() {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 px-8 py-3.5 rounded-xl bg-[var(--color-magenta-ray)]/20 border border-[var(--color-magenta-ray)]/30 text-[var(--color-magenta-ray)] font-ui text-[0.8rem] font-semibold uppercase tracking-[0.12em] hover:bg-[var(--color-magenta-ray)]/30 transition-all duration-500 ease-out"
+                  style={{ textShadow: '0 1px 4px rgba(0,0,0,0.35)' }}
                 >
-                  <Users className="w-4 h-4" />
+                  <Users className="w-4 h-4" style={{ filter: 'drop-shadow(0 1px 2px rgba(0,0,0,0.35))' }} />
                   Join as Co-Creator
                 </a>
 
@@ -162,10 +164,11 @@ export function HeartlightCollective() {
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 px-8 py-3.5 rounded-xl bg-[var(--color-ray-400)]/20 border border-[var(--color-ray-400)]/30 text-[var(--text-secondary)] font-ui text-[0.8rem] font-semibold uppercase tracking-[0.12em] hover:bg-[var(--color-ray-400)]/30 hover:border-[var(--color-solar-gold)]/30 hover:text-[var(--color-solar-gold)] transition-all duration-500 ease-out"
+                  style={{ textShadow: '0 1px 4px rgba(0,0,0,0.3)' }}
                 >
-                  <HandHeart className="w-4 h-4" />
+                  <HandHeart className="w-4 h-4" style={{ filter: 'drop-shadow(0 1px 2px rgba(0,0,0,0.3))' }} />
                   Donate
-                  <ArrowUpRight className="w-4 h-4" />
+                  <ArrowUpRight className="w-4 h-4" style={{ filter: 'drop-shadow(0 1px 2px rgba(0,0,0,0.3))' }} />
                 </a>
               </div>
             </motion.div>
@@ -284,8 +287,8 @@ export function HeartlightCollective() {
                   Stewarded as of {formatDate(pool.asOfDate)}
                 </p>
                 <div className="inline-flex items-center gap-2 mt-3 px-3 py-1.5 rounded-full bg-[var(--color-ray-green)]/20 border border-[var(--color-ray-green)]/30">
-                  <span className="w-2 h-2 rounded-full bg-[#3a9b6f] animate-pulse" />
-                  <span className="font-ui text-[0.7rem] text-[#3a9b6f] uppercase tracking-[0.1em]">
+                  <span className="w-2 h-2 rounded-full bg-[var(--color-ray-green)] animate-pulse" />
+                  <span className="font-ui text-[0.7rem] text-[var(--color-ray-green)] uppercase tracking-[0.1em]">
                     Open ledger coming soon
                   </span>
                 </div>
@@ -294,8 +297,8 @@ export function HeartlightCollective() {
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 pt-6 border-t border-[var(--color-ray-400)]/10">
                 <div className="text-center">
                   <div className="flex items-center justify-center gap-2 mb-1">
-                    <TrendingUp className="w-4 h-4 text-[#3a9b6f]" />
-                    <p className="font-display text-[2rem] text-[#3a9b6f]">{formatCurrency(inflowTotal)}</p>
+                    <TrendingUp className="w-4 h-4 text-[var(--color-ray-green)]" />
+                    <p className="font-display text-[2rem] text-[var(--color-ray-green)]">{formatCurrency(inflowTotal)}</p>
                   </div>
                   <p className="font-body text-[0.85rem] text-[var(--text-secondary)]/60">Total Inflows</p>
                 </div>
@@ -343,12 +346,12 @@ export function HeartlightCollective() {
                       <div
                         className="w-9 h-9 rounded-lg flex items-center justify-center"
                         style={{
-                          backgroundColor: `${entry.rayColor || (entry.type === 'inflow' ? '#3a9b6f' : '#ff0099')}15`,
-                          border: `1px solid ${entry.rayColor || (entry.type === 'inflow' ? '#3a9b6f' : '#ff0099')}25`,
+                          backgroundColor: entry.rayColor ? entry.rayColor + '15' : (entry.type === 'inflow' ? 'rgba(58,155,111,0.08)' : 'rgba(255,0,153,0.08)'),
+                          border: entry.rayColor ? '1px solid ' + entry.rayColor + '25' : (entry.type === 'inflow' ? '1px solid rgba(58,155,111,0.15)' : '1px solid rgba(255,0,153,0.15)'),
                         }}
                       >
                         {entry.type === 'inflow' ? (
-                          <ArrowUpRight className="w-4 h-4" style={{ color: entry.rayColor || '#3a9b6f' }} />
+                          <ArrowUpRight className="w-4 h-4" style={{ color: entry.rayColor || 'var(--color-ray-green)' }} />
                         ) : (
                           <TrendingDown className="w-4 h-4" style={{ color: entry.rayColor || '#ff0099' }} />
                         )}
@@ -358,7 +361,7 @@ export function HeartlightCollective() {
                       <div className="flex items-center gap-2 mb-1">
                         <span
                           className="inline-block w-2 h-2 rounded-full"
-                          style={{ backgroundColor: entry.rayColor || '#fad144' }}
+                          style={{ backgroundColor: entry.rayColor || 'var(--color-solar-gold)' }}
                         />
                         <span className="font-ui text-[0.65rem] uppercase tracking-[0.12em] text-[var(--text-secondary)]/50">
                           {entry.category}
@@ -372,7 +375,7 @@ export function HeartlightCollective() {
                         <p
                           className="font-display text-[1rem]"
                           style={{
-                            color: entry.type === 'inflow' ? '#3a9b6f' : '#ff0099',
+                            color: entry.type === 'inflow' ? 'var(--color-ray-green)' : 'var(--color-magenta-ray)',
                           }}
                         >
                           {entry.type === 'inflow' ? '+' : '-'}{formatCurrency(entry.amount)}
@@ -505,9 +508,10 @@ export function HeartlightCollective() {
                 <a
                   href="https://atlasisland.co/connect"
                   className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-[var(--color-heartlight-green)]/20 border border-[var(--color-heartlight-green)]/30 text-[var(--color-heartlight-green)] font-ui text-[0.75rem] uppercase tracking-[0.12em] hover:bg-[var(--color-heartlight-green)]/30 transition-all duration-300"
+                  style={{ textShadow: '0 1px 4px rgba(0,0,0,0.4)' }}
                 >
                   Apply Now
-                  <ArrowUpRight className="w-3.5 h-3.5" />
+                  <ArrowUpRight className="w-3.5 h-3.5" style={{ filter: 'drop-shadow(0 1px 2px rgba(0,0,0,0.4))' }} />
                 </a>
               </motion.div>
 

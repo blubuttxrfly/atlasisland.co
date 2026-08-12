@@ -133,10 +133,12 @@ export function Header() {
               <button
                 onClick={() => setDropdownOpen(!dropdownOpen)}
                 className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-[#7B52DA] dark:bg-[rgba(123,82,218,0.2)] border border-[var(--border-default)] text-[var(--color-solar-gold)] font-ui text-[0.75rem] uppercase tracking-[0.1em]"
+                style={{ textShadow: 'var(--text-shadow-hero)' }}
               >
                 <span>{currentItem.label}</span>
                 <ChevronDown
                   className={`w-4 h-4 transition-transform duration-300 ${dropdownOpen ? 'rotate-180' : ''}`}
+                  style={{ filter: 'drop-shadow(0 1px 3px rgba(0,0,0,0.45))' }}
                 />
               </button>
 

@@ -3,9 +3,9 @@ import { SOCIAL_LINKS } from '../lib/constants';
 
 export function Footer() {
   return (
-    <footer className="relative mt-auto border-t border-[#6455df]/15 bg-[#0a0515]">
+    <footer className="relative mt-auto border-t border-[var(--color-ray-400)]/15 bg-[var(--bg-page)]">
       {/* Top glow line */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-[1px] bg-gradient-to-r from-transparent via-[#fad144]/40 to-transparent" />
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-[1px] bg-gradient-to-r from-transparent via-[var(--color-solar-gold)]/40 to-transparent" />
 
       <div className="max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="flex flex-col items-center text-center gap-6">
@@ -19,23 +19,25 @@ export function Footer() {
               <polygon
                 points="50,5 95,27.5 95,72.5 50,95 5,72.5 5,27.5"
                 fill="none"
-                stroke="#fad144"
+                stroke="var(--color-solar-gold)"
                 strokeWidth="1.5"
                 opacity="0.6"
               />
               <polygon
                 points="50,20 80,35 80,65 50,80 20,65 20,35"
                 fill="none"
-                stroke="#6455df"
+                stroke="var(--color-ray-400)"
                 strokeWidth="1"
                 opacity="0.4"
               />
-              <circle cx="50" cy="50" r="8" fill="none" stroke="#ff0099" strokeWidth="1" opacity="0.5" />
+              <circle cx="50" cy="50" r="8" fill="none" stroke="var(--color-magenta-ray)" strokeWidth="1" opacity="0.5" />
             </svg>
           </div>
 
           {/* Sacred phrase */}
-          <p className="font-body italic text-[0.85rem] sm:text-[0.9rem] text-[#fad144]/80 tracking-wide leading-relaxed">
+          <p className="font-body italic text-[0.85rem] sm:text-[0.9rem] text-[var(--color-solar-gold)]/80 tracking-wide leading-relaxed"
+            style={{ textShadow: '0 1px 4px rgba(0,0,0,0.35)' }}
+          >
             🌈🎶 "Atlas Island - Home for the Heartlight of You & Me, Atlas Island - Where Every Being is Free" 💫🎶
           </p>
 
@@ -47,7 +49,7 @@ export function Footer() {
                 href={link.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 rounded-xl bg-[#6455df]/15 border border-[#6455df]/25 flex items-center justify-center hover:bg-[#fad144]/10 hover:border-[#fad144]/30 transition-all duration-300"
+                className="w-10 h-10 rounded-xl bg-[var(--color-ray-400)]/15 border border-[var(--color-ray-400)]/25 flex items-center justify-center hover:bg-[var(--color-solar-gold)]/10 hover:border-[var(--color-solar-gold)]/30 transition-all duration-300"
                 aria-label={link.name}
               >
                 <img
@@ -61,7 +63,7 @@ export function Footer() {
               href="https://heartlight.atlasisland.co"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-10 h-10 rounded-xl bg-[#6455df]/15 border border-[#6455df]/25 flex items-center justify-center hover:bg-[#fad144]/10 hover:border-[#fad144]/30 transition-all duration-300"
+              className="w-10 h-10 rounded-xl bg-[var(--color-ray-400)]/15 border border-[var(--color-ray-400)]/25 flex items-center justify-center hover:bg-[var(--color-solar-gold)]/10 hover:border-[var(--color-solar-gold)]/30 transition-all duration-300"
               aria-label="Heartlight Collective"
             >
               <img
@@ -74,7 +76,7 @@ export function Footer() {
               href="https://aut.atlasisland.co"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-10 h-10 rounded-xl bg-[#6455df]/15 border border-[#6455df]/25 flex items-center justify-center hover:bg-[#fad144]/10 hover:border-[#fad144]/30 transition-all duration-300"
+              className="w-10 h-10 rounded-xl bg-[var(--color-ray-400)]/15 border border-[var(--color-ray-400)]/25 flex items-center justify-center hover:bg-[var(--color-solar-gold)]/10 hover:border-[var(--color-solar-gold)]/30 transition-all duration-300"
               aria-label="AUT Time & Tools"
             >
               <img
@@ -86,16 +88,16 @@ export function Footer() {
           </div>
 
           {/* Copyright */}
-          <div className="flex items-center gap-2 font-ui text-[0.65rem] text-[#b8a8f0]/40">
+          <div className="flex items-center gap-2 font-ui text-[0.65rem] text-[var(--text-secondary)]/40">
             <span>© 2026 Atlas Island</span>
-            <Heart className="w-3 h-3 text-[#ff0099]/50" />
+            <Heart className="w-3 h-3 text-[var(--color-magenta-ray)]/50" />
             <span>All Rights Reserved</span>
           </div>
           <div className="flex items-center gap-4 mt-2">
-            <a href="/privacy" className="font-ui text-[0.65rem] text-[#b8a8f0]/30 hover:text-[#fad144]/60 transition-colors">
+            <a href="/privacy" className="font-ui text-[0.65rem] text-[var(--text-secondary)]/30 hover:text-[var(--color-solar-gold)]/60 transition-colors">
               Privacy Policy
             </a>
-            <a href="/ledger" className="font-ui text-[0.65rem] text-[#b8a8f0]/30 hover:text-[#fad144]/60 transition-colors">
+            <a href="/ledger" className="font-ui text-[0.65rem] text-[var(--text-secondary)]/30 hover:text-[var(--color-solar-gold)]/60 transition-colors">
               Sacred Ledger
             </a>
           </div>
