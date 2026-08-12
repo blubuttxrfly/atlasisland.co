@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
 import { Suspense, lazy } from 'react';
+import { ThemeProvider } from './components/ThemeProvider';
 import { Header } from './components/Header';
 import { Footer } from './components/Footer';
 import { StarField } from './components/StarField';
@@ -38,20 +39,26 @@ function AnimatedRoutes() {
 
 function App() {
   return (
-    <BrowserRouter>
-      <StarField />
-      <div className="min-h-screen flex flex-col bg-[#0a0515]">
-        <Header />
-        <Suspense fallback={
-          <main className="flex-1 flex items-center justify-center">
-            <div className="w-8 h-8 rounded-full border-2 border-[#fad144]/30 border-t-[#fad144] animate-spin" />
-          </main>
-        }>
-          <AnimatedRoutes />
-        </Suspense>
-        <Footer />
-      </div>
-    </BrowserRouter>
+    <ThemeProvider>
+      <BrowserRouter>
+        <div className="relative min-h-screen flex flex-col bg-atlas-page">
+          <div className="bg-aurora" aria-hidden="true" />
+          <StarField />
+
+          <div className="relative z-10 flex flex-col min-h-screen">
+            <Header />
+            <Suspense fallback={
+              <main className="flex-1 flex items-center justify-center">
+                <div className="w-8 h-8 rounded-full border-2 border-[var(--color-solar-gold)]/30 border-t-[var(--color-solar-gold)] animate-spin" />
+              </main>
+            }>
+              <AnimatedRoutes />
+            </Suspense>
+            <Footer />
+          </div>
+        </div>
+      </BrowserRouter>
+    </ThemeProvider>
   );
 }
 

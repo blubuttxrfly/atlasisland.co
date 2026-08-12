@@ -71,10 +71,10 @@ We only share the minimum data necessary for each service to fulfill its role. N
 
   return (
     <PageTransition>
-      <div className="min-h-screen pt-[72px]">
+      <div className="min-h-screen pt-[72px] bg-[var(--bg-page)]">
         {/* Hero */}
         <section className="relative py-20 sm:py-28 overflow-hidden">
-          <div className="absolute inset-0 bg-[#0a0515]" />
+          <div className="absolute inset-0 bg-[var(--bg-page)]" />
           <div
             className="absolute inset-0 opacity-25"
             style={{
@@ -88,17 +88,17 @@ We only share the minimum data necessary for each service to fulfill its role. N
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
             >
-              <span className="inline-flex items-center gap-2 font-ui text-[0.7rem] uppercase tracking-[0.2em] text-[#6455df] mb-4">
+              <span className="inline-flex items-center gap-2 font-ui text-[0.7rem] uppercase tracking-[0.2em] text-[var(--color-ray-400)] mb-4">
                 <Shield className="w-3.5 h-3.5" />
                 Sacred Trust
               </span>
-              <h1 className="font-display text-[2.5rem] sm:text-[3.5rem] text-[#fad144] leading-tight mb-6">
+              <h1 className="font-display text-[2.5rem] sm:text-[3.5rem] text-[var(--color-solar-gold)] leading-tight mb-6">
                 Privacy Policy
               </h1>
-              <p className="font-body text-[1.1rem] sm:text-[1.25rem] text-[#b8a8f0]/85 italic leading-relaxed max-w-[650px] mx-auto mb-4">
+              <p className="font-body text-[1.1rem] sm:text-[1.25rem] text-[var(--text-secondary)]/85 italic leading-relaxed max-w-[650px] mx-auto mb-4">
                 Your data is held as sacred trust. We steward it with the same care we steward the Heartlight Collective itself.
               </p>
-              <p className="font-ui text-[0.7rem] text-[#b8a8f0]/40 uppercase tracking-[0.15em]">
+              <p className="font-ui text-[0.7rem] text-[var(--text-secondary)]/40 uppercase tracking-[0.15em]">
                 Last Updated: {lastUpdated}
               </p>
             </motion.div>
@@ -118,15 +118,15 @@ We only share the minimum data necessary for each service to fulfill its role. N
                 className="reveal"
               >
                 <div className="flex items-center gap-3 mb-4">
-                  <div className="w-10 h-10 rounded-lg bg-[#6455df]/10 flex items-center justify-center flex-shrink-0">
-                    <section.icon className="w-5 h-5 text-[#6455df]" />
+                  <div className="w-10 h-10 rounded-lg bg-[var(--color-ray-400)]/10 flex items-center justify-center flex-shrink-0">
+                    <section.icon className="w-5 h-5 text-[var(--color-ray-400)]" />
                   </div>
-                  <h2 className="font-display text-[1.4rem] text-[#fad144]">
+                  <h2 className="font-display text-[1.4rem] text-[var(--color-solar-gold)]">
                     {section.title}
                   </h2>
                 </div>
                 <div className="pl-[52px]">
-                  <div className="font-body text-[0.95rem] text-[#b8a8f0]/70 leading-relaxed whitespace-pre-line">
+                  <div className="font-body text-[0.95rem] text-[var(--text-secondary)]/70 leading-relaxed whitespace-pre-line">
                     {section.content}
                   </div>
                 </div>
@@ -139,24 +139,24 @@ We only share the minimum data necessary for each service to fulfill its role. N
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.5, duration: 0.6 }}
-              className="reveal pt-8 border-t border-[#6455df]/10"
+              className="reveal pt-8 border-t border-[var(--color-ray-400)]/10"
             >
               <div className="flex items-center gap-3 mb-4">
-                <div className="w-10 h-10 rounded-lg bg-[#ff0099]/10 flex items-center justify-center flex-shrink-0">
-                  <Mail className="w-5 h-5 text-[#ff0099]" />
+                <div className="w-10 h-10 rounded-lg bg-[var(--color-magenta-ray)]/10 flex items-center justify-center flex-shrink-0">
+                  <Mail className="w-5 h-5 text-[var(--color-magenta-ray)]" />
                 </div>
-                <h2 className="font-display text-[1.4rem] text-[#fad144]">
+                <h2 className="font-display text-[1.4rem] text-[var(--color-solar-gold)]">
                   Questions or Requests?
                 </h2>
               </div>
               <div className="pl-[52px]">
-                <p className="font-body text-[0.95rem] text-[#b8a8f0]/70 leading-relaxed mb-4">
+                <p className="font-body text-[0.95rem] text-[var(--text-secondary)]/70 leading-relaxed mb-4">
                   If you have questions about this privacy policy, wish to exercise your data rights, 
                   or simply want to discuss how we steward information at Atlas Island, please reach out.
                 </p>
                 <a
                   href="mailto:contact@atlasisland.co"
-                  className="inline-flex items-center gap-2 text-[#ff0099] font-ui text-[0.8rem] uppercase tracking-[0.1em] hover:text-[#fad144] transition-colors"
+                  className="inline-flex items-center gap-2 text-[var(--color-magenta-ray)] font-ui text-[0.8rem] uppercase tracking-[0.1em] hover:text-[var(--color-solar-gold)] transition-colors"
                 >
                   <Mail className="w-4 h-4" />
                   contact@atlasisland.co
@@ -172,7 +172,7 @@ We only share the minimum data necessary for each service to fulfill its role. N
               transition={{ delay: 0.6, duration: 0.8 }}
               className="reveal text-center pt-8"
             >
-              <p className="font-body text-[0.9rem] text-[#b8a8f0]/50 italic">
+              <p className="font-body text-[0.9rem] text-[var(--text-secondary)]/50 italic">
                 With Love of ALL that IS, this policy is stewarded by Z Atlas Morphoenix for Atlas Island LLC.
               </p>
             </motion.div>

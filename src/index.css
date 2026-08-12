@@ -2,18 +2,31 @@
 
 /* ── Atlas Island Sacred Tokens ── */
 @theme {
-  /* Core Colors */
-  --color-atlas-indigo: #6455df;
-  --color-deep-indigo: #3a2a8a;
+  /* Deep Violet Ray Scale — anchored by #4D25AD */
+  --color-ray-50:  #EFEAFB;
+  --color-ray-100: #D2C4F3;
+  --color-ray-200: #B59EEA;
+  --color-ray-300: #9878E2;
+  --color-ray-400: #7B52DA;
+  --color-ray-500: #5E2DD2;
+  --color-ray-600: #4D25AD;
+  --color-ray-700: #3C1D87;
+  --color-ray-800: #2E1666;
+  --color-ray-900: #1A0C3B;
+  --color-ray-950: #090415;
+
+  /* Legacy named tokens — remapped to Ray palette */
+  --color-atlas-indigo: var(--color-ray-400);
+  --color-deep-indigo: var(--color-ray-700);
   --color-solar-gold: #fad144;
   --color-solar-gold-light: #ffe478;
   --color-heartlight-green: #dfff42;
   --color-magenta-ray: #ff0099;
   --color-magenta-ray-soft: #ff009980;
-  --color-aura-cream: #f0e8ff;
-  --color-aura-muted: #b8a8f0;
-  --color-void-black: #0a0515;
-  --color-void-deep: #120822;
+  --color-aura-cream: var(--color-ray-50);
+  --color-aura-muted: var(--color-ray-200);
+  --color-void-black: var(--color-ray-950);
+  --color-void-deep: var(--color-ray-900);
 
   /* Orichalcum Bridge (Exchange connection) */
   --color-orichalcum: #c8922a;
@@ -39,6 +52,42 @@
   --font-mono: 'Alice', Georgia, 'Times New Roman', serif;
 }
 
+/* ── Theme-aware semantic tokens ── */
+html[data-theme="dark"],
+html:not([data-theme]) {
+  --bg-page: var(--color-ray-950);
+  --bg-surface: var(--color-ray-900);
+  --bg-card: rgba(26, 12, 59, 0.72);
+  --bg-header: rgba(9, 4, 21, 0.92);
+  --text-primary: var(--color-ray-50);
+  --text-secondary: var(--color-ray-200);
+  --text-muted: var(--color-ray-300);
+  --text-glow: var(--color-solar-gold);
+  --border-default: rgba(123, 82, 218, 0.22);
+  --border-hover: rgba(250, 209, 68, 0.35);
+  --shadow-glow: rgba(123, 82, 218, 0.18);
+  --star-core: 255, 245, 220;
+  --star-field-opacity: 0.85;
+  --text-shadow-hero: none;
+}
+
+html[data-theme="light"] {
+  --bg-page: var(--color-ray-50);
+  --bg-surface: var(--color-ray-100);
+  --bg-card: rgba(255, 255, 255, 0.86);
+  --bg-header: rgba(239, 234, 251, 0.92);
+  --text-primary: var(--color-ray-900);
+  --text-secondary: var(--color-ray-700);
+  --text-muted: var(--color-ray-600);
+  --text-glow: var(--color-ray-600);
+  --border-default: rgba(77, 37, 173, 0.16);
+  --border-hover: rgba(77, 37, 173, 0.35);
+  --shadow-glow: rgba(77, 37, 173, 0.12);
+  --star-core: 77, 37, 173;
+  --star-field-opacity: 0.55;
+  --text-shadow-hero: 0 1px 8px rgba(26,12,59,0.55), 0 2px 16px rgba(26,12,59,0.35);
+}
+
 /* ── Alice Global Harmony ── */
 *,
 *::before,
@@ -49,17 +98,18 @@
 /* ── Global Reset ── */
 html {
   scroll-behavior: smooth;
-  color-scheme: dark;
+  color-scheme: dark light;
 }
 
 body {
   margin: 0;
   padding: 0;
-  color: var(--color-aura-cream);
-  background: var(--color-void-black);
+  color: var(--text-primary);
+  background: var(--bg-page);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
+  transition: background-color 0.5s ease, color 0.5s ease;
 }
 
 #root {
@@ -142,6 +192,17 @@ body {
   50% { opacity: 1; transform: scale(1.5); }
 }
 
+@keyframes gradient-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes ray-breathe {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 1; }
+}
+
 .animate-aura-pulse {
   animation: aura-pulse 4s ease-in-out infinite;
 }
@@ -175,6 +236,15 @@ body {
   animation: twinkle var(--dur, 3s) ease-in-out infinite;
 }
 
+.animate-gradient-shift {
+  background-size: 400% 400%;
+  animation: gradient-shift 20s ease infinite;
+}
+
+.animate-ray-breathe {
+  animation: ray-breathe 8s ease-in-out infinite;
+}
+
 /* ── Reduced Motion ── */
 @media (prefers-reduced-motion: reduce) {
   .animate-aura-pulse,
@@ -184,9 +254,62 @@ body {
   .animate-rotate-sigil,
   .animate-shimmer,
   .animate-scroll-hint,
-  .animate-twinkle {
+  .animate-twinkle,
+  .animate-gradient-shift,
+  .animate-ray-breathe {
     animation: none;
   }
+}
+
+/* ── Page Backgrounds ── */
+.bg-atlas-page {
+  background:
+    radial-gradient(ellipse 80% 50% at 50% -10%, rgba(123, 82, 218, 0.25), transparent 60%),
+    radial-gradient(ellipse 60% 40% at 80% 100%, rgba(77, 37, 173, 0.2), transparent 55%),
+    var(--bg-page);
+  transition: background 0.6s ease;
+}
+
+html[data-theme="light"] .bg-atlas-page {
+  background:
+    radial-gradient(ellipse 80% 50% at 50% -10%, rgba(152, 120, 226, 0.18), transparent 60%),
+    radial-gradient(ellipse 60% 40% at 80% 100%, rgba(77, 37, 173, 0.08), transparent 55%),
+    var(--bg-page);
+}
+
+.bg-atlas-surface {
+  background: var(--bg-surface);
+  transition: background 0.5s ease;
+}
+
+/* ── Living aurora overlay behind stars ── */
+.bg-aurora {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background:
+    radial-gradient(ellipse 100% 60% at 20% 30%, rgba(123, 82, 218, 0.22), transparent 55%),
+    radial-gradient(ellipse 90% 70% at 80% 70%, rgba(77, 37, 173, 0.18), transparent 55%),
+    radial-gradient(ellipse 80% 50% at 50% 100%, rgba(250, 209, 68, 0.06), transparent 45%);
+  opacity: 0.7;
+}
+
+html[data-theme="light"] .bg-aurora {
+  background:
+    radial-gradient(ellipse 100% 60% at 20% 30%, rgba(123, 82, 218, 0.12), transparent 55%),
+    radial-gradient(ellipse 90% 70% at 80% 70%, rgba(77, 37, 173, 0.08), transparent 55%),
+    radial-gradient(ellipse 80% 50% at 50% 100%, rgba(250, 209, 68, 0.04), transparent 45%);
+  opacity: 0.9;
+}
+
+/* ── Glass card surfaces ── */
+.glass-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-default);
+  backdrop-filter: blur(12px);
+  border-radius: 1rem;
+  transition: background 0.4s ease, border-color 0.4s ease;
 }
 
 /* ── Heartlight Collective Background ── */
@@ -201,12 +324,6 @@ body {
   );
   background-size: 400% 400%;
   animation: gradient-shift 15s ease infinite;
-}
-
-@keyframes gradient-shift {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -226,16 +343,38 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgba(100, 85, 223, 0.25);
+  background: rgba(123, 82, 218, 0.25);
   border-radius: 3px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(100, 85, 223, 0.45);
+  background: rgba(123, 82, 218, 0.45);
 }
 
 /* Firefox */
 * {
   scrollbar-width: thin;
-  scrollbar-color: rgba(100, 85, 223, 0.25) transparent;
+  scrollbar-color: rgba(123, 82, 218, 0.25) transparent;
+}
+
+html[data-theme="light"] ::-webkit-scrollbar-thumb {
+  background: rgba(77, 37, 173, 0.2);
+}
+
+html[data-theme="light"] ::-webkit-scrollbar-thumb:hover {
+  background: rgba(77, 37, 173, 0.4);
+}
+
+html[data-theme="light"] * {
+  scrollbar-color: rgba(77, 37, 173, 0.2) transparent;
+}
+
+/* ── Light-only / Dark-only helpers for data-theme system ── */
+html[data-theme="dark"] .light-only,
+html:not([data-theme="light"]) .light-only {
+  display: none !important;
+}
+
+html[data-theme="light"] .dark-only {
+  display: none !important;
 }

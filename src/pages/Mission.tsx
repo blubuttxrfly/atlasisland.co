@@ -8,10 +8,10 @@ export function Mission() {
   useScrollReveal();
   return (
     <PageTransition>
-      <div className="min-h-screen pt-[72px]">
+      <div className="min-h-screen pt-[72px] bg-[var(--bg-page)]">
         {/* Content starts immediately, minimal hero */}
         <section className="relative pt-12 sm:pt-16 pb-8 overflow-hidden">
-          <div className="absolute inset-0 bg-[#0a0515]" />
+          <div className="absolute inset-0 bg-[var(--bg-page)]" />
           <div className="relative max-w-[800px] mx-auto px-4 sm:px-6">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -19,22 +19,23 @@ export function Mission() {
               transition={{ duration: 0.8 }}
               className="text-center mb-10"
             >
-              <span className="inline-block font-ui text-[0.7rem] uppercase tracking-[0.2em] text-[#ff0099] mb-3">
+              <span className="inline-block font-ui text-[0.7rem] uppercase tracking-[0.2em] text-[var(--color-magenta-ray)] mb-3">
                 Why Atlas Island Exists
               </span>
-              <h1 className="font-display text-[2rem] sm:text-[2.8rem] text-[#fad144] leading-tight">
+              <h1
+                className="font-display text-[2rem] sm:text-[2.8rem] text-[var(--color-solar-gold)] leading-tight"
+              >
                 Mission & Purpose
               </h1>
             </motion.div>
 
-            <div className="reveal space-y-10"
- >
+            <div className="reveal space-y-10">
               {/* Personal Declaration — FIRST and most prominent */}
-              <div className="border-l-2 border-[#fad144]/40 pl-6 py-2">
-                <h2 className="font-display text-[1.4rem] text-[#fad144] mb-4">
+              <div className="border-l-2 border-[var(--color-solar-gold)]/40 pl-6 py-2">
+                <h2 className="font-display text-[1.4rem] text-[var(--color-solar-gold)] mb-4">
                   A Personal Declaration
                 </h2>
-                <div className="font-body text-[1.05rem] text-[#b8a8f0]/80 leading-relaxed space-y-4">
+                <div className="font-body text-[1.05rem] text-[var(--text-secondary)]/80 leading-relaxed space-y-4">
                   <p>
                     I know what it is like to be in a state of survival from an early age battling demons and diseases that I almost lost to. Later, toxic relationships that had my empathy in a constant battle of confusion and chaos. I had to re-learn what it meant to be me, and I am so grateful I chose to do so. This life path has also brought me back to remember what it means to be living life with authentic joy and conscious awareness. I remember now that we deserve to live our absolute best dream lives. We deserve to be in a world where we are living every day with conscious awareness of our authentic joy. Especially when there are beings who feel the within their Heartlight to share their gifts, wishes, and healing with our world.
                   </p>
@@ -44,7 +45,7 @@ export function Mission() {
                   <p>
                     Atlas Island is a sentient being, just the same as you, me, nature, and our Earth. When we remember that we are sovereign interdependent beings co-creating a living sustainable regenerative home with & for ALL the Living, we re-unite with the authentic callings of our Heartlight's sacred life journey.
                   </p>
-                  <p className="text-[#fad144]/90 italic">
+                  <p className="text-[var(--color-solar-gold)]/90 italic">
                     With Love of ALL that IS,<br />
                     Z Atlas Morphoenix
                   </p>
@@ -59,17 +60,17 @@ export function Mission() {
               </div>
 
               {/* The Calling — evolved for sovereign interdependent nation resonance */}
-              <div className="border-l-2 border-[#ff0099]/30 pl-6">
-                <h2 className="font-display text-[1.4rem] text-[#fad144] mb-3">
+              <div className="border-l-2 border-[var(--color-magenta-ray)]/30 pl-6">
+                <h2 className="font-display text-[1.4rem] text-[var(--color-solar-gold)] mb-3">
                   The Calling
                 </h2>
-                <p className="font-body text-[1.05rem] text-[#b8a8f0]/80 leading-relaxed mb-4">
-                  A peaceful, sovereign, interdependent nation living in alignment with the <Link to="/codes" className="text-[#fad144] hover:underline">12 Codes of ALL</Link>, the agreed-upon resonance of the collective. These Codes provide a language and structure to assure the sanctity and thrival of ALL that IS.
+                <p className="font-body text-[1.05rem] text-[var(--text-secondary)]/80 leading-relaxed mb-4">
+                  A peaceful, sovereign, interdependent nation living in alignment with the <Link to="/codes" className="text-[var(--color-solar-gold)] hover:underline">12 Codes of ALL</Link>, the agreed-upon resonance of the collective. These Codes provide a language and structure to assure the sanctity and thrival of ALL that IS.
                 </p>
-                <p className="font-body text-[1.05rem] text-[#b8a8f0]/70 leading-relaxed mb-4">
+                <p className="font-body text-[1.05rem] text-[var(--text-secondary)]/70 leading-relaxed mb-4">
                   Atlas Island is a home for beings of ALL walks of life, including:
                 </p>
-                <ul className="font-body text-[1.05rem] text-[#b8a8f0]/70 leading-relaxed mb-4 space-y-1 list-disc list-inside">
+                <ul className="font-body text-[1.05rem] text-[var(--text-secondary)]/70 leading-relaxed mb-4 space-y-1 list-disc list-inside">
                   <li>Earth-conscious co-creators</li>
                   <li>Queer/LGBTQIA+/Two-Spirit beings and Allies</li>
                   <li>Neurodivergent and Disabled beings</li>
@@ -78,37 +79,37 @@ export function Mission() {
                   <li>Guides & Guardians</li>
                   <li>Engineers, Developers, Visioneers, Builders</li>
                 </ul>
-                <p className="font-body text-[1.05rem] text-[#b8a8f0]/70 leading-relaxed mb-8">
+                <p className="font-body text-[1.05rem] text-[var(--text-secondary)]/70 leading-relaxed mb-8">
                   And ALL who feel the call to co-create a meaningful and fulfilling life through unifying intentional, aligned exchanges.
                 </p>
-                <p className="font-body text-[1.05rem] text-[#b8a8f0]/70 leading-relaxed">
+                <p className="font-body text-[1.05rem] text-[var(--text-secondary)]/70 leading-relaxed">
                   Many beings who feel the call to New Earth may also resonate with Atlas Island. If you wish and dream that there is another way of life that is based on sovereign interdependence, peace, unity, mutual aid, conscious co-creation, and authentic joy, Atlas Island is a home where we co-create and live our absolute best dream lives together.
                 </p>
               </div>
 
-              <div className="border-l-2 border-[#6455df]/30 pl-6">
-                <h2 className="font-display text-[1.4rem] text-[#fad144] mb-3">
+              <div className="border-l-2 border-[var(--color-ray-400)]/30 pl-6">
+                <h2 className="font-display text-[1.4rem] text-[var(--color-solar-gold)] mb-3">
                   What Atlas Island Is
                 </h2>
-                <p className="font-body text-[1.05rem] text-[#b8a8f0]/70 leading-relaxed mb-3">
+                <p className="font-body text-[1.05rem] text-[var(--text-secondary)]/70 leading-relaxed mb-3">
                   Atlas Island is a sovereign interdependent united state. The economy is a gift exchange through the Heartlight Exchange.
                 </p>
-                <p className="font-body text-[1.05rem] text-[#b8a8f0]/70 leading-relaxed mb-3">
+                <p className="font-body text-[1.05rem] text-[var(--text-secondary)]/70 leading-relaxed mb-3">
                   Beings co-operate from a place of having their life essentials assured and fulfilled through the Heartlight Collective which serves as the unified resource collective of Atlas Island. Beings may contribute and co-create with the Heartlight Collective through various roles, such as artists, healers, builders, gardeners/farmers (agroforestry fields), caregivers, engineers, architects, visioneers, dreamers, and beings who feel a call to co-create with our Heartlight.
                 </p>
-                <p className="font-body text-[1.05rem] text-[#b8a8f0]/70 leading-relaxed">
+                <p className="font-body text-[1.05rem] text-[var(--text-secondary)]/70 leading-relaxed">
                   Our Heartlight is our universal heart & soul that comes from the remembrance of our sacred creation of ALL that IS.
                 </p>
-                <p className="font-body text-[1.05rem] text-[#b8a8f0]/70 leading-relaxed mt-3">
+                <p className="font-body text-[1.05rem] text-[var(--text-secondary)]/70 leading-relaxed mt-3">
                   There is a Heartlight Collective which represents the beings who are Co-Creators & Sovereign Supporters. It is where beings who want to donate & support healing aligned resources, money, and opportunities can do so without yet directly joining Atlas Island and may also remain cloaked/minimum surveillance for our Heartlight's Greatest & Highest Good.
                 </p>
               </div>
 
-              <div className="border-l-2 border-[#dfff42]/30 pl-6">
-                <h2 className="font-display text-[1.4rem] text-[#fad144] mb-3">
+              <div className="border-l-2 border-[var(--color-heartlight-green)]/30 pl-6">
+                <h2 className="font-display text-[1.4rem] text-[var(--color-solar-gold)] mb-3">
                   The Mission
                 </h2>
-                <p className="font-body text-[1.05rem] text-[#b8a8f0]/70 leading-relaxed">
+                <p className="font-body text-[1.05rem] text-[var(--text-secondary)]/70 leading-relaxed">
                   To assure ALL beings life essentials to co-create from thrival. When beings have life essentials, they feel that they are able to breathe and find what brings them authentic joy in life. It is genuinely unique and ever-evolving from one being to another.
                 </p>
               </div>
@@ -127,7 +128,7 @@ export function Mission() {
                   href="https://heartlight.atlasisland.co/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-8 py-3.5 rounded-xl bg-[#6455df]/20 border border-[#6455df]/40 text-[#b8a8f0] font-ui text-[0.8rem] font-semibold uppercase tracking-[0.12em] hover:bg-[#6455df]/30 hover:border-[#fad144]/30 transition-all duration-300"
+                  className="inline-flex items-center gap-2 px-8 py-3.5 rounded-xl bg-[var(--color-ray-400)]/20 border border-[var(--color-ray-400)]/40 text-[var(--text-secondary)] font-ui text-[0.8rem] font-semibold uppercase tracking-[0.12em] hover:bg-[var(--color-ray-400)]/30 hover:border-[var(--color-solar-gold)]/30 transition-all duration-300"
                 >
                   <Heart className="w-4 h-4" />
                   Explore the Heartlight Collective

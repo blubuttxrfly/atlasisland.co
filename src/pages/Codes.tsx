@@ -73,28 +73,28 @@ function CodeCard({ code, index }: { code: typeof CODES[0]; index: number }) {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay: 0.1 + index * 0.06, duration: 0.5 }}
-      className="group rounded-2xl border border-[#6455df]/15 bg-[#120822]/40 overflow-hidden hover:border-[#fad144]/25 hover:shadow-[0_8px_40px_rgba(100,85,223,0.1)] transition-all duration-300"
+      className="group rounded-2xl border border-[var(--color-ray-400)]/15 bg-[var(--bg-card)] overflow-hidden hover:border-[var(--color-solar-gold)]/25 hover:shadow-[0_8px_40px_rgba(100,85,223,0.1)] transition-all duration-300"
     >
       <div className="h-1" style={{ background: code.color }} />
       <div className="p-6">
-        <p className="font-ui text-[0.6rem] uppercase tracking-[0.2em] text-[#b8a8f0]/30 mb-1">
+        <p className="font-ui text-[0.6rem] uppercase tracking-[0.2em] text-[var(--text-secondary)]/30 mb-1">
           Code {String(code.number).padStart(2, '0')}
         </p>
-        <h3 className="font-display text-[1.25rem] text-[#fad144] mb-1">{code.name}</h3>
+        <h3 className="font-display text-[1.25rem] text-[var(--color-solar-gold)] mb-1"{code.name}</h3>
         <div className="flex items-center gap-2 mb-4">
           <span className="w-2 h-2 rounded-full inline-block" style={{ background: code.color }} />
           <span className="font-ui text-[0.65rem] uppercase tracking-[0.12em]" style={{ color: code.color }}>{code.ray}</span>
         </div>
         <p
-          className="font-body italic text-[0.95rem] text-[#b8a8f0]/70 leading-relaxed p-3 rounded-lg bg-[#0a0515]/50 border-l-[3px] mb-4"
+          className="font-body italic text-[0.95rem] text-[var(--text-secondary)]/70 leading-relaxed p-3 rounded-lg bg-[var(--bg-page)]/50 border-l-[3px] mb-4"
           style={{ borderColor: code.color + '60' }}
         >
           "{code.mantra}"
         </p>
-        <p className="font-ui text-[0.6rem] uppercase tracking-[0.12em] text-[#fad144]/50 mb-2">
+        <p className="font-ui text-[0.6rem] uppercase tracking-[0.12em] text-[var(--color-solar-gold)]/50 mb-2">
           In the Living
         </p>
-        <p className="font-body text-[0.85rem] text-[#b8a8f0]/55 leading-relaxed">{code.exchange}</p>
+        <p className="font-body text-[0.85rem] text-[var(--text-secondary)]/55 leading-relaxed">{code.exchange}</p>
       </div>
     </motion.div>
   );
@@ -105,9 +105,9 @@ export function Codes() {
 
   return (
     <PageTransition>
-      <div className="min-h-screen pt-[72px]">
+      <div className="min-h-screen pt-[72px] bg-[var(--bg-page)]">
         <section className="relative pt-20 sm:pt-28 pb-12 overflow-hidden">
-          <div className="absolute inset-0 bg-[#0a0515]" />
+          <div className="absolute inset-0 bg-[var(--bg-page)]" />
           <div
             className="absolute inset-0 opacity-20"
             style={{
@@ -121,18 +121,18 @@ export function Codes() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
             >
-              <span className="inline-flex items-center gap-2 font-ui text-[0.7rem] uppercase tracking-[0.2em] text-[#fad144] mb-4">
+              <span className="inline-flex items-center gap-2 font-ui text-[0.7rem] uppercase tracking-[0.2em] text-[var(--color-solar-gold)] mb-4"
                 <Diamond className="w-3.5 h-3.5" />
                 Sacred Foundation
               </span>
-              <h1 className="font-display text-[2.2rem] sm:text-[3.2rem] text-[#fad144] leading-tight mb-5">
+              <h1 className="font-display text-[2.2rem] sm:text-[3.2rem] text-[var(--color-solar-gold)] leading-tight mb-5">
                 The 12 Codes of ALL
               </h1>
-              <p className="font-body text-[1.05rem] sm:text-[1.15rem] text-[#b8a8f0]/70 italic leading-relaxed max-w-[650px] mx-auto mb-6">
+              <p className="font-body text-[1.05rem] sm:text-[1.15rem] text-[var(--text-secondary)]/70 italic leading-relaxed max-w-[650px] mx-auto mb-6">
                 The living agreements that hold the sanctity and thrival of Atlas Island.
                 They provide a language and structure so ALL beings may co-create in peace.
               </p>
-              <p className="font-body text-[0.95rem] text-[#b8a8f0]/50 leading-relaxed max-w-[600px] mx-auto">
+              <p className="font-body text-[0.95rem] text-[var(--text-secondary)]/50 leading-relaxed max-w-[600px] mx-auto">
                 Each Code is held by a Ray frequency and carries its own mantra of practice.
                 They are not rules imposed from above, but resonance agreements chosen by the collective —
                 a shared vow to assure the Greatest & Highest Good of ALL that IS.
@@ -153,30 +153,30 @@ export function Codes() {
         </section>
 
         {/* Closing */}
-        <section className="relative py-16 sm:py-20 border-t border-[#6455df]/10">
+        <section className="relative py-16 sm:py-20 border-t border-[var(--color-ray-400)]/10">
           <div className="max-w-[700px] mx-auto px-4 sm:px-6 text-center">
             <motion.div
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3, duration: 0.6 }}
-              className="reveal p-8 rounded-2xl border border-[#fad144]/15 bg-[#fad144]/5"
+              className="reveal p-8 rounded-2xl border border-[var(--color-solar-gold)]/15 bg-[var(--color-solar-gold)]/5"
             >
-              <Diamond className="w-6 h-6 text-[#fad144] mx-auto mb-4" />
-              <p className="font-body text-[1rem] text-[#fad144]/80 italic leading-relaxed mb-6">
+              <Diamond className="w-6 h-6 text-[var(--color-solar-gold)] mx-auto mb-4" />
+              <p className="font-body text-[1rem] text-[var(--color-solar-gold)]/80 italic leading-relaxed mb-6">
                 These Codes are lived values. They shape every wish, every offering, every agreement,
                 and every exchange on Atlas Island. To step onto the Island is to carry them forward.
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                 <Link
                   to="/mission"
-                  className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-[#fad144]/15 border border-[#fad144]/30 text-[#fad144] font-ui text-[0.75rem] uppercase tracking-[0.12em] hover:bg-[#fad144]/25 transition-all duration-300"
+                  className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-[var(--color-solar-gold)]/15 border border-[var(--color-solar-gold)]/30 text-[var(--color-solar-gold)] font-ui text-[0.75rem] uppercase tracking-[0.12em] hover:bg-[var(--color-solar-gold)]/25 transition-all duration-300"
                 >
                   <ArrowRight className="w-4 h-4" />
                   Return to Mission & Purpose
                 </Link>
                 <Link
                   to="/connect"
-                  className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-[#ff0099]/15 border border-[#ff0099]/30 text-[#ff0099] font-ui text-[0.75rem] uppercase tracking-[0.12em] hover:bg-[#ff0099]/25 transition-all duration-300"
+                  className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-[var(--color-magenta-ray)]/15 border border-[var(--color-magenta-ray)]/30 text-[var(--color-magenta-ray)] font-ui text-[0.75rem] uppercase tracking-[0.12em] hover:bg-[var(--color-magenta-ray)]/25 transition-all duration-300"
                 >
                   <ArrowRight className="w-4 h-4" />
                   Step Onto Atlas Island

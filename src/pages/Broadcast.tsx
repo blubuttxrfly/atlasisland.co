@@ -86,10 +86,10 @@ export function Broadcast() {
 
   return (
     <PageTransition>
-      <div className="min-h-screen pt-[72px]">
+      <div className="min-h-screen pt-[72px] bg-[var(--bg-page)]">
         {/* Hero */}
         <section className="relative py-24 sm:py-32 overflow-hidden">
-          <div className="absolute inset-0 bg-[#0a0515]" />
+          <div className="absolute inset-0 bg-[var(--bg-page)]" />
           <div
             className="absolute inset-0 opacity-25"
             style={{
@@ -106,10 +106,10 @@ export function Broadcast() {
               <span className="inline-block font-ui text-[0.7rem] uppercase tracking-[0.2em] text-[#c94040] mb-5">
                 Transmissions from the Island
               </span>
-              <h1 className="font-display text-[2.5rem] sm:text-[3.5rem] text-[#fad144] leading-tight mb-6">
+              <h1 className="font-display text-[2.5rem] sm:text-[3.5rem] text-[var(--color-solar-gold)] leading-tight mb-6">
                 Broadcast
               </h1>
-              <p className="font-body text-[1.15rem] sm:text-[1.3rem] text-[#b8a8f0]/80 italic leading-relaxed max-w-[700px] mx-auto mb-10">
+              <p className="font-body text-[1.15rem] sm:text-[1.3rem] text-[var(--text-secondary)]/80 italic leading-relaxed max-w-[700px] mx-auto mb-10">
                 Videos, writings, and transmissions from Atlas Island.
                 Each one a doorway into deeper remembrance.
               </p>
@@ -146,20 +146,20 @@ export function Broadcast() {
           <div className="max-w-[1200px] mx-auto px-4 sm:px-6">
             <div className="reveal">
               <div className="flex items-center gap-3 mb-8">
-                <div className="w-10 h-10 rounded-xl bg-[#c94040]/15 border border-[#c94040]/25 flex items-center justify-center">
+                <div className="w-10 h-10 rounded-xl bg-[var(--color-custom-c94040)]/15 border border-[var(--color-custom-c94040)]/25 flex items-center justify-center">
                   <Play className="w-5 h-5 text-[#c94040]" />
                 </div>
                 <div>
-                  <h2 className="font-display text-[1.6rem] text-[#fad144]">
+                  <h2 className="font-display text-[1.6rem] text-[var(--color-solar-gold)]">
                     Latest Transmission
                   </h2>
-                  <p className="font-ui text-[0.65rem] uppercase tracking-[0.12em] text-[#b8a8f0]/40">
+                  <p className="font-ui text-[0.65rem] uppercase tracking-[0.12em] text-[var(--text-secondary)]/40">
                     From the YouTube Broadcast Tower
                   </p>
                 </div>
               </div>
 
-              <div className="max-w-[900px] mx-auto aspect-video rounded-2xl border border-[#6455df]/20 bg-[#120822]/60 overflow-hidden">
+              <div className="max-w-[900px] mx-auto aspect-video rounded-2xl border border-[var(--color-ray-400)]/20 bg-[var(--bg-card)] overflow-hidden">
                 <iframe
                   src="https://www.youtube.com/embed/afD6L1HnWWk"
                   title="Atlas Island Broadcast"
@@ -173,13 +173,13 @@ export function Broadcast() {
         </section>
 
         {/* Channel Grid */}
-        <section className="relative py-16 sm:py-20 border-t border-[#6455df]/10">
+        <section className="relative py-16 sm:py-20 border-t border-[var(--color-ray-400)]/10">
           <div className="max-w-[1200px] mx-auto px-4 sm:px-6">
             <div className="reveal text-center mb-10">
-              <h2 className="font-display text-[1.6rem] text-[#fad144] mb-3">
+              <h2 className="font-display text-[1.6rem] text-[var(--color-solar-gold)] mb-3">
                 Resonance Channels
               </h2>
-              <p className="font-body text-[1rem] text-[#b8a8f0]/60 max-w-[600px] mx-auto">
+              <p className="font-body text-[1rem] text-[var(--text-secondary)]/60 max-w-[600px] mx-auto">
                 Each channel carries a unique frequency. Follow the ones that call to your Heartlight.
               </p>
             </div>
@@ -214,21 +214,21 @@ export function Broadcast() {
                       </div>
                       <div className="flex-1 min-w-0">
                         <div className="flex items-center gap-2 mb-1">
-                          <h3 className="font-display text-[1.2rem] text-[#fad144] group-hover:text-[#ffe478] transition-colors">
+                          <h3 className="font-display text-[1.2rem] text-[var(--color-solar-gold)] group-hover:text-[#ffe478] transition-colors">
                             {ch.name}
                           </h3>
-                          <ExternalLink className="w-3.5 h-3.5 text-[#b8a8f0]/30 group-hover:text-[#fad144]/60 transition-colors" />
+                          <ExternalLink className="w-3.5 h-3.5 text-[var(--text-secondary)]/30 group-hover:text-[var(--color-solar-gold)]/60 transition-colors" />
                         </div>
                         <p className="font-ui text-[0.65rem] uppercase tracking-[0.12em] mb-2" style={{ color: ch.color }}>
                           {ch.tagline}
                         </p>
-                        <p className="font-body text-[0.9rem] text-[#b8a8f0]/60 leading-relaxed">
+                        <p className="font-body text-[0.9rem] text-[var(--text-secondary)]/60 leading-relaxed">
                           {ch.description}
                         </p>
                       </div>
                     </div>
 
-                    <div className="mt-4 pt-4 border-t border-[#6455df]/10">
+                    <div className="mt-4 pt-4 border-t border-[var(--color-ray-400)]/10">
                       <span
                         className="inline-flex items-center gap-1.5 font-ui text-[0.7rem] uppercase tracking-[0.1em]"
                         style={{ color: ch.color }}
@@ -245,7 +245,7 @@ export function Broadcast() {
         </section>
 
         {/* Substack Embed */}
-        <section className="relative py-16 sm:py-20 border-t border-[#6455df]/10">
+        <section className="relative py-16 sm:py-20 border-t border-[var(--color-ray-400)]/10">
           <div className="max-w-[800px] mx-auto px-4 sm:px-6">
             <div className="reveal text-center mb-8">
               <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[#FF6719]/30 bg-[#FF6719]/10 mb-5">
@@ -254,16 +254,16 @@ export function Broadcast() {
                   The Written Garden
                 </span>
               </div>
-              <h2 className="font-display text-[1.6rem] text-[#fad144] mb-3">
+              <h2 className="font-display text-[1.6rem] text-[var(--color-solar-gold)] mb-3">
                 Subscribe to the Newsletter
               </h2>
-              <p className="font-body text-[1rem] text-[#b8a8f0]/60 max-w-[500px] mx-auto">
+              <p className="font-body text-[1rem] text-[var(--text-secondary)]/60 max-w-[500px] mx-auto">
                 Receive weekly transmissions from Atlas Island directly in your inbox.
                 No noise, only resonance.
               </p>
             </div>
 
-            <div className="rounded-2xl border border-[#FF6719]/20 bg-[#120822]/40 p-6 sm:p-8">
+            <div className="rounded-2xl border border-[#FF6719]/20 bg-[var(--bg-card)] p-6 sm:p-8">
               <iframe
                 src="https://atlasisland.substack.com/embed"
                 width="100%"
@@ -276,18 +276,18 @@ export function Broadcast() {
         </section>
 
         {/* Article Garden */}
-        <section className="relative py-16 sm:py-20 border-t border-[#6455df]/10">
+        <section className="relative py-16 sm:py-20 border-t border-[var(--color-ray-400)]/10">
           <div className="max-w-[1200px] mx-auto px-4 sm:px-6">
             <div className="reveal">
               <div className="flex items-center gap-3 mb-8">
-                <div className="w-10 h-10 rounded-xl bg-[#3a9b6f]/15 border border-[#3a9b6f]/25 flex items-center justify-center">
+                <div className="w-10 h-10 rounded-xl bg-[var(--color-ray-green)]/15 border border-[var(--color-ray-green)]/25 flex items-center justify-center">
                   <FileText className="w-5 h-5 text-[#3a9b6f]" />
                 </div>
                 <div>
-                  <h2 className="font-display text-[1.6rem] text-[#fad144]">
+                  <h2 className="font-display text-[1.6rem] text-[var(--color-solar-gold)]">
                     Written Garden
                   </h2>
-                  <p className="font-ui text-[0.65rem] uppercase tracking-[0.12em] text-[#b8a8f0]/40">
+                  <p className="font-ui text-[0.65rem] uppercase tracking-[0.12em] text-[var(--text-secondary)]/40">
                     Archived transmissions from across the channels
                   </p>
                 </div>
@@ -297,7 +297,7 @@ export function Broadcast() {
                 {ARTICLES.map((article, i) => (
                   <div
                     key={i}
-                    className="group p-6 rounded-xl border border-[#6455df]/15 bg-[#120822]/40 hover:border-[#ff0099]/25 transition-all duration-300 cursor-pointer"
+                    className="group p-6 rounded-xl border border-[var(--color-ray-400)]/15 bg-[var(--bg-card)] hover:border-[var(--color-magenta-ray)]/25 transition-all duration-300 cursor-pointer"
                   >
                     <div className="flex items-center gap-3 mb-3">
                       <div
@@ -306,14 +306,14 @@ export function Broadcast() {
                       >
                         <FileText className="w-4 h-4" />
                       </div>
-                      <span className="font-ui text-[0.6rem] uppercase tracking-[0.15em] text-[#b8a8f0]/40">
+                      <span className="font-ui text-[0.6rem] uppercase tracking-[0.15em] text-[var(--text-secondary)]/40">
                         {article.channel}
                       </span>
                     </div>
-                    <h3 className="font-display text-[1.15rem] text-[#fad144] mb-2 group-hover:text-[#ffe478] transition-colors">
+                    <h3 className="font-display text-[1.15rem] text-[var(--color-solar-gold)] mb-2 group-hover:text-[#ffe478] transition-colors">
                       {article.title}
                     </h3>
-                    <p className="font-body text-[0.9rem] text-[#b8a8f0]/50">
+                    <p className="font-body text-[0.9rem] text-[var(--text-secondary)]/50">
                       {article.desc}
                     </p>
                   </div>

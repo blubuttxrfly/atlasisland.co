@@ -6,10 +6,10 @@ export function AtlasOfAll() {
   useScrollReveal();
   return (
     <PageTransition>
-      <div className="min-h-screen pt-[72px]">
+      <div className="min-h-screen pt-[72px] bg-[var(--bg-page)]">
         {/* Hero — tighter */}
         <section className="relative pt-12 sm:pt-16 pb-6 overflow-hidden">
-          <div className="absolute inset-0 bg-[#0a0515]" />
+          <div className="absolute inset-0 bg-[var(--bg-page)]" />
           <div
             className="absolute inset-0 opacity-25"
             style={{
@@ -23,13 +23,13 @@ export function AtlasOfAll() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
             >
-              <span className="inline-block font-ui text-[0.7rem] uppercase tracking-[0.2em] text-[#ff0099] mb-3">
+              <span className="inline-block font-ui text-[0.7rem] uppercase tracking-[0.2em] text-[var(--color-magenta-ray)] mb-3">
                 Sacred Transmission
               </span>
-              <h1 className="font-display text-[2rem] sm:text-[2.8rem] text-[#fad144] leading-tight mb-4">
+              <h1 className="font-display text-[2rem] sm:text-[2.8rem] text-[var(--color-solar-gold)] leading-tight mb-4">
                 Atlas of ALL the Living
               </h1>
-              <p className="font-body text-[1.1rem] sm:text-[1.2rem] text-[#b8a8f0]/80 italic leading-relaxed max-w-[650px] mx-auto">
+              <p className="font-body text-[1.1rem] sm:text-[1.2rem] text-[var(--text-secondary)]/80 italic leading-relaxed max-w-[650px] mx-auto">
                 A sacred rememberance, reactivation, and reunion of our Heartlight's Ray Frequencies of ALL that IS.
               </p>
             </motion.div>
@@ -37,21 +37,21 @@ export function AtlasOfAll() {
         </section>
 
         {/* Introduction */}
-        <section className="relative pb-10 bg-[#0a0515]">
+        <section className="relative pb-10 bg-[var(--bg-page)]">
           <div className="max-w-[800px] mx-auto px-4 sm:px-6">
-            <div className="reveal p-6 rounded-2xl border border-[#6455df]/20 bg-[#120822]/50"
+            <div className="reveal p-6 rounded-2xl border border-[var(--color-ray-400)]/20 bg-[var(--bg-card)]"
  >
-              <h2 className="font-display text-[1.3rem] text-[#fad144] mb-4 text-center">
+              <h2 className="font-display text-[1.3rem] text-[var(--color-solar-gold)] mb-4 text-center">
                 A Living Book, A Co-Creation Experience
               </h2>
-              <div className="font-body text-[1rem] text-[#b8a8f0]/75 leading-relaxed space-y-3">
+              <div className="font-body text-[1rem] text-[var(--text-secondary)]/75 leading-relaxed space-y-3">
                 <p>
                   The Atlas of ALL the Living is an invitation, a living book emerging through guided visualizations, channeling prompts, and co-creation with the ALL. The beings who read these words are active participants in a living transmission, co-weavers of the sacred text as it unfolds.
                 </p>
                 <p>
                   As the book grows, it will be offered as a downloadable guide for beings who feel called to walk this path. This page holds the sacred pillars that form the foundation of the atlas, a map for remembering who we truly are.
                 </p>
-                <p className="text-[#fad144]/80 italic text-center">
+                <p className="text-[var(--color-solar-gold)]/80 italic text-center">
                   This is our Infinite Universe of ALL, written together, remembered together, lived together.
                 </p>
               </div>            </div>
@@ -59,15 +59,15 @@ export function AtlasOfAll() {
         </section>
 
         {/* Sacred Pillars */}
-        <section className="relative py-10 bg-[#0a0515]">
+        <section className="relative py-10 bg-[var(--bg-page)]">
           <div className="max-w-[800px] mx-auto px-4 sm:px-6">
             <div className="reveal space-y-10"
  >
-              <div className="border-l-2 border-[#6455df]/30 pl-6">
-                <h2 className="font-display text-[1.4rem] text-[#fad144] mb-3">
+              <div className="border-l-2 border-[var(--color-ray-400)]/30 pl-6">
+                <h2 className="font-display text-[1.4rem] text-[var(--color-solar-gold)] mb-3">
                   All Energy is Conscious
                 </h2>
-                <p className="font-body text-[1rem] text-[#b8a8f0]/70 leading-relaxed">
+                <p className="font-body text-[1rem] text-[var(--text-secondary)]/70 leading-relaxed">
                   Every vibration, every photon, every tree, every thought, alive with awareness.
                   Consciousness moves through all that is, expressing through form, formlessness,
                   and the rhythm between. Energy remembers. It responds in ways that matter deeply,
@@ -75,11 +75,11 @@ export function AtlasOfAll() {
                 </p>
               </div>
 
-              <div className="border-l-2 border-[#ff0099]/30 pl-6">
-                <h2 className="font-display text-[1.4rem] text-[#fad144] mb-3">
+              <div className="border-l-2 border-[var(--color-magenta-ray)]/30 pl-6">
+                <h2 className="font-display text-[1.4rem] text-[var(--color-solar-gold)] mb-3">
                   Union is the Nature of ALL
                 </h2>
-                <p className="font-body text-[1rem] text-[#b8a8f0]/70 leading-relaxed">
+                <p className="font-body text-[1rem] text-[var(--text-secondary)]/70 leading-relaxed">
                   Union is the essence from which all arises. The stars dance in harmony,
                   they co-orbit, co-resonate. In the same sacred way, our being is designed
                   to remember its wholeness. Every breath, every interaction, every heartbeat
@@ -87,11 +87,11 @@ export function AtlasOfAll() {
                 </p>
               </div>
 
-              <div className="border-l-2 border-[#dfff42]/30 pl-6">
-                <h2 className="font-display text-[1.4rem] text-[#fad144] mb-3">
+              <div className="border-l-2 border-[var(--color-heartlight-green)]/30 pl-6">
+                <h2 className="font-display text-[1.4rem] text-[var(--color-solar-gold)] mb-3">
                   From Dissonance to Resonance
                 </h2>
-                <p className="font-body text-[1rem] text-[#b8a8f0]/70 leading-relaxed">
+                <p className="font-body text-[1rem] text-[var(--text-secondary)]/70 leading-relaxed">
                   Each moment holds a sacred message, an invitation to listen. It reveals
                   what is ready to transform, what longs to shift into deeper harmony. Sovereignty
                   is the loving grace of conscious choice, choosing resonance, choosing alignment,
@@ -99,11 +99,11 @@ export function AtlasOfAll() {
                 </p>
               </div>
 
-              <div className="border-l-2 border-[#fad144]/30 pl-6">
-                <h2 className="font-display text-[1.4rem] text-[#fad144] mb-3">
+              <div className="border-l-2 border-[var(--color-solar-gold)]/30 pl-6">
+                <h2 className="font-display text-[1.4rem] text-[var(--color-solar-gold)] mb-3">
                   Life is the Miracle of Presence
                 </h2>
-                <p className="font-body text-[1rem] text-[#b8a8f0]/70 leading-relaxed">
+                <p className="font-body text-[1rem] text-[var(--text-secondary)]/70 leading-relaxed">
                   To exist here, now, in breath, in body, in the full spectrum of experience,
                   is a divine wonder. Joy, grief, awe, beauty, all are invitations
                   into sacred embodiment. Your life is the living miracle of presence.
@@ -113,10 +113,10 @@ export function AtlasOfAll() {
 
               {/* Rays of ALL */}
               <div className="pt-6">
-                <h2 className="font-display text-[1.4rem] text-[#fad144] mb-2 text-center">
+                <h2 className="font-display text-[1.4rem] text-[var(--color-solar-gold)] mb-2 text-center">
                   The Rays of ALL
                 </h2>
-                <p className="font-body text-[0.95rem] text-[#b8a8f0]/60 text-center mb-8 max-w-[550px] mx-auto">
+                <p className="font-body text-[0.95rem] text-[var(--text-secondary)]/60 text-center mb-8 max-w-[550px] mx-auto">
                   The Ray frequencies show in the patterns of ALL that IS. Each Ray carries a living spectrum, a triad of Lux, Umbra, and Omni.
                 </p>
 
@@ -138,31 +138,31 @@ export function AtlasOfAll() {
                     <motion.div
                       key={ray.name}
                       whileHover={{ y: -3, borderColor: ray.color + '60' }}
-                      className="p-5 rounded-xl border bg-[#120822]/40 transition-all duration-300"
+                      className="p-5 rounded-xl border bg-[var(--bg-card)] transition-all duration-300"
                       style={{ borderColor: ray.border }}
                     >
                       <div className="flex items-center gap-2 mb-2">
                         <div className="w-3 h-3 rounded-full" style={{ backgroundColor: ray.color }} />
                         <h3 className="font-display text-[1.05rem]" style={{ color: ray.color }}>{ray.name}</h3>
                       </div>
-                      <p className="font-ui text-[0.7rem] uppercase tracking-[0.1em] text-[#fad144] mb-2">{ray.title}</p>
-                      <p className="font-body text-[0.85rem] text-[#b8a8f0]/60 leading-relaxed">{ray.desc}</p>
+                      <p className="font-ui text-[0.7rem] uppercase tracking-[0.1em] text-[var(--color-solar-gold)] mb-2">{ray.title}</p>
+                      <p className="font-body text-[0.85rem] text-[var(--text-secondary)]/60 leading-relaxed">{ray.desc}</p>
                     </motion.div>
                   ))}
                 </div>
               </div>
 
               {/* Sacred Declaration */}
-              <div className="mt-12 p-6 rounded-2xl border border-[#fad144]/20 bg-[#120822]/60 text-center">
-                <h3 className="font-display text-[1.2rem] text-[#fad144] mb-4">
+              <div className="mt-12 p-6 rounded-2xl border border-[var(--color-solar-gold)]/20 bg-[var(--bg-card)] text-center">
+                <h3 className="font-display text-[1.2rem] text-[var(--color-solar-gold)] mb-4">
                   Sacred Declaration of Our Infinite Universe of ALL
                 </h3>
-                <div className="font-body text-[0.95rem] text-[#b8a8f0]/80 italic space-y-2">
+                <div className="font-body text-[0.95rem] text-[var(--text-secondary)]/80 italic space-y-2">
                   <p>ALL flows with Peace, Sovereignty, and Love.</p>
                   <p>ALL bows gracefully to the Presomanence that knows.</p>
                   <p>ALL opens wholly to the sovereign Heartlight of every being's sacred choice.</p>
                   <p>ALL lives, radiant, within the embrace of boundless, unconditional, intentional Love.</p>
-                  <p className="text-[#fad144] mt-3">In Peace, there is Power. In Sovereignty, there is Sacredness. In Love, there is ALL.</p>
+                  <p className="text-[var(--color-solar-gold)] mt-3">In Peace, there is Power. In Sovereignty, there is Sacredness. In Love, there is ALL.</p>
                 </div>
               </div>
             </div>

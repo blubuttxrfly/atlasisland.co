@@ -104,12 +104,12 @@ export function StarField({ count = 70 }: { count?: number }) {
         const twinkle = Math.sin(Date.now() * s.twinkleSpeed + s.twinkleOffset);
         const alpha = s.opacity * (0.5 + 0.5 * twinkle);
 
-        // Soft glow — smaller in light mode
+        // Soft glow — brighter and more luminous
         ctx.beginPath();
-        const glowRadius = s.size * (s.size > 1.2 ? (isLight ? 5 : 6) : (isLight ? 6 : 8));
+        const glowRadius = s.size * (s.size > 1.2 ? (isLight ? 7 : 8) : (isLight ? 8 : 10));
         const glow = ctx.createRadialGradient(s.x, s.y, 0, s.x, s.y, glowRadius);
-        glow.addColorStop(0, `rgba(${s.color},${alpha * 0.6})`);
-        glow.addColorStop(0.4, `rgba(${s.color},${alpha * 0.15})`);
+        glow.addColorStop(0, `rgba(${s.color},${alpha * 0.85})`);
+        glow.addColorStop(0.4, `rgba(${s.color},${alpha * 0.3})`);
         glow.addColorStop(1, `rgba(${s.color},0)`);
         ctx.fillStyle = glow;
         ctx.arc(s.x, s.y, glowRadius, 0, Math.PI * 2);
